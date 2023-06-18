@@ -1,0 +1,6 @@
+header > nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding-left: 0; /* reset */
+}
