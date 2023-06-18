@@ -1,0 +1,1 @@
+the `/client/src/pages/ContactUsPage/components` folder is for Components that are specific to the Contact Us Page
