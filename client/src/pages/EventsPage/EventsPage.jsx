@@ -1,7 +1,11 @@
 import "./EventsPage.css";
 
 const EventsPage = () => {
-	return <div>Events Page</div>;
+	return (
+		<main>
+			<h1>Events Page</h1>
+		</main>
+	);
 };
 
 export default EventsPage;

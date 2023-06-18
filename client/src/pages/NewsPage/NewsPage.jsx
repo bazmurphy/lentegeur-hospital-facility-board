@@ -1,7 +1,11 @@
 import "./NewsPage.css";
 
 const NewsPage = () => {
-	return <div>News Page</div>;
+	return (
+		<main>
+			<h1>News Page</h1>
+		</main>
+	);
 };
 
 export default NewsPage;

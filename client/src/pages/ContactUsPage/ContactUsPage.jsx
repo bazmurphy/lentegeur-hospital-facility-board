@@ -1,7 +1,11 @@
 import "./ContactUsPage.css";
 
 const ContactUsPage = () => {
-	return <div>Contact Us Page</div>;
+	return (
+		<main>
+			<h1>Contact Us Page</h1>
+		</main>
+	);
 };
 
 export default ContactUsPage;

@@ -1,7 +1,11 @@
 import "./GalleryPage.css";
 
 const GalleryPage = () => {
-	return <div>Gallery Page</div>;
+	return (
+		<main>
+			<h1>Gallery Page</h1>
+		</main>
+	);
 };
 
 export default GalleryPage;

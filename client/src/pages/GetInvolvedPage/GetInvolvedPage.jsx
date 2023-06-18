@@ -1,7 +1,11 @@
 import "./GetInvolvedPage.css";
 
 const GetInvolvedPage = () => {
-	return <div>Get Involved Page</div>;
+	return (
+		<main>
+			<h1>Get Involved Page</h1>
+		</main>
+	);
 };
 
 export default GetInvolvedPage;
