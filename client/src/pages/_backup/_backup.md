@@ -1,0 +1,1 @@
+the `/client/src/pages/backup` folder is storing some of the original files that are now unused by the Project
