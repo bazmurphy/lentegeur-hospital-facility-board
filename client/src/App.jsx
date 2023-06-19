@@ -1,8 +1,12 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import {
+	createBrowserRouter,
+	createRoutesFromElements,
+	RouterProvider,
+	Route,
+} from "react-router-dom";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import RootLayout from "./layouts/RootLayout/RootLayout";
 
 import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
@@ -13,10 +17,9 @@ import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage/GetInvolvedPage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
 
-const App = () => (
-	<>
-		<Header />
-		<Routes>
+const router = createBrowserRouter(
+	createRoutesFromElements(
+		<Route path="/" element={<RootLayout />}>
 			<Route path="/" element={<HomePage />} />
 			<Route path="/about" element={<AboutPage />} />
 			<Route path="/services" element={<ServicesPage />} />
@@ -25,9 +28,14 @@ const App = () => (
 			<Route path="/gallery" element={<GalleryPage />} />
 			<Route path="/get-involved" element={<GetInvolvedPage />} />
 			<Route path="/contact-us" element={<ContactUsPage />} />
-		</Routes>
-		<Footer />
-	</>
+		</Route>
+	)
 );
+
+const App = () => {
+	return (
+		<RouterProvider router={router}></RouterProvider>
+	);
+};
 
 export default App;
