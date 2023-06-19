@@ -23,7 +23,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-		<div className="roadmap">
+		<div className="services">
           <h3>SERVICES</h3>
           <ul>
             <li>
@@ -46,8 +46,37 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-		 </div>
-    </footer>
+		<div className="pages">
+          <h3>PAGES</h3>
+         <ul>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/about">About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/services">Services</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/news">News</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/events">Events</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/gallery">Gallery</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/get-involved">Get Involved</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact-us">Contact Us</NavLink>
+                    </li>
+                </ul>
+        </div>
+      </div>
+	</footer>
   );
 };
 
