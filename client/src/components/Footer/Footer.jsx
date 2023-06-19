@@ -23,6 +23,29 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+		<div className="roadmap">
+          <h3>SERVICES</h3>
+          <ul>
+            <li>
+              <a href="#">Service 1</a>
+            </li>
+            <li>
+              <a href="#">Service 2</a>
+            </li>
+            <li>
+              <a href="#">Service 3</a>
+            </li>
+            <li>
+              <a href="#">Service 4</a>
+            </li>
+            <li>
+              <a href="#">Service 5</a>
+            </li>
+            <li>
+              <a href="#">Service 6</a>
+            </li>
+          </ul>
+        </div>
 		 </div>
     </footer>
   );
