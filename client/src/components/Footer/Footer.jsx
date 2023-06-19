@@ -1,17 +1,19 @@
-import "./Footer.css";
+import React from "react";
 import { NavLink } from "react-router-dom";
+
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer>
-		 <div className="footer-container">
-			<div className="address">
+      <div className="footer-container">
+        <div className="address">
           <h3 className="footer-headings">ADDRESS</h3>
           <p>Lorem Ipsum is simply dummy text of the printing</p>
         </div>
         <div className="contact-details">
           <h3 className="footer-headings">CONTACTS</h3>
-          <ul>
+          <ul className="no-list-style">
             <li>
               <a href="tel:+8201453434343">8 201 45 343 4343</a>
             </li>
@@ -23,9 +25,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-		<div className="services">
+        <div className="services">
           <h3 className="footer-headings">SERVICES</h3>
-          <ul>
+          <ul className="no-list-style">
             <li>
               <a href="#">Service 1</a>
             </li>
@@ -46,38 +48,39 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-		<div className="pages">
+        <div className="pages">
           <h3 className="footer-headings">PAGES</h3>
-         <ul>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about">About</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/services">Services</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/news">News</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/events">Events</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/gallery">Gallery</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/get-involved">Get Involved</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact-us">Contact Us</NavLink>
-                    </li>
-                </ul>
+          <ul className="no-list-style">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/services">Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/news">News</NavLink>
+            </li>
+            <li>
+              <NavLink to="/events">Events</NavLink>
+            </li>
+            <li>
+              <NavLink to="/gallery">Gallery</NavLink>
+            </li>
+            <li>
+              <NavLink to="/get-involved">Get Involved</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact-us">Contact Us</NavLink>
+            </li>
+          </ul>
         </div>
       </div>
-	</footer>
+    </footer>
   );
 };
+
 
 export default Footer;
