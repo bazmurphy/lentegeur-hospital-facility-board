@@ -19,14 +19,14 @@ import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
-			<Route path="/" element={<HomePage />} />
-			<Route path="/about" element={<AboutPage />} />
-			<Route path="/services" element={<ServicesPage />} />
-			<Route path="/news" element={<NewsPage />} />
-			<Route path="/events" element={<EventsPage />} />
-			<Route path="/gallery" element={<GalleryPage />} />
-			<Route path="/get-involved" element={<GetInvolvedPage />} />
-			<Route path="/contact-us" element={<ContactUsPage />} />
+			<Route index element={<HomePage />} />
+			<Route path="about" element={<AboutPage />} />
+			<Route path="services" element={<ServicesPage />} />
+			<Route path="news" element={<NewsPage />} />
+			<Route path="events" element={<EventsPage />} />
+			<Route path="gallery" element={<GalleryPage />} />
+			<Route path="get-involved" element={<GetInvolvedPage />} />
+			<Route path="contact-us" element={<ContactUsPage />} />
 		</Route>
 	)
 );
