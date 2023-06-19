@@ -6,11 +6,11 @@ const Footer = () => {
     <footer>
 		 <div className="footer-container">
 			<div className="address">
-          <h3>ADDRESS</h3>
+          <h3 className="footer-headings">ADDRESS</h3>
           <p>Lorem Ipsum is simply dummy text of the printing</p>
         </div>
         <div className="contact-details">
-          <h3>CONTACTS</h3>
+          <h3 className="footer-headings">CONTACTS</h3>
           <ul>
             <li>
               <a href="tel:+8201453434343">8 201 45 343 4343</a>
@@ -24,7 +24,7 @@ const Footer = () => {
           </ul>
         </div>
 		<div className="services">
-          <h3>SERVICES</h3>
+          <h3 className="footer-headings">SERVICES</h3>
           <ul>
             <li>
               <a href="#">Service 1</a>
@@ -47,7 +47,7 @@ const Footer = () => {
           </ul>
         </div>
 		<div className="pages">
-          <h3>PAGES</h3>
+          <h3 className="footer-headings">PAGES</h3>
          <ul>
                     <li>
                         <NavLink to="/">Home</NavLink>

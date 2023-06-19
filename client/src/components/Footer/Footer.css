@@ -7,3 +7,32 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+.footer-headings {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.address,
+.contact-details,
+.services,
+.pages {
+    margin-bottom: 20px;
+}
+
+/* Mobile-first design */
+@media (min-width: 768px) {
+
+    /* Desktop version */
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .address,
+    .contact-details,
+    .services,
+    .pages {
+        flex-basis: 25%;
+    }
+}
