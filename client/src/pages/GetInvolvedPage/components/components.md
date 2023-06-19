@@ -1,0 +1,1 @@
+the `/client/src/pages/GetInvolvedPage/components` folder is for Components that are specific to the Get Involved Page
