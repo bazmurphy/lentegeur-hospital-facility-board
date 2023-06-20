@@ -1,6 +1,44 @@
 header > nav > ul {
   display: flex;
   list-style: none;
-  gap: 10px;
+  gap: 15px;
   padding-left: 0; /* reset */
+  flex-flow: row nowrap;
+}
+header > nav > ul > li {
+  padding: 18px 10px;
+}
+nav {
+  width: 100%;
+  height: 75px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation-links {
+  font-size: 1.3rem;
+}
+.logo-name {
+  padding: 18px 0;
+  display: flex;
+  gap: 10px;
+}
+.active {
+  background-color: #B3B3B3;
+}
+.text-link {
+  color: black;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .navigation-links{
+    flex-flow: column nowrap;
+    background-color: #B3B3B3;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3rem;
+  }
 }
