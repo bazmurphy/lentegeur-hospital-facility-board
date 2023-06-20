@@ -1,5 +1,4 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -29,51 +28,51 @@ const Footer = () => {
           <h3 className="footer-headings">SERVICES</h3>
           <ul className="no-list-style">
             <li>
-              <a href="#">Service 1</a>
+              <a href="/services">Service 1</a>
             </li>
             <li>
-              <a href="#">Service 2</a>
+              <a href="/services">Service 2</a>
             </li>
             <li>
-              <a href="#">Service 3</a>
+              <a href="/services">Service 3</a>
             </li>
             <li>
-              <a href="#">Service 4</a>
+              <a href="/services">Service 4</a>
             </li>
             <li>
-              <a href="#">Service 5</a>
+              <a href="/services">Service 5</a>
             </li>
             <li>
-              <a href="#">Service 6</a>
+              <a href="/services">Service 6</a>
             </li>
           </ul>
         </div>
-        <div className="pages">
+               <div className="pages">
           <h3 className="footer-headings">PAGES</h3>
           <ul className="no-list-style">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <Link to="/services">Services</Link>
             </li>
             <li>
-              <NavLink to="/news">News</NavLink>
+              <Link to="/news">News</Link>
             </li>
             <li>
-              <NavLink to="/events">Events</NavLink>
+              <Link to="/events">Events</Link>
             </li>
             <li>
-              <NavLink to="/gallery">Gallery</NavLink>
+              <Link to="/gallery">Gallery</Link>
             </li>
             <li>
-              <NavLink to="/get-involved">Get Involved</NavLink>
+              <Link to="/get-involved">Get Involved</Link>
             </li>
             <li>
-              <NavLink to="/contact-us">Contact Us</NavLink>
+              <Link to="/contact-us">Contact Us</Link>
             </li>
           </ul>
         </div>
