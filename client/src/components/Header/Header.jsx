@@ -1,11 +1,20 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useRef } from "react";
 
 const Header = () => {
+
+	const navRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle("responsive_nav")
+	}
+
 	return (
 		<header>
 			<h2>Lentegeur Hospital</h2>
-			<nav>
+			<nav ref = {navRef}>
 				<ul>
 					<li>
 						<NavLink to="/">Home</NavLink>
@@ -31,8 +40,14 @@ const Header = () => {
 					<li>
 						<NavLink to="/contact-us">Contact Us</NavLink>
 					</li>
+					<button className="nav-btn nav-close-btn"  onClick={showNavbar}>
+						<FaTimes />
+					</button>
 				</ul>
 			</nav>
+			<button className="nav-btn" onClick={showNavbar}>
+				<FaBars />
+			</button>
 		</header>
 	);
 };
