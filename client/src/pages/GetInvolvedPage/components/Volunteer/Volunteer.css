@@ -1,0 +1,32 @@
+.volunteer-section {
+}
+
+.volunteer-section > h2 {
+	margin-bottom: 5px; /* to offset from the line-divider */
+	text-align: center;
+}
+
+.volunteer-image-container {
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 10px; /* to offset from the paragraph */
+}
+
+.volunteer-image {
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
+	width: 100%;
+}
+
+.volunteer-section > p {
+	text-align: center;
+	margin-bottom: 20px; /* to offset from the form*/
+}
+
+@media screen and (min-width: 700px) {
+	.volunteer-section > p {
+		width: 80%;
+		margin: 0 auto 20px auto;
+	}
+}
