@@ -5,7 +5,7 @@ import NetworkingSection from "./components/NetworkingSection";
 
 const AboutPage = () => {
 	return (
-		<div>
+		<div className="about-page">
 			<HistorySection />
 			<GovernanceSection />
 			<NetworkingSection />

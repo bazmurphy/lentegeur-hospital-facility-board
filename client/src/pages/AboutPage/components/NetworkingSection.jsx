@@ -10,10 +10,10 @@ const NetworkingSection = () => {
 		affiliates.push({ image: Circle, name: "Lorem Ipsum name" });
 	}
 	return (
-		<div className="history-section">
-			<h1 className="history-title">Networking Affiliates </h1>
+		<div className="networking-section">
+			<h1 className="networking-title">Networking Affiliates </h1>
 			<div className="title-line"></div>
-			<div className="history-wrapper">
+			<div className="networking-wrapper">
 				<img src={image} alt="grey square" />
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting

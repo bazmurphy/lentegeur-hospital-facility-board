@@ -1,0 +1,96 @@
+.about-page {
+	margin: 10px 30px;
+	text-align: justify;
+}
+
+.about-page p {
+	margin: 15px 0;
+}
+
+.about-page img {
+	width: 90%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.title-line {
+	height: 2px;
+	background-color: #b3b3b3;
+	margin: 5px auto 15px auto;
+}
+
+/* history section */
+.history-section {
+	margin-bottom: 30px;
+}
+
+/* governance section */
+.governance-section {
+	margin-bottom: 30px;
+}
+
+/* networking section */
+.networking-section {
+	margin-bottom: 30px;
+}
+
+.affiliates {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.affiliates img {
+	width: 50px !important;
+	height: auto;
+	margin: 5px 10px;
+}
+
+.affiliates .affiliate {
+	display: flex;
+	align-items: center;
+}
+
+/* tablet */
+@media screen and (min-width: 480px) {
+	.about-page img {
+		width: 70%;
+	}
+
+	.networking-wrapper img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border: 1px solid black;
+	}
+
+	.affiliates {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.affiliates .affiliate {
+		justify-content: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.history-wrapper {
+		display: flex;
+	}
+
+	.history-wrapper img {
+		width: 300px;
+		height: 200px;
+		margin-right: 20px;
+	}
+
+	.affiliates img {
+		width: 70px !important;
+	}
+
+	.affiliates .affiliate {
+		margin: 10px 0;
+	}
+}
