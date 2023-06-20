@@ -6,9 +6,9 @@ import NetworkingSection from "./components/NetworkingSections";
 const AboutPage = () => {
 	return (
 		<div>
-		<HistorySection />
-		<GovernanceSection />
-		<NetworkingSection />
+			<HistorySection />
+			<GovernanceSection />
+			<NetworkingSection />
 		</div>
 	);
 };
