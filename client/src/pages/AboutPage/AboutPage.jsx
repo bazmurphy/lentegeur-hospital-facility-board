@@ -1,10 +1,15 @@
 import "./AboutPage.css";
+import GovernanceSection from "./components/GovernanceSection";
+import HistorySection from "./components/HistorySection";
+import NetworkingSection from "./components/NetworkingSections";
 
 const AboutPage = () => {
 	return (
-		<>
-			<h1>About Page</h1>
-		</>
+		<div>
+		<HistorySection />
+		<GovernanceSection />
+		<NetworkingSection />
+		</div>
 	);
 };
 
