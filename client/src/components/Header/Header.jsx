@@ -1,17 +1,39 @@
 import "./Header.css";
-import RightNav from "./RightNav";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <header>
-            <nav>
-                <div className="logo-name">
-                    <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Circle_Davys-Grey_Solid.svg/1200px-Circle_Davys-Grey_Solid.svg.png"></img>
-                    <div className="name">Lentegeur Hospital</div>
-                </div>
-                <RightNav />
-            </nav>
-        </header>
-    );
+	return (
+		<header>
+			<h2>Lentegeur Hospital</h2>
+			<nav>
+				<ul>
+					<li>
+						<NavLink to="/">Home</NavLink>
+					</li>
+					<li>
+						<NavLink to="/about">About</NavLink>
+					</li>
+					<li>
+						<NavLink to="/services">Services</NavLink>
+					</li>
+					<li>
+						<NavLink to="/news">News</NavLink>
+					</li>
+					<li>
+						<NavLink to="/events">Events</NavLink>
+					</li>
+					<li>
+						<NavLink to="/gallery">Gallery</NavLink>
+					</li>
+					<li>
+						<NavLink to="/get-involved">Get Involved</NavLink>
+					</li>
+					<li>
+						<NavLink to="/contact-us">Contact Us</NavLink>
+					</li>
+				</ul>
+			</nav>
+		</header>
+	);
 };
 export default Header;
