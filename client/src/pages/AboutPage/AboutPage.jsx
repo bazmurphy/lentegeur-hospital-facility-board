@@ -1,7 +1,7 @@
 import "./AboutPage.css";
 import GovernanceSection from "./components/GovernanceSection";
 import HistorySection from "./components/HistorySection";
-import NetworkingSection from "./components/NetworkingSections";
+import NetworkingSection from "./components/NetworkingSection";
 
 const AboutPage = () => {
 	return (
