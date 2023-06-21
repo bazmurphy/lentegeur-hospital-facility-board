@@ -1,5 +1,6 @@
 import "./NewsPage.css";
 import ContentBox from "../../components/Share/ContentBox";
+import { useState } from "react";
 
 const newsData = [
 	{
@@ -26,11 +27,34 @@ const newsData = [
 ];
 
 const NewsPage = () => {
+	const [searchValue, setSearchValue] = useState("");
+
+	const handleSearch = (event) => {
+		setSearchValue(event.target.value);
+	};
+
+	const filteredNews = newsData.filter((item) => {
+		const titleMatches = item.title
+			.toLowerCase()
+			.includes(searchValue.toLowerCase());
+		const contentMatches = item.description
+			.toLowerCase()
+			.includes(searchValue.toLowerCase());
+		return titleMatches || contentMatches;
+	});
 	return (
 		<>
 			<h1>News</h1>
-			<div className="tools-bar"></div>
-			{newsData.map((item, index) => {
+			<div className="tools-bar">
+				<input
+					type="text"
+					placeholder="Search"
+					value={searchValue}
+					onChange={handleSearch}
+				/>
+				<p>{filteredNews.length} news found</p>
+			</div>
+			{filteredNews.map((item, index) => {
 				return (
 					<ContentBox
 						key={index}
