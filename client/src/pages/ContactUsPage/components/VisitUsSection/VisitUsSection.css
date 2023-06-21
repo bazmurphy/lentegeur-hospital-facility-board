@@ -1,0 +1,47 @@
+.visit-us-section {
+	margin-bottom: 20px; /* adjust this for the gap to the footer */
+}
+
+.visit-us-section > h2 {
+	text-align: center;
+}
+
+.visit-us-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 30px;
+}
+
+.visit-us-details-container {
+	display: grid;
+	align-content: center;
+	gap: 20px;
+}
+
+.visit-us-details-subcontainer {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.visit-us-details-subcontainer > h3 {
+	/* for Address and Contacts styling */
+}
+
+.visit-us-details-subcontainer > p {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+@media screen and (min-width: 700px) {
+	.visit-us-container {
+		width: 90%; /* the map is flush with the right edge but i've changed it deliberately */
+		margin: 0 auto;
+		grid-template-columns: 0.3fr 0.7fr;
+		column-gap: 20px;
+	}
+
+	.visit-us-details-container {
+	}
+}
