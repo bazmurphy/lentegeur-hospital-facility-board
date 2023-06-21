@@ -1,10 +1,13 @@
 import "./ContactUsPage.css";
+import ContactUsSection from "./components/ContactUsSection/ContactUsSection";
+import VisitUsSection from "./components/VisitUsSection/VisitUsSection";
 
 const ContactUsPage = () => {
 	return (
-		<>
-			<h1>Contact Us Page</h1>
-		</>
+		<div className="contact-us-page">
+			<ContactUsSection />
+			<VisitUsSection />
+		</div>
 	);
 };
 

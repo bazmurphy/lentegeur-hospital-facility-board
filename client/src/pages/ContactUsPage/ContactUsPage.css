@@ -1,0 +1,18 @@
+.contact-us-page {
+	padding: 20px 15px; /* page padding in Mobile */
+}
+
+@media screen and (min-width: 700px) {
+	.contact-us-page {
+		margin: 0 auto;
+		max-width: 1000px;
+		padding: 20px 30px; /* page padding in Desktop */
+	}
+}
+
+/* this needs to be global */
+.divider-line {
+	height: 2px;
+	background-color: hsl(0, 0%, 70%);
+	margin: 5px 0 20px 0;
+}
