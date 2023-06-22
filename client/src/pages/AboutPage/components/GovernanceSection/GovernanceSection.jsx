@@ -1,10 +1,11 @@
 import "./GovernanceSection.css";
+import Line from "../../../../components/Line/Line";
 
 const GovernanceSection = () => {
 	return (
 		<section className="governance-section">
-			<h1 className="governance-title">Governance</h1>
-			<div className="title-line"></div>
+			<h2>Governance</h2>
+			<Line />
 			<div className="governance-wrapper">
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting

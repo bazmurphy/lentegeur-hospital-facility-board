@@ -1,21 +1,26 @@
-import image from "../../../../assets/grey_circle_image.svg";
-import placeholderNetworkingImage from "../../../../assets/grey_image.svg";
+import placeholderNetworkingImage from "../../../../assets/grey_circle_image.svg";
+import image from "../../../../assets/grey_image.svg";
 import Affiliate from "../Affiliate/Affiliate";
 import "./NetworkingSection.css";
+import Line from "../../../../components/Line/Line";
 
 const NetworkingSection = () => {
-	const affiliates = [];
+	//adding  6 affiliates to the array
+	const affiliates = Array.from({ length: 6 }, (_, index) => ({
+		name: `Affiliate Name ${index + 1}`,
+		image: placeholderNetworkingImage,
+		altText: `Affiliate alternate text ${index + 1}`,
+	}));
 
-	//adding  6 the same affiliates to the array
-	for (let i = 0; i < 6; i++) {
-		affiliates.push({ image: image, name: "Lorem Ipsum name" });
-	}
 	return (
-		<div className="networking-section">
-			<h1 className="networking-title">Networking Affiliates </h1>
-			<div className="title-line"></div>
+		<section className="networking-section">
+			<h2>Networking Affiliates</h2>
+			<Line />
 			<div className="networking-wrapper">
-				<img src={placeholderNetworkingImage} alt="grey square" />
+				<div className="networking-image-container">
+					<img src={image} alt="grey square" />
+				</div>
+
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industrys standard dummy text ever
@@ -30,15 +35,15 @@ const NetworkingSection = () => {
 			</div>
 			<div className="affiliates">
 				{affiliates.length > 0 &&
-					affiliates.map((affiliate, index) => (
+					affiliates.map((affiliate) => (
 						<Affiliate
-							key={index}
+							key={affiliate.name}
 							image={affiliate.image}
 							name={affiliate.name}
 						/>
 					))}
 			</div>
-		</div>
+		</section>
 	);
 };
 

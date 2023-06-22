@@ -1,15 +1,19 @@
 import "./HistorySection.css";
+import Line from "../../../../components/Line/Line";
 
 import image from "../../../../assets/grey_image.svg";
 
 const HistorySection = () => {
 	return (
 		<div className="history-section">
-			<h1 className="history-title">History</h1>
-			<div className="title-line"></div>
+			<h2>History</h2>
+			<Line />
 			<div className="history-wrapper">
-				<img src={image} alt="grey square" />
-				<p>
+				<div className="history-image-container">
+					<img src={image} alt="grey square" />
+				</div>
+
+				<p className="history-text">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industrys standard dummy text ever
 					since the 1500s, when an unknown printer took a galley of type and
