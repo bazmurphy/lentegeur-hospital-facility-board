@@ -1,11 +1,12 @@
 import "./VisitUsSection.css";
+import Line from "../../../../components/Line/Line";
 import VisitUsMap from "./VisitUsMap/VisitUsMap";
 
 const VisitUsSection = () => {
 	return (
 		<section className="visit-us-section">
 			<h2>Visit Us</h2>
-			<div className="divider-line"></div>
+			<Line />
 			<div className="visit-us-container">
 				<div className="visit-us-details-container">
 					<div className="visit-us-details-subcontainer">

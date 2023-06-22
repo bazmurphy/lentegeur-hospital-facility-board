@@ -14,7 +14,8 @@
 }
 
 .contact-us-form-group {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 5px;
 }
 
@@ -25,8 +26,6 @@
 .contact-us-form-textarea,
 .contact-us-form-submit {
 	display: block;
-	font-family: inherit;
-	font-size: inherit;
 }
 
 .contact-us-form-input,
@@ -58,13 +57,11 @@
 }
 
 .contact-us-form-submit {
+	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
 	cursor: pointer;
 	background-color: hsl(0, 0%, 70%);
 	color: hsl(0, 0%, 100%);
-	justify-self: center; /* override default grid item rule and place in the center */
-	font-family: inherit;
-	font-size: inherit;
 }
 
 .contact-us-form-submit:hover {
