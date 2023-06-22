@@ -2,7 +2,7 @@ import "./GovernanceSection.css";
 
 const GovernanceSection = () => {
 	return (
-		<div className="governance-section">
+		<section className="governance-section">
 			<h1 className="governance-title">Governance</h1>
 			<div className="title-line"></div>
 			<div className="governance-wrapper">
@@ -32,7 +32,7 @@ const GovernanceSection = () => {
 					section 1.10.32.
 				</p>
 			</div>
-		</div>
+		</section>
 	);
 };
 

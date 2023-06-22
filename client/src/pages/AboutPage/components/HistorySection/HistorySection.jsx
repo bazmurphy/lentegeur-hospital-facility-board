@@ -1,6 +1,6 @@
 import "./HistorySection.css";
 
-import image from "../../../assets/grey_image.svg";
+import image from "../../../../assets/grey_image.svg";
 
 const HistorySection = () => {
 	return (
