@@ -1,9 +1,9 @@
 .contact-us-page {
-	padding: 0 15px; /* left and right page padding in Mobile */
+	margin: 0 20px; /* left and right page padding in Mobile */
 }
 
 @media screen and (min-width: 700px) {
 	.contact-us-page {
-		padding: 0 30px; /* left and right page padding in Desktop */
+		padding: 0 20px; /* left and right page padding in Desktop (this may be wider?) */
 	}
 }

@@ -1,9 +1,8 @@
 .contact-us-form-container {
-	/* neccessary for the "fields mark with an asterisk (*) are required line */
 }
 
 .contact-us-form-container > p {
-	margin-bottom: 10px;
+	margin-bottom: 10px; /* gap below the "Fields mark with an asterisk (*) are required." */
 }
 
 .contact-us-form {
@@ -59,9 +58,9 @@
 .contact-us-form-submit {
 	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
-	cursor: pointer;
 	background-color: hsl(0, 0%, 70%);
 	color: hsl(0, 0%, 100%);
+	cursor: pointer;
 }
 
 .contact-us-form-submit:hover {
@@ -98,10 +97,10 @@
 
 /* this loading animation needs to be global */
 .loading {
-	width: 20px;
-	height: 20px;
-	border: 3px solid #f3f3f3;
-	border-top: 3px solid hsl(0, 0%, 75%);
+	width: 19px;
+	height: 19px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid hsl(0, 0%, 75%);
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
 }

@@ -1,5 +1,4 @@
 .visit-us-section {
-	margin-bottom: 30px; /* adjust this for the gap to the footer */
 }
 
 .visit-us-section > h2 {
@@ -8,7 +7,6 @@
 
 .visit-us-container {
 	display: grid;
-	grid-template-columns: 1fr;
 	row-gap: 30px;
 }
 
@@ -43,6 +41,5 @@
 		width: 90%; /* the map is flush with the right edge but i've changed it deliberately */
 		margin: 0 auto;
 		grid-template-columns: 0.3fr 0.7fr;
-		/* column-gap: 20px; */
 	}
 }
