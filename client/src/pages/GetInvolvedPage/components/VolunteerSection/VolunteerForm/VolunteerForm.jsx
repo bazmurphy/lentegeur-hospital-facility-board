@@ -95,7 +95,7 @@ const VolunteerForm = () => {
 					disabled={isSubmitting}
 					className="volunteer-form-submit"
 				>
-					{isSubmitting ? "SUBMITTING..." : "SUBMIT"}
+					{isSubmitting ? <div className="loading"></div> : "SUBMIT"}
 				</button>
 			</form>
 		</div>
