@@ -1,3 +1,5 @@
+import "./Affiliate.css";
+
 const Affiliate = ({ image, name }) => {
 	return (
 		<div className="affiliate">

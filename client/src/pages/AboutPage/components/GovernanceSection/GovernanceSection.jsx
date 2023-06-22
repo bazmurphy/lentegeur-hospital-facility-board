@@ -1,3 +1,5 @@
+import "./GovernanceSection.css";
+
 const GovernanceSection = () => {
 	return (
 		<div className="governance-section">

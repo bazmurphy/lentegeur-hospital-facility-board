@@ -1,11 +1,20 @@
 import image from "../../../assets/grey_image.svg";
+import Circle from "../../../assets/grey_circle_image.svg";
+import Affiliate from "./Affiliate";
+import "./NetworkingSection.css";
 
-const HistorySection = () => {
+const NetworkingSection = () => {
+	const affiliates = [];
+
+	//adding  6 the same affiliates to the array
+	for (let i = 0; i < 6; i++) {
+		affiliates.push({ image: Circle, name: "Lorem Ipsum name" });
+	}
 	return (
-		<div className="history-section">
-			<h1 className="history-title">History</h1>
+		<div className="networking-section">
+			<h1 className="networking-title">Networking Affiliates </h1>
 			<div className="title-line"></div>
-			<div className="history-wrapper">
+			<div className="networking-wrapper">
 				<img src={image} alt="grey square" />
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -19,8 +28,18 @@ const HistorySection = () => {
 					including versions of Lorem Ipsum.
 				</p>
 			</div>
+			<div className="affiliates">
+				{affiliates.length > 0 &&
+					affiliates.map((affiliate, index) => (
+						<Affiliate
+							key={index}
+							image={affiliate.image}
+							name={affiliate.name}
+						/>
+					))}
+			</div>
 		</div>
 	);
 };
 
-export default HistorySection;
+export default NetworkingSection;
