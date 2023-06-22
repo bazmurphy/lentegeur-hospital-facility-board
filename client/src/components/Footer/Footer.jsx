@@ -5,14 +5,13 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-container">
-        <div className="address">
-          <h3 className="footer-headings">ADDRESS</h3>
+        <div className="footer-subcontainer">
+          <h3 className="footer-subheading">ADDRESS</h3>
           <p>Lorem Ipsum is simply dummy text of the printing</p>
         </div>
-        <div className="contact-details">
-          <h3 className="footer-headings">CONTACTS</h3>
-          <ul className="no-list-style">
+        <div className="footer-subcontainer">
+          <h3 className="footer-subheading">CONTACTS</h3>
+          <ul className="footer-list">
             <li>
               <a href="tel:+8201453434343">8 201 45 343 4343</a>
             </li>
@@ -24,9 +23,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="services">
-          <h3 className="footer-headings">SERVICES</h3>
-          <ul className="no-list-style">
+        <div className="footer-subcontainer">
+          <h3 className="footer-subheading">SERVICES</h3>
+          <ul className="footer-list">
             <li>
               <a href="/services">Service 1</a>
             </li>
@@ -47,9 +46,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-               <div className="pages">
-          <h3 className="footer-headings">PAGES</h3>
-          <ul className="no-list-style">
+        <div className="footer-subcontainer">
+          <h3 className="footer-subheading">PAGES</h3>
+          <ul className="footer-list">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -76,7 +75,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
     </footer>
   );
 };
