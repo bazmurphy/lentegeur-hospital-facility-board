@@ -1,35 +1,9 @@
 .get-involved-page {
-	padding: 20px 15px;
-}
-
-.get-involved-section {
-	margin-bottom: 30px; /* to offset from the next section */
-}
-
-.get-involved-section > h1 {
-	text-align: center;
-	padding-bottom: 5px; /* to offset from the line-divider */
-}
-
-.get-involved-section > p {
-	text-align: center; /* do we want this centered or is justify better? */
-}
-
-/* reusable line divider below headings */
-.line-divider {
-	border-top: solid 2px hsl(0, 0%, 70%);
-	padding-bottom: 10px;
+	margin: 0 20px;
 }
 
 @media screen and (min-width: 700px) {
 	.get-involved-page {
-		max-width: 1000px; /* set a max width of the page in Desktop */
-		margin: 0 auto;
-		padding: 20px 40px;
-	}
-
-	.get-involved-section > p {
-		width: 80%;
-		margin: 0 auto;
+		margin: 0 20px; /* this could be wider in Desktop? */
 	}
 }

@@ -3,11 +3,13 @@
 }
 
 .donate-section > h2 {
-	margin-bottom: 5px; /* to offset from the line-divider */
 }
 
-.donate-section > p {
-	margin-bottom: 15px; /* to separate the paragraphs from each other */
+.donate-section-subcontainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 10px; /* to offset from the next subcontainer */
 }
 
 .donate-link {
