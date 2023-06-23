@@ -1,7 +1,6 @@
-import NewsContent from "./NewsContent";
-import "./NewsSection.css";
-// import Line from "../../../../components/Line";
-import { useState } from "react";
+import NewsEventContent from "./NewsEventContent";
+import "./NewsEventSection.css";
+import Line from "../../../../components/Line/Line";
 
 const newsData = [
 	{
@@ -28,29 +27,15 @@ const newsData = [
 ];
 
 const NewsSection = () => {
-	const [searchValue, setSearchValue] = useState("");
 
-	const handleSearch = (event) => {
-		setSearchValue(event.target.value);
-	};
-
-	const filteredNews = newsData.filter((item) => {
-		const titleMatches = item.title
-			.toLowerCase()
-			.includes(searchValue.toLowerCase());
-		const contentMatches = item.description
-			.toLowerCase()
-			.includes(searchValue.toLowerCase());
-		return titleMatches || contentMatches;
-	});
 	return (
 		<section>
 			<h2>News</h2>
-			{/* <Line /> */}
+			<Line />
 			<div className="cards-list-container">
-				{filteredNews.map((item, index) => {
+				{newsData.map((item, index) => {
 					return (
-						<NewsContent
+						<NewsEventContent
 							key={index}
 							title={item.title}
 							image={item.image}

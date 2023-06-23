@@ -1,6 +1,6 @@
 import "./NewsContent.css";
 
-function NewsContent({ title, image, content }) {
+function NewsEventContent({ title, image, content }) {
 	// Truncate the content if it exceeds 100 characters
 	const truncatedContent =
 		content.length > 350 ? `${content.substring(0, 350)}...` : content;
@@ -18,4 +18,4 @@ function NewsContent({ title, image, content }) {
 	);
 }
 
-export default NewsContent;
+export default NewsEventContent;

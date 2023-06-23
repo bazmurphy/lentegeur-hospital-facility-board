@@ -1,6 +1,7 @@
 import "./HomePage.css";
 import HomeCarousel from "./components/Carousel/Carousel";
 import NewsSection from "./components/Latest-News/NewsSection";
+// import EventsSection from "./components/Latest-Events/EventsSection";
 
 const HomePage = () => {
     return (
@@ -19,7 +20,7 @@ const HomePage = () => {
       <div className="section">
         <h2>Latest Events</h2>
         <div className="card-container">
-          {/* Add your latest events cards here */}
+          {/* <EventsSection /> */}
         </div>
       </div>
       <div className="section">
