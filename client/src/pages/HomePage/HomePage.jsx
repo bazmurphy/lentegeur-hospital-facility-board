@@ -1,5 +1,6 @@
 import "./HomePage.css";
 import HomeCarousel from "./components/Carousel/Carousel";
+import NewsSection from "./components/Latest-News/NewsSection";
 
 const HomePage = () => {
     return (
@@ -12,7 +13,7 @@ const HomePage = () => {
       <div className="section">
         <h2>Latest News</h2>
         <div className="card-container">
-          {/* Add your latest news cards here */}
+          <NewsSection />
         </div>
       </div>
       <div className="section">
