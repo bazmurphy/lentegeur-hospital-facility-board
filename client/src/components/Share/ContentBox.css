@@ -61,4 +61,7 @@
   position: absolute;
   bottom: 8px;
 }
+.content-title{
+  align-self: flex-start;
+}
 }

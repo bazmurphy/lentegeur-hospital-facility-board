@@ -10,7 +10,7 @@ function ContentBox({ title, image, content }) {
 				<img className="content-img" src={image} alt="news" />
 			</div>
 			<div className="contents">
-				<h2 className="content-title">{title}</h2>
+				<h3 className="content-title">{title}</h3>
 				<p className="content-text">{truncatedContent}</p>
 				<button className="content-button">Read More</button>
 			</div>
