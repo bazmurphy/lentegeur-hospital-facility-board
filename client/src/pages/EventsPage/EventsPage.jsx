@@ -1,5 +1,6 @@
 import "./EventsPage.css";
 import ContentBox from "../../components/Share/ContentBox";
+import Line from "../../components/Line/Line";
 import { useState } from "react";
 
 const eventsData = [
@@ -58,6 +59,7 @@ const EventsPage = () => {
 	return (
 		<>
 			<h1>Events</h1>
+			<Line />
 			<div className="tools-bar">
 				<input
 					type="text"
@@ -73,16 +75,18 @@ const EventsPage = () => {
 				</select>
 				<p>{filteredEvents.length} events found</p>
 			</div>
-			{filteredEvents.map((item, index) => {
-				return (
-					<ContentBox
-						key={index}
-						title={item.title}
-						image={item.image}
-						content={item.description}
-					/>
-				);
-			})}
+			<div className="cards-list-container">
+				{filteredEvents.map((item, index) => {
+					return (
+						<ContentBox
+							key={index}
+							title={item.title}
+							image={item.image}
+							content={item.description}
+						/>
+					);
+				})}
+			</div>
 		</>
 	);
 };
