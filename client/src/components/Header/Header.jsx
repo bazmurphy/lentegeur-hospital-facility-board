@@ -9,6 +9,7 @@ const Header = () => {
 
 	const showNavbar = () => {
 		navRef.current.classList.toggle("responsive_nav");
+		document.body.classList.toggle("open-nav");
 	};
 
 	const closeNavbar = () => {
@@ -16,6 +17,7 @@ const Header = () => {
 		if (window.innerWidth <= 767) {
 			navRef.current.classList.remove("responsive_nav");
 			navRef.current.classList.toggle("closing");
+			document.body.classList.remove("open-nav");
 
 			setTimeout(() => {
 				navRef.current.classList.remove("closing");

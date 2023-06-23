@@ -78,10 +78,17 @@ nav .nav-close-btn {
 .responsive_nav {
 	transform: none;
 	transition: 1s;
+	overflow: hidden;
 }
 
+/* transition for closing mobile navbar */
 .closing {
 	transition: 1s;
+}
+
+/* disabling scrolling while mobile navbar is opened */
+body.open-nav {
+	overflow: hidden;
 }
 
 .header-logo-container {
