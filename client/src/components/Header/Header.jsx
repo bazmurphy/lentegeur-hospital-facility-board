@@ -15,6 +15,11 @@ const Header = () => {
 		// Check if the window width is less than or equal to 767px (indicating the mobile view)
 		if (window.innerWidth <= 767) {
 			navRef.current.classList.remove("responsive_nav");
+			navRef.current.classList.toggle("closing");
+
+			setTimeout(() => {
+				navRef.current.classList.remove("closing");
+			}, 1000); // Wait for the animation to complete before removing the classes
 		}
 	};
 
@@ -109,7 +114,7 @@ const Header = () => {
 							</div>
 						</li>
 					</ul>
-					<button className="nav-btn nav-close-btn" onClick={showNavbar}>
+					<button className="nav-btn nav-close-btn" onClick={closeNavbar}>
 						<FaTimes />
 					</button>
 				</nav>
