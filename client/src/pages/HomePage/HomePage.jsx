@@ -2,6 +2,7 @@ import "./HomePage.css";
 import HomeCarousel from "./components/Carousel/Carousel";
 import NewsSection from "./components/Latest-News/NewsSection/NewsSection";
 import EventsSection from "./components/Latest-Events/EventsSection";
+import GetInvolved from "./components/GetInvolved/GetInvolvedSection";
 
 const HomePage = () => {
     return (
@@ -24,10 +25,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="section">
-        <h2>Get Involved</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum lectus eget consectetur laoreet.</p>
         <div className="icon-container">
-          {/* Add your icons here */}
+          <GetInvolved />
         </div>
       </div>
     </div>
