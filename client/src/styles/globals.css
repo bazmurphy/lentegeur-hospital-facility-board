@@ -1,0 +1,98 @@
+/* Media Query Categories */
+/* Mobile 0px - 360px */
+/* Tablet 480px */
+/* Laptop 1024px */
+/* Desktop 1200px */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+	--white: hsl(0, 0%, 100%);
+	--gray10: hsl(0, 0%, 10%);
+	--gray20: hsl(0, 0%, 20%);
+	--gray30: hsl(0, 0%, 30%);
+	--gray40: hsl(0, 0%, 40%);
+	--gray50: hsl(0, 0%, 50%);
+	--gray60: hsl(0, 0%, 60%);
+	--gray70: hsl(0, 0%, 70%);
+	--gray80: hsl(0, 0%, 80%);
+	--gray90: hsl(0, 0%, 90%);
+	--black: hsl(0, 0%, 0%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	/* uncomment this when developing to see how the box models interact */
+	/* border: 1px dotted black; */
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+body {
+	min-width: 320px;
+	overflow-x: hidden; /* this is to prevent the content jumping left when a scroll bar appears */
+}
+
+main {
+	max-width: 1200px;
+}
+
+@media screen and (min-width: 1200px) {
+	main {
+		margin: 0 auto;
+	}
+}
+
+/* h1's are usually the Page title/heading at the top of the Page */
+h1 {
+	margin-top: 15px; /* this may change */
+	font-size: 24px;
+	font-weight: 800;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 28px;
+	}
+}
+
+/* h2's are usually the title/headings at the top of the Sections */
+h2 {
+	font-size: 22px;
+	font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+	h2 {
+		font-size: 24px;
+	}
+}
+
+/* h3's are usually the title/headings in the Card Containers */
+h3 {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+	h3 {
+		font-size: 20px;
+	}
+}
+
+/* The general paragraph text across the entire Website */
+p {
+	font-size: 14px;
+	line-height: 1.6;
+	text-align: justify;
+}
+
+@media screen and (min-width: 768px) {
+	p {
+		font-size: 16px;
+	}
+}
