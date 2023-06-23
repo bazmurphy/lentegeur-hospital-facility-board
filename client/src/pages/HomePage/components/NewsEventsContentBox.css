@@ -56,6 +56,19 @@
     background-color: var(--gray40);
 }
 
+.cards-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .cards-list-container {
+        flex-direction: row;
+    }
+}
+
 /* @media screen and (min-width: 768px) {
 
     .content-box {

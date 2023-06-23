@@ -1,6 +1,6 @@
-import NewsEventContent from "./NewsEventContent";
-import "./NewsEventSection.css";
-import Line from "../../../../components/Line/Line";
+import "./NewsSection.css";
+import NewsEventContentBox from "../../NewsEventsContentBox.";
+import Line from "../../../../../components/Line/Line";
 
 const newsData = [
 	{
@@ -30,12 +30,11 @@ const NewsSection = () => {
 
 	return (
 		<section>
-			<h2>News</h2>
 			<Line />
 			<div className="cards-list-container">
 				{newsData.map((item, index) => {
 					return (
-						<NewsEventContent
+						<NewsEventContentBox
 							key={index}
 							title={item.title}
 							image={item.image}
