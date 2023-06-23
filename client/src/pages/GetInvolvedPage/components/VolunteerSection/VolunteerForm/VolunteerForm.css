@@ -38,6 +38,7 @@
 .volunteer-form-textarea {
 	width: 100%;
 	height: 160px;
+	resize: none;
 }
 
 .volunteer-form-submit {
