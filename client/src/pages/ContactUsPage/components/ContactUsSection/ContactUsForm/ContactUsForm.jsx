@@ -108,6 +108,8 @@ const ContactUsForm = () => {
 						type="tel"
 						id="contact-us-form-phone"
 						name="phone"
+						// regex pattern for initial phone number validation, optional + a the start, and then numbers only
+						pattern="^\+?[0-9]+$"
 						placeholder="+27 77 555 4455"
 						required
 						className="contact-us-form-input"
@@ -166,7 +168,7 @@ const ContactUsForm = () => {
 					>
 						What would you like to discuss? *
 					</label>
-					<input
+					<textarea
 						type="textarea"
 						id="contact-us-form-message"
 						name="message"
