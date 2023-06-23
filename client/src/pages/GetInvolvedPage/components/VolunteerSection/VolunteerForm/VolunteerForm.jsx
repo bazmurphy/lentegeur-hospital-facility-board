@@ -42,52 +42,84 @@ const VolunteerForm = () => {
 			<p>Fields marked with an asterisk (*) are required.</p>
 			<form ref={formRef} onSubmit={handleSubmit} className="volunteer-form">
 				<div className="volunteer-form-group">
-					<label htmlFor="firstname" className="volunteer-form-label">
+					<label
+						htmlFor="volunteer-form-firstname"
+						className="volunteer-form-label"
+					>
 						First Name *
 					</label>
 					<input
 						type="text"
 						name="firstname"
+						id="volunteer-form-firstname"
 						placeholder="e.g. John"
 						required
 						className="volunteer-form-input"
 					/>
 				</div>
 				<div className="volunteer-form-group">
-					<label htmlFor="lastname" className="volunteer-form-label">
+					<label
+						htmlFor="volunteer-form-lastname"
+						className="volunteer-form-label"
+					>
 						Last Name *
 					</label>
 					<input
 						type="text"
 						name="lastname"
+						id="volunteer-form-lastname"
 						placeholder="e.g. Smith"
 						required
 						className="volunteer-form-input"
 					/>
 				</div>
 				<div className="volunteer-form-group">
-					<label htmlFor="email" className="volunteer-form-label">
+					<label
+						htmlFor="volunteer-form-email"
+						className="volunteer-form-label"
+					>
 						Email *
 					</label>
 					<input
 						type="email"
 						name="email"
+						id="volunteer-form-email"
 						placeholder="e.g. name@company.name"
 						required
 						className="volunteer-form-input"
 					/>
 				</div>
 				<div className="volunteer-form-group">
-					<label htmlFor="phone" className="volunteer-form-label">
+					<label
+						htmlFor="volunteer-form-phone"
+						className="volunteer-form-label"
+					>
 						Phone Number
 					</label>
 					<input
 						type="tel"
 						name="phone"
+						id="volunteer-form-phone"
 						// regex pattern for initial phone number validation, optional + a the start, and then numbers only
 						pattern="^\+?[0-9]+$"
 						placeholder="+27 77 555 4455"
 						className="volunteer-form-input"
+					/>
+				</div>
+				<div className="volunteer-form-group volunter-form-message-container">
+					<label
+						htmlFor="volunteer-form-message"
+						className="volunteer-form-label"
+					>
+						Tell us more about yourself and which skill you wish to share whilst
+						volunteering *
+					</label>
+					<textarea
+						name="message"
+						id="volunteer-form-message"
+						placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, a!"
+						required
+						className="volunteer-form-textarea"
 					/>
 				</div>
 				<button
