@@ -5,7 +5,8 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-        <div className="footer-subcontainer">
+      <div className="footer-container">
+         <div className="footer-subcontainer">
           <h3 className="footer-subheading">ADDRESS</h3>
           <p>Lorem Ipsum is simply dummy text of the printing</p>
         </div>
@@ -75,6 +76,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
     </footer>
   );
 };

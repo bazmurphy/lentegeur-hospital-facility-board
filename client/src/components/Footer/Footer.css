@@ -1,9 +1,12 @@
 footer {
+    background-color: hsl(0, 0%, 70%);
+}
+
+.footer-container{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 30px 10px 45px 50px;
-    background-color: hsl(0, 0%, 70%);
+    padding: 30px 20px 45px 20px;
     font-size: 12px;
     max-width: 1200px;
     margin: 0 auto;
@@ -35,11 +38,10 @@ footer {
 /* Mobile-first design */
 @media (min-width: 768px) {
     /* Desktop version */
-    footer {
+    .footer-container {
         flex-direction: row;
         justify-content: space-evenly;
         gap: 70px;
-        padding: 30px 20px 20px 70px;
     }
 
 
