@@ -6,7 +6,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 30px 20px 45px 20px;
+    padding: 30px 60px 45px 60px;
     font-size: 12px;
     max-width: 1200px;
     margin: 0 auto;
@@ -19,7 +19,7 @@ footer {
 }
 
 .footer-subheading {
-    font-size: 15px;
+    font-size: 17px;
     color: white;
 }
 
@@ -42,6 +42,7 @@ footer {
         flex-direction: row;
         justify-content: space-evenly;
         gap: 70px;
+        padding: 30px 20px 45px 20px;
     }
 
 
