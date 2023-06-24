@@ -6,7 +6,7 @@ function NewsEventContentBox({ title, image, content }) {
 		content.length > 350 ? `${content.substring(0, 350)}...` : content;
 	return (
 		<section className="content-box">
-			<div className="image-wrapper">
+			<div className="content-box-image-container">
 				<img className="content-img" src={image} alt="news" />
 			</div>
 			<div className="contents">
