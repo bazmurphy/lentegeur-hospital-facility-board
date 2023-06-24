@@ -1,27 +1,16 @@
 import "./HomePage.css";
 import Carousel from "./components/Carousel/Carousel";
-import NewsSection from "./components/Latest-News/NewsSection/NewsSection";
-import EventsSection from "./components/Latest-Events/EventsSection";
+import HomeCards from "./components/HomeCards/HomeCards";
 import GetInvolved from "./components/GetInvolved/GetInvolvedSection";
 
 const HomePage = () => {
 	return (
-		<div className="container">
+		<div className="home-container">
 			<section>
 				<Carousel />
 			</section>
-			<section>
-				<h2>Latest News</h2>
-				<div className="card-container">
-					<NewsSection />
-				</div>
-			</section>
-			<section>
-				<h2>Latest Events</h2>
-				<div className="card-container">
-					<EventsSection />
-				</div>
-			</section>
+			<HomeCards title="Latest News" />
+			<HomeCards title="Latest Events" />
 			<section>
 				<div className="icon-container">
 					<GetInvolved />
