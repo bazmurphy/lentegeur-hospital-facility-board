@@ -22,7 +22,7 @@
 .contact-us-form-select,
 .contact-us-form-textarea,
 .contact-us-form-submit {
-	border: 1px solid black;
+	border: 1px solid var(--black);
 }
 
 .contact-us-form-input,
@@ -51,7 +51,7 @@
 	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
 	background-color: var(--gray70);
-	color: hsl(0, 0%, 100%);
+	color: var(--white);
 	cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
 	background-color: var(--gray60);
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
 	.contact-us-form-container {
 		margin: 0 auto;
 		width: 85%;
@@ -91,7 +91,7 @@
 .loading {
 	width: 19px;
 	height: 19px;
-	border: 4px solid #f3f3f3;
+	border: 4px solid hsl(0, 0%, 95%);
 	border-top: 4px solid hsl(0, 0%, 75%);
 	border-radius: 50%;
 	animation: spin 1s linear infinite;

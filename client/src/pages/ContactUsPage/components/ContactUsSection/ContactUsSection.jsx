@@ -1,6 +1,6 @@
 import "./ContactUsSection.css";
 import Line from "../../../../components/Line/Line";
-import ContactUsForm from "./ContactUsForm/ContactUsForm";
+import ContactUsForm from "../ContactUsForm/ContactUsForm";
 
 const ContactUsSection = () => {
 	return (

@@ -1,6 +1,6 @@
 import "./VisitUsSection.css";
 import Line from "../../../../components/Line/Line";
-import VisitUsMap from "./VisitUsMap/VisitUsMap";
+import VisitUsMap from "../VisitUsMap/VisitUsMap";
 
 const VisitUsSection = () => {
 	return (
