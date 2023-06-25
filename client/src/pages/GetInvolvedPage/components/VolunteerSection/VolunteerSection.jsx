@@ -1,6 +1,6 @@
 import "./VolunteerSection.css";
 import Line from "../../../../components/Line/Line";
-import VolunteerForm from "./VolunteerForm/VolunteerForm";
+import VolunteerForm from "../VolunteerForm/VolunteerForm";
 
 const Volunteer = () => {
 	return (

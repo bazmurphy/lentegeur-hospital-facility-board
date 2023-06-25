@@ -35,7 +35,7 @@
 	/* might need a different font-weight? */
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
 	.donate-account-detail {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 60px; /* adjust this to separate the labels and values */
