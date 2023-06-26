@@ -1,4 +1,5 @@
 .contact-us-form-container {
+	/* placeholder for future adjustment */
 }
 
 .contact-us-form-container > p {
@@ -41,7 +42,6 @@
 	cursor: pointer;
 }
 
-/* the placeholder text in this textarea is centered, i can't find a fix */
 .contact-us-form-textarea {
 	height: 96px;
 	resize: none;
@@ -84,24 +84,5 @@
 	.contact-us-form-submit {
 		grid-column: 1 / 3; /* spread across both columns */
 		justify-self: end; /* override default grid item rule and place at the end */
-	}
-}
-
-/* this loading animation needs to be global */
-.loading {
-	width: 19px;
-	height: 19px;
-	border: 4px solid hsl(0, 0%, 95%);
-	border-top: 4px solid hsl(0, 0%, 75%);
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
 	}
 }

@@ -9,7 +9,11 @@ const ContactUsForm = () => {
 	// mocking a form submission (to test disabling the submit button)
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	const reasons = ["Reason option 1", "Reason option 2", "Reason option 3"];
+	const reasons = [
+		{ id: 1, option: "Compliments" },
+		{ id: 2, option: "Complaints" },
+		{ id: 3, option: "Suggestions" },
+	];
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -42,7 +46,7 @@ const ContactUsForm = () => {
 		setIsSubmitting(false);
 
 		// reset the Form after successful Submission
-		// formRef.current.reset();
+		formRef.current.reset();
 	};
 
 	return (
@@ -102,16 +106,13 @@ const ContactUsForm = () => {
 						htmlFor="contact-us-form-phone"
 						className="contact-us-form-label"
 					>
-						First Name *
+						Phone Number
 					</label>
 					<input
 						type="tel"
 						id="contact-us-form-phone"
 						name="phone"
-						// regex pattern for initial phone number validation, optional + a the start, and then numbers only
-						pattern="^\+?[0-9]+$"
 						placeholder="+27 77 555 4455"
-						required
 						className="contact-us-form-input"
 					/>
 				</div>
@@ -141,21 +142,21 @@ const ContactUsForm = () => {
 					<select
 						id="contact-us-form-reason"
 						name="reason"
-						defaultValue={""} // i don't think this is the best practice...
+						defaultValue={""}
 						className="contact-us-form-select"
 						required
 					>
 						<option disabled value={""} className="contact-us-form-option">
 							Please select a reason...
 						</option>
-						{reasons.map((reason, index) => {
+						{reasons.map((reason) => {
 							return (
 								<option
-									key={index}
+									key={reason.id}
 									className="contact-us-form-option"
-									value={reason}
+									value={reason.option}
 								>
-									{reason}
+									{reason.option}
 								</option>
 							);
 						})}
@@ -182,7 +183,11 @@ const ContactUsForm = () => {
 					disabled={isSubmitting}
 					className="contact-us-form-submit"
 				>
-					{isSubmitting ? <div className="loading" /> : "SUBMIT"}
+					{isSubmitting ? (
+						<div className="form-submit-loading-icon" />
+					) : (
+						"SUBMIT"
+					)}
 					{/* later: transition the loader into a tick after success */}
 				</button>
 			</form>
