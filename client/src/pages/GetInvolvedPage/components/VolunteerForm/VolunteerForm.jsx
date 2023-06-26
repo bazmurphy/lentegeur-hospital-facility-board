@@ -19,12 +19,14 @@ const VolunteerForm = () => {
 		const lastname = formData.get("lastname");
 		const email = formData.get("email");
 		const phone = formData.get("phone");
+		const message = formData.get("message");
 
 		const requestBody = {
 			firstname,
 			lastname,
 			email,
 			phone,
+			message,
 		};
 
 		// inspect requestBody before POST
@@ -34,6 +36,9 @@ const VolunteerForm = () => {
 		await new Promise((resolve) => setTimeout(resolve, 2000));
 
 		setIsSubmitting(false);
+
+		// reset the Form after successful Submission
+		formRef.current.reset();
 	};
 
 	return (
@@ -100,8 +105,6 @@ const VolunteerForm = () => {
 						type="tel"
 						name="phone"
 						id="volunteer-form-phone"
-						// regex pattern for initial phone number validation, optional + a the start, and then numbers only
-						pattern="^\+?[0-9]+$"
 						placeholder="+27 77 555 4455"
 						className="volunteer-form-input"
 					/>
@@ -128,6 +131,7 @@ const VolunteerForm = () => {
 					className="volunteer-form-submit"
 				>
 					{isSubmitting ? <div className="loading"></div> : "SUBMIT"}
+					{/* later: transition the loader into a tick after success */}
 				</button>
 			</form>
 		</div>
