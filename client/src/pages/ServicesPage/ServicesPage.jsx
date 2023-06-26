@@ -1,6 +1,7 @@
 import "./ServicesPage.css";
 import Services from "./components/Services";
 
+
 const servicesData = [
 	{
 		title: "Emergency Services",
@@ -27,7 +28,7 @@ const servicesData = [
 
 const ServicesPage = () => {
 	return (
-		<>
+		<div className="services-page">
 			<h1>Services</h1>
 			{servicesData.map((service, index) => (
 				<Services
@@ -38,7 +39,7 @@ const ServicesPage = () => {
 					customClassAlignImage={index % 2 === 0 ? "align-left" : "align-right"}
 				/>
 			))}
-		</>
+		</div>
 	);
 };
 
