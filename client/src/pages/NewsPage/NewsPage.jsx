@@ -47,32 +47,32 @@ const NewsPage = () => {
         return titleMatches || descriptionMatches;
     });
 	return (
-		<>
+		<div className="news-page">
 			<h1>News</h1>
 			<Line />
 			<form className="search-form">
-                <input
-                    type="text"
-                    placeholder="Search"
-                    value={searchValue}
-                    onChange={handleSearch}
-                />
-                <p>{filteredNews.length} news found</p>
-            </form>
+				<input
+					type="text"
+					placeholder="Search"
+					value={searchValue}
+					onChange={handleSearch}
+				/>
+				<p>{filteredNews.length} news found</p>
+			</form>
 			<div className="cards-list-container">
 				{filteredNews.map((item, index) => {
 					return (
 						<ContentBox
-                            key={index}
-                            title={item.title}
-                            image={item.image}
-                            altText={item.altText}
-                            content={item.description}
-                        />
+							key={index}
+							title={item.title}
+							image={item.image}
+							altText={item.altText}
+							content={item.description}
+						/>
 					);
 				})}
 			</div>
-		</>
+		</div>
 	);
 };
 

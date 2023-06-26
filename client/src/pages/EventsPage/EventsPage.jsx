@@ -60,7 +60,7 @@ const EventsPage = () => {
 	});
 
 	return (
-		<>
+		<div className="event-page">
 			<h1>Events</h1>
 			<Line />
 			<form className="search-form">
@@ -91,7 +91,7 @@ const EventsPage = () => {
 					);
 				})}
 			</div>
-		</>
+		</div>
 	);
 };
 
