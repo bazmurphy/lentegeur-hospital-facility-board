@@ -28,7 +28,7 @@ const newsData = [
 
 const HomeCards = ({ title }) => {
 	return (
-		<section>
+		<section className="card-section-container">
 			<h2>{title}</h2>
 			<Line />
 			<div className="cards-list-container">

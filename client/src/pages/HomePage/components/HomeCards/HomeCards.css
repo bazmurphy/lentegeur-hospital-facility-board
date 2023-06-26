@@ -5,6 +5,10 @@
 	flex-wrap: wrap;
 }
 
+.card-section-container {
+	margin: 70px 60px 60px 40px;
+}
+
 @media screen and (min-width: 768px) {
 	.cards-list-container {
 		flex-direction: row;
