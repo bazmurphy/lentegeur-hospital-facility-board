@@ -1,5 +1,5 @@
 import "./EventsPage.css";
-import ContentBox from "../../components/Share/ContentBox";
+import ContentBox from "../../components/ContentBox/ContentBox";
 import Line from "../../components/Line/Line";
 import { useState } from "react";
 
