@@ -11,6 +11,7 @@ const eventsData = [
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Emergency",
+		altText: "whatever",
 	},
 	{
 		title: "Surgical Procedures",
@@ -19,6 +20,7 @@ const eventsData = [
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Surgical",
+		altText: "whatever",
 	},
 	{
 		title: "Diagnostic Imaging",
@@ -27,6 +29,7 @@ const eventsData = [
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Diagnostic",
+		altText: "whatever",
 	},
 ];
 
@@ -47,20 +50,20 @@ const EventsPage = () => {
 		const titleMatches = item.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const contentMatches = item.description
+		const descriptionMatches = item.description
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
 		const categoryMatches =
 			selectedCategory === "All" || item.category === selectedCategory;
 
-		return (titleMatches || contentMatches) && categoryMatches;
+		return (titleMatches || descriptionMatches) && categoryMatches;
 	});
 
 	return (
 		<>
 			<h1>Events</h1>
 			<Line />
-			<div className="tools-bar">
+			<form className="search-form">
 				<input
 					type="text"
 					placeholder="Search"
@@ -74,7 +77,7 @@ const EventsPage = () => {
 					<option value="Diagnostic">Diagnostic</option>
 				</select>
 				<p>{filteredEvents.length} events found</p>
-			</div>
+			</form>
 			<div className="cards-list-container">
 				{filteredEvents.map((item, index) => {
 					return (
@@ -82,6 +85,7 @@ const EventsPage = () => {
 							key={index}
 							title={item.title}
 							image={item.image}
+							altText={item.altText}
 							content={item.description}
 						/>
 					);
