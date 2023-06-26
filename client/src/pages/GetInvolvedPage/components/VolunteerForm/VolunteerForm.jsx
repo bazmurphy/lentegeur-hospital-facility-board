@@ -130,7 +130,11 @@ const VolunteerForm = () => {
 					disabled={isSubmitting}
 					className="volunteer-form-submit"
 				>
-					{isSubmitting ? <div className="loading"></div> : "SUBMIT"}
+					{isSubmitting ? (
+						<div className="form-submit-loading-icon"></div>
+					) : (
+						"SUBMIT"
+					)}
 					{/* later: transition the loader into a tick after success */}
 				</button>
 			</form>
