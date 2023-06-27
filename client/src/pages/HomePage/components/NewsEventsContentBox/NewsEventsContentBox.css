@@ -4,14 +4,14 @@
 	align-items: center;
 	justify-content: center;
 	background-color: var(--gray80);
-	width: 350px;
+	width: 280px;
 	gap: 20px;
 	position: relative;
 }
 
 .content-box-image-container {
-	width: 300px;
-	height: 180px;
+	width: 260px;
+	height: 150px;
 	overflow: hidden;
 	margin-top: 1rem;
 }
@@ -22,14 +22,14 @@
 	object-fit: cover;
 }
 
-.contents {
+.card-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
 	gap: 1rem;
 	margin-bottom: 1rem;
+	width: 260px;
 }
 
 .content-text {

@@ -14,36 +14,38 @@ const Carousel = () => {
 	};
 
 	return (
-		<Slider {...settings}>
-			<div className="slide-container">
-				<h2 className="slide-title">
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry.
-				</h2>
-				<div className="slide-image-container">
-					<img
-						src="https://infoguidenigeria.com/wp-content/uploads/2020/01/african-american-black-doctor-man-626x405.jpg"
-						alt="one"
-					/>
+		<section>
+			<Slider {...settings}>
+				<div className="slide-container">
+					<h2 className="slide-title">
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry.
+					</h2>
+					<div className="slide-image-container">
+						<img
+							src="https://infoguidenigeria.com/wp-content/uploads/2020/01/african-american-black-doctor-man-626x405.jpg"
+							alt="one"
+						/>
+					</div>
 				</div>
-			</div>
-			<div className="slide-container">
-				<div className="slide-image-container">
-					<img
-						src="https://t4.ftcdn.net/jpg/03/17/85/49/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
-						alt="two"
-					/>
+				<div className="slide-container">
+					<div className="slide-image-container">
+						<img
+							src="https://t4.ftcdn.net/jpg/03/17/85/49/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
+							alt="two"
+						/>
+					</div>
 				</div>
-			</div>
-			<div className="slide-container">
-				<div className="slide-image-container">
-					<img
-						src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
-						alt="three"
-					/>
+				<div className="slide-container">
+					<div className="slide-image-container">
+						<img
+							src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
+							alt="three"
+						/>
+					</div>
 				</div>
-			</div>
-		</Slider>
+			</Slider>
+		</section>
 	);
 };
 

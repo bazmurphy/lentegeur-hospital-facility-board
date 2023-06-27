@@ -6,16 +6,10 @@ import GetInvolved from "./components/GetInvolved/GetInvolvedSection";
 const HomePage = () => {
 	return (
 		<div className="home-container">
-			<section>
-				<Carousel />
-			</section>
+			<Carousel />
 			<HomeCards title="Latest News" />
 			<HomeCards title="Latest Events" />
-			<section>
-				<div className="icon-container">
-					<GetInvolved />
-				</div>
-			</section>
+			<GetInvolved />
 		</div>
 	);
 };

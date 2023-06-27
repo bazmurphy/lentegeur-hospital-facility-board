@@ -1,30 +1,39 @@
 import { Link } from "react-router-dom";
 import "./GetInvolvedSection.css";
-import SquareImage from "./SquareImage";
-import volunteerimage from "../Assets/Volunteer.svg";
-import fundraisingimage from "../Assets/Fundraising.svg";
+import volunteerImage from "../Assets/Volunteer.svg";
+import fundraisingImage from "../Assets/Fundraising.svg";
 import Line from "../../../../components/Line/Line";
 
 const GetInvolved = () => {
 	return (
-		<div className="get-involved-container">
-			<h2 className="get-involved-title">Get Involved</h2>
+		<section className="get-involved-container">
+			<h2>Get Involved</h2>
 			<Line />
-			<div className="get-involved-description-container">
-				<p className="get-involved-description">
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry. Lorem Ipsum has been the industrys standard...
-				</p>
-			</div>
-			<div className="image-container">
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting
+				industry. Lorem Ipsum has been the industrys standard...
+			</p>
+			<div className="icon-container">
 				<Link to="/get-involved">
-					<SquareImage src={fundraisingimage} alt="fundraising" />
+					<div className="get-involved-image-container">
+						<img
+							src={fundraisingImage}
+							alt="fundraising"
+							className="square-image"
+						/>
+					</div>
 				</Link>
 				<Link to="/get-involved">
-					<SquareImage src={volunteerimage} alt="volunteer" />
+					<div className="get-involved-image-container">
+						<img
+							src={volunteerImage}
+							alt="volunteer"
+							className="square-image"
+						/>
+					</div>
 				</Link>
 			</div>
-		</div>
+		</section>
 	);
 };
 
