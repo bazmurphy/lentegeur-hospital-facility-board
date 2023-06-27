@@ -2,7 +2,7 @@ import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AiFillCaretUp } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,6 +23,24 @@ const Header = () => {
 			setIsClosingAdded(false);
 		}, 1000); // Wait for the animation to complete before removing the classes
 	};
+
+	// This useEffect hook adds a resize event listener to the window object
+	// to handle changes in the window size. The event listener invokes
+	// the handleResize function whenever the window is resized.
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth > 767) {
+				closeNavbar();
+				setIsClosingAdded(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	return (
 		<header>
