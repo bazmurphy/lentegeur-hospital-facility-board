@@ -40,6 +40,7 @@ const NetworkingSection = () => {
 							key={affiliate.name}
 							image={affiliate.image}
 							name={affiliate.name}
+							altText={affiliate.altText}
 						/>
 					))}
 			</div>
