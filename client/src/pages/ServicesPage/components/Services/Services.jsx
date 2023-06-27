@@ -1,4 +1,5 @@
-import Line from "../../../components/Line/Line";
+import Line from "../../../../components/Line/Line";
+import "./Services.css";
 function Services({ title, image, description, customClassAlignImage }) {
 	return (
 		<section className="services-container">
