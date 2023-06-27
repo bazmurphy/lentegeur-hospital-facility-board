@@ -1,0 +1,9 @@
+.contact-us-page {
+	margin: 0 20px; /* left and right margin (top/bottom should be controlled by <main>) */
+}
+
+@media screen and (min-width: 768px) {
+	.contact-us-page {
+		/* placeholder for future adjustment */
+	}
+}
