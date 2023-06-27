@@ -8,12 +8,14 @@ const Donate = () => {
 			<Line />
 			<div className="donate-section-subcontainer">
 				<p>
-					Thank you for your interest in making a donation to Lentegeur Hospital
-					Facility Board. Lorem ipsum dolor sit amet consectetur adipisicing
-					elit. Nostrum aperiam neque consequuntur facere excepturi, iste ex ut
-					nihil quo dolorem?
+					Thank you for your willingness to donate to the Lentegeur Psychiatric
+					Hospital Facility Board.
 				</p>
 				<p>
+					Your financial support will directly impact the lives of all who are
+					facing mental health challenges.
+				</p>
+				{/* <p>
 					<a
 						href="https://external-link-to-donation-platform"
 						target="_blank"
@@ -22,40 +24,32 @@ const Donate = () => {
 					>
 						Click here
 					</a>{" "}
-					to be taken to our secure donations site through Platform.
-				</p>
+					to be taken to securely donate through *Platform*.
+				</p> */}
 			</div>
 			<div className="donate-account-details-container">
 				<p>Donations may be made to:</p>
 				<p className="donate-account-detail">
-					<span className="donate-account-label">Account Name:</span>
-					<span className="donate-account-value">Lorem Ipsum</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">TrustAccount Number:</span>
-					<span className="donate-account-value">12345678</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Account Type:</span>
-					<span className="donate-account-value">Lorem Ipsum</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Bank Name:</span>
-					<span className="donate-account-value">Lorem Ipsum</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Branch Name:</span>
-					<span className="donate-account-value">Lorem Ipsum</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Sort Code:</span>
-					<span className="donate-account-value">123 456</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">
-						SwiftCode (international):
+					<span className="donate-account-label">Name:</span>
+					<span className="donate-account-value">
+						Lentegeur Hospital Facility Board
 					</span>
-					<span className="donate-account-value">SWIFT CODE</span>
+				</p>
+				<p className="donate-account-detail">
+					<span className="donate-account-label">Bank:</span>
+					<span className="donate-account-value">FNB</span>
+				</p>
+				<p className="donate-account-detail">
+					<span className="donate-account-label">Account Number:</span>
+					<span className="donate-account-value">59204188287</span>
+				</p>
+				<p className="donate-account-detail">
+					<span className="donate-account-label">Branch Code:</span>
+					<span className="donate-account-value">250555</span>
+				</p>
+				<p className="donate-account-detail">
+					<span className="donate-account-label">SwiftCode:</span>
+					<span className="donate-account-value">FIRNAJJ</span>
 				</p>
 			</div>
 		</section>
