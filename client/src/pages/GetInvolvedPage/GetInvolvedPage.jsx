@@ -1,10 +1,15 @@
 import "./GetInvolvedPage.css";
+import GetInvolvedSection from "./components/GetInvolvedSection/GetInvolvedSection";
+import DonateSection from "./components/DonateSection/DonateSection";
+import VolunteerSection from "./components/VolunteerSection/VolunteerSection";
 
 const GetInvolvedPage = () => {
 	return (
-		<>
-			<h1>Get Involved Page</h1>
-		</>
+		<div className="get-involved-page">
+			<GetInvolvedSection />
+			<DonateSection />
+			<VolunteerSection />
+		</div>
 	);
 };
 

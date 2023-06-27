@@ -1,0 +1,9 @@
+.get-involved-page {
+	margin: 0 20px; /* left and right margin (top/bottom should be controlled by <main>) */
+}
+
+@media screen and (min-width: 700px) {
+	.get-involved-page {
+		/* placeholder for future adjustment */
+	}
+}
