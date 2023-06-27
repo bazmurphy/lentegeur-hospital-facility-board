@@ -2,7 +2,7 @@
 	margin-bottom: 30px;
 }
 
-.history-wrapper {
+.history-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -23,7 +23,7 @@
 
 /* tablet */
 @media screen and (min-width: 768px) {
-	.history-wrapper {
+	.history-container {
 		flex-direction: row;
 	}
 

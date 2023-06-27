@@ -16,7 +16,7 @@ const NetworkingSection = () => {
 		<section className="networking-section">
 			<h2>Networking Affiliates</h2>
 			<Line />
-			<div className="networking-wrapper">
+			<div className="networking-container">
 				<div className="networking-image-container">
 					<img src={image} alt="grey square" />
 				</div>

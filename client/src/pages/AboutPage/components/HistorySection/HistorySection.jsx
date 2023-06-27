@@ -8,7 +8,7 @@ const HistorySection = () => {
 		<div className="history-section">
 			<h2>History</h2>
 			<Line />
-			<div className="history-wrapper">
+			<div className="history-container">
 				<div className="history-image-container">
 					<img src={image} alt="grey square" />
 				</div>

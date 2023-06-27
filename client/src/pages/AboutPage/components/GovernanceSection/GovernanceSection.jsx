@@ -6,7 +6,7 @@ const GovernanceSection = () => {
 		<section className="governance-section">
 			<h2>Governance</h2>
 			<Line />
-			<div className="governance-wrapper">
+			<div className="governance-container">
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industrys standard dummy text ever
