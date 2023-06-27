@@ -2,27 +2,26 @@ import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AiFillCaretUp } from "react-icons/ai";
-import { useRef } from "react";
+import { useState } from "react";
 
 const Header = () => {
-	const navRef = useRef();
+	const [isNavOpen, setIsNavOpen] = useState(false);
+	//for closing animation
+	const [isClosingAdded, setIsClosingAdded] = useState(false);
 
 	const showNavbar = () => {
-		navRef.current.classList.toggle("responsive_nav");
-		document.body.classList.toggle("open-nav");
+		setIsNavOpen(true);
+		document.body.classList.add("open-nav");
 	};
 
 	const closeNavbar = () => {
-		// Check if the window width is less than or equal to 767px (indicating the mobile view)
-		if (window.innerWidth <= 767) {
-			navRef.current.classList.remove("responsive_nav");
-			navRef.current.classList.toggle("closing");
-			document.body.classList.remove("open-nav");
+		document.body.classList.remove("open-nav");
+		setIsNavOpen(false);
+		setIsClosingAdded(true);
 
-			setTimeout(() => {
-				navRef.current.classList.remove("closing");
-			}, 1000); // Wait for the animation to complete before removing the classes
-		}
+		setTimeout(() => {
+			setIsClosingAdded(false);
+		}, 1000); // Wait for the animation to complete before removing the classes
 	};
 
 	return (
@@ -41,7 +40,11 @@ const Header = () => {
 						Facility Board
 					</h2>
 				</div>
-				<nav ref={navRef}>
+				<nav
+					className={`${isNavOpen ? "responsive_nav" : ""} ${
+						isClosingAdded ? "closing" : ""
+					}`}
+				>
 					<ul>
 						<li>
 							<NavLink to="/" className="navlink" onClick={closeNavbar}>
@@ -127,4 +130,5 @@ const Header = () => {
 		</header>
 	);
 };
+
 export default Header;
