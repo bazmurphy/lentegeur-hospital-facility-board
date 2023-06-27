@@ -1,0 +1,9 @@
+.governance-section {
+	margin-bottom: 30px;
+}
+
+.governance-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
