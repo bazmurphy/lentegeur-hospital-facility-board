@@ -30,6 +30,7 @@
 	width: 70%;
 	gap: 0.5rem;
 }
+
 .content-box-button {
 	align-self: flex-end;
 	margin-bottom: 0.5rem;
@@ -52,13 +53,16 @@
 		width: auto;
 		height: 250px;
 	}
+
 	.content-box-subcontainer {
 		margin: 1rem 2rem 2rem 0;
 	}
+
 	.content-box-button {
 		position: absolute;
 		bottom: 8px;
 	}
+	
 	.content-box-title {
 		align-self: flex-start;
 	}
