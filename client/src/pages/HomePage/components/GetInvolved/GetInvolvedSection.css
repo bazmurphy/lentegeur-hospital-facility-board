@@ -42,3 +42,17 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+@media screen and (min-width: 768px) {
+	.get-involved-image-container {
+		width: 150px;
+		height: 110px;
+	}
+	.icon-container {
+		gap: 100px;
+	}
+
+	.get-involved-container h2 {
+		font-size: 30px;
+	}
+}
