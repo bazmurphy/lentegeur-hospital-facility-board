@@ -1,17 +1,17 @@
 .news-page {
 	margin: 0 20px;
 }
-.search-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
+.search-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 1rem;
 }
 
-.cards-list-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.cards-list-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
