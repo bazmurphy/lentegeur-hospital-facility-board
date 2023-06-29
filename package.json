@@ -77,10 +77,10 @@
 		"helmet": "^6.1.5",
 		"morgan": "^1.10.0",
 		"pg": "^8.10.0",
-		"react-responsive-carousel": "^3.2.23",
+		"pigeon-maps": "^0.21.3",
+		"react-icons": "^4.10.1",
 		"react-slick": "^0.29.0",
 		"slick-carousel": "^1.8.1",
-		"pigeon-maps": "^0.21.3",
 		"winston": "^3.8.2"
 	},
 	"engines": {

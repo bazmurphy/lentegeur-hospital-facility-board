@@ -1,15 +1,15 @@
 import "./HomePage.css";
-import Carousel from "./components/Carousel/Carousel";
-import HomeCards from "./components/HomeCards/HomeCards";
-import GetInvolved from "./components/GetInvolved/GetInvolvedSection";
+import HomeHero from "./components/HomeHero/HomeHero";
+import HomeCardList from "./components/HomeCardList/HomeCardList";
+import HomeGetInvolvedSection from "./components/HomeGetInvolvedSection/HomeGetInvolvedSection";
 
 const HomePage = () => {
 	return (
-		<div className="home-container">
-			<Carousel />
-			<HomeCards title="Latest News" />
-			<HomeCards title="Latest Events" />
-			<GetInvolved />
+		<div className="home-page">
+			<HomeHero />
+			<HomeCardList title="Latest News" />
+			<HomeCardList title="Latest Events" />
+			<HomeGetInvolvedSection />
 		</div>
 	);
 };

@@ -1,5 +1,11 @@
-.home-container {
+.home-page {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.home-page {
+		gap: 60px;
+	}
 }
