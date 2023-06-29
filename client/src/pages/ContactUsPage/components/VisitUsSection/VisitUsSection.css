@@ -1,0 +1,65 @@
+.visit-us-section {
+	/* placeholder for future adjustment */
+}
+
+.visit-us-section > h2 {
+	text-align: center;
+}
+
+.visit-us-container {
+	display: grid;
+	/* <Line /> margin-bottom should be fulfilling this container's margin-top rule? */
+	/* margin-top: 30px; */
+	row-gap: 30px;
+	grid-template-areas:
+		"visit-us-address-container"
+		"visit-us-map-container"
+		"visit-us-contacts-container";
+}
+
+.visit-us-address-container,
+.visit-us-contacts-container {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-left: 30px;
+}
+
+.visit-us-address-container {
+	grid-area: visit-us-address-container;
+}
+
+.visit-us-contacts-container {
+	grid-area: visit-us-contacts-container;
+}
+
+.visit-us-address-container > h3,
+.visit-us-contacts-container > h3 {
+	font-weight: 600;
+}
+
+.visit-us-address-container > p,
+.visit-us-contacts-container > p {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.visit-us-address-container > p > span,
+.visit-us-contacts-container > p > span {
+	font-size: inherit;
+}
+
+@media screen and (min-width: 768px) {
+	.visit-us-container {
+		grid-template-columns: 0.3fr 0.7fr;
+		grid-template-areas:
+			"visit-us-address-container visit-us-map-container"
+			"visit-us-contacts-container visit-us-map-container";
+	}
+
+	.visit-us-address-container,
+	.visit-us-contacts-container {
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,44 @@
+.donate-section {
+	margin-bottom: 30px; /* to offset from the next section */
+}
+
+.donate-section > h2 {
+	/* placeholder for future adjustment */
+}
+
+.donate-section-subcontainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 10px; /* to offset from the next subcontainer */
+}
+
+.donate-link {
+	color: inherit;
+	font-weight: 700;
+}
+
+.donate-account-details-container {
+	display: grid;
+	justify-content: start;
+	row-gap: 5px;
+}
+
+.donate-account-detail {
+	display: grid;
+}
+
+.donate-account-label {
+	font-weight: 600;
+}
+
+.donate-account-value {
+	/* might need a different font-weight? */
+}
+
+@media screen and (min-width: 768px) {
+	.donate-account-detail {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 60px; /* adjust this to separate the labels and values */
+	}
+}

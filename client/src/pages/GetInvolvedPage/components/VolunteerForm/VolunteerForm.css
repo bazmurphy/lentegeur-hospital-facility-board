@@ -1,0 +1,82 @@
+.volunteer-form-container {
+	/* placeholder for future adjustment */
+}
+
+.volunteer-form-container > h3 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.volunteer-form-container > p {
+	/* for gap below "Fields marked with an asterisk (*) are required */
+	margin-bottom: 10px;
+}
+
+.volunteer-form {
+	display: grid;
+	row-gap: 20px;
+	padding: 20px 30px;
+	background-color: hsl(0, 0%, 85%);
+}
+
+.volunteer-form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.volunteer-form-label {
+	font-weight: 500;
+}
+
+.volunteer-form-input,
+.volunteer-form-textarea {
+	padding: 6px;
+	border: 1px solid var(--black);
+	background-color: hsl(0, 6%, 90%);
+}
+
+.volunteer-form-textarea {
+	width: 100%;
+	height: 160px;
+	resize: none;
+}
+
+.volunteer-form-submit {
+	justify-self: center;
+	padding: 4px 24px;
+	border: 1px solid var(--black);
+	background-color: hsl(0, 0%, 70%);
+	color: hsl(0, 0%, 100%);
+	cursor: pointer;
+}
+
+.volunteer-form-submit:hover {
+	background-color: var(--gray60);
+}
+
+@media screen and (min-width: 768px) {
+	.volunteer-form-container {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.volunteer-form {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 40px;
+		padding: 30px 50px;
+	}
+
+	.volunter-form-message-container {
+		grid-column: 1 / 3;
+	}
+
+	.volunter-form-textarea {
+		height: 160px;
+	}
+
+	.volunteer-form-submit {
+		grid-column: 1 / 3;
+		justify-self: end;
+	}
+}
