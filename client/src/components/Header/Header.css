@@ -1,7 +1,3 @@
-/* * {
-	border: 1px dotted black;
-} */
-
 header {
 	background-color: var(--gray80);
 }
@@ -15,7 +11,7 @@ header nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #adadade9;
+	background-color: hsla(0, 0%, 70%, 0.92);
 	transform: translateY(-100vh);
 }
 
@@ -25,7 +21,6 @@ header nav ul {
 	text-align: center;
 	gap: 16px;
 	list-style: none;
-	padding-left: 0; /* reset */
 }
 
 /* disabling scrolling of the body in the background whilst the mobile navigation is open */
@@ -63,7 +58,7 @@ header nav ul {
 }
 
 /* hamburger button */
-.nav-btn {
+.navigation-menu-button {
 	padding: 5px;
 	cursor: pointer;
 	background: transparent;
@@ -71,14 +66,14 @@ header nav ul {
 	outline: none;
 	font-size: 1.8rem;
 	display: block;
-	color: black;
+	color: var(--black);
 }
 
 /* close mobile menu button */
-.nav-close-btn {
+.navigation-menu-button-close {
 	position: absolute;
-	top: 2rem;
-	right: 2rem;
+	top: 18px;
+	right: 20px;
 }
 
 .navigation-open {
@@ -135,7 +130,7 @@ header nav ul {
 		flex-direction: row;
 	}
 
-	.nav-btn {
+	.navigation-menu-button {
 		display: none;
 	}
 

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const Header = () => {
 	const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 	//for closing animation
-	const [isClosingAdded, setIsClosingAdded] = useState(false);
+	const [isNavigationClosing, setIsNavigationClosing] = useState(false);
 
 	const navLinks = [
 		{ id: 1, to: "/", text: "Home" },
@@ -28,10 +28,10 @@ const Header = () => {
 	const closeNavbar = () => {
 		document.body.classList.remove("disable-scroll");
 		setIsNavigationOpen(false);
-		setIsClosingAdded(true);
+		setIsNavigationClosing(true);
 
 		setTimeout(() => {
-			setIsClosingAdded(false);
+			setIsNavigationClosing(false);
 		}, 1000); // Wait for the animation to complete before removing the classes
 	};
 
@@ -42,7 +42,7 @@ const Header = () => {
 		const handleResize = () => {
 			if (window.innerWidth > 767) {
 				closeNavbar();
-				setIsClosingAdded(false);
+				setIsNavigationClosing(false);
 			}
 		};
 
@@ -71,7 +71,7 @@ const Header = () => {
 				</div>
 				<nav
 					className={`${isNavigationOpen ? "navigation-open" : ""} ${
-						isClosingAdded ? "navigation-closing" : ""
+						isNavigationClosing ? "navigation-closing" : ""
 					}`}
 				>
 					<ul>
@@ -92,11 +92,14 @@ const Header = () => {
 							);
 						})}
 					</ul>
-					<button className="nav-btn nav-close-btn" onClick={closeNavbar}>
+					<button
+						className="navigation-menu-button navigation-menu-button-close"
+						onClick={closeNavbar}
+					>
 						<FaTimes />
 					</button>
 				</nav>
-				<button className="nav-btn" onClick={showNavbar}>
+				<button className="navigation-menu-button" onClick={showNavbar}>
 					<FaBars />
 				</button>
 			</div>
