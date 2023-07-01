@@ -28,8 +28,8 @@ header nav ul {
 	padding-left: 0; /* reset */
 }
 
-/* disabling scrolling while mobile navbar is opened */
-body.open-nav {
+/* disabling scrolling of the body in the background whilst the mobile navigation is open */
+.disable-scroll {
 	overflow: hidden;
 }
 
@@ -81,14 +81,14 @@ body.open-nav {
 	right: 2rem;
 }
 
-.responsive_nav {
+.navigation-open {
 	transform: none;
 	transition: 1s;
 	overflow: hidden;
 }
 
 /* transition for closing mobile navbar */
-.closing {
+.navigation-closing {
 	transition: 1s;
 }
 

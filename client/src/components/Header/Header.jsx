@@ -5,7 +5,7 @@ import { AiFillCaretUp } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
 const Header = () => {
-	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 	//for closing animation
 	const [isClosingAdded, setIsClosingAdded] = useState(false);
 
@@ -21,13 +21,13 @@ const Header = () => {
 	];
 
 	const showNavbar = () => {
-		setIsNavOpen(true);
-		document.body.classList.add("open-nav");
+		setIsNavigationOpen(true);
+		document.body.classList.add("disable-scroll");
 	};
 
 	const closeNavbar = () => {
-		document.body.classList.remove("open-nav");
-		setIsNavOpen(false);
+		document.body.classList.remove("disable-scroll");
+		setIsNavigationOpen(false);
 		setIsClosingAdded(true);
 
 		setTimeout(() => {
@@ -70,8 +70,8 @@ const Header = () => {
 					</h2>
 				</div>
 				<nav
-					className={`${isNavOpen ? "responsive_nav" : ""} ${
-						isClosingAdded ? "closing" : ""
+					className={`${isNavigationOpen ? "navigation-open" : ""} ${
+						isClosingAdded ? "navigation-closing" : ""
 					}`}
 				>
 					<ul>
