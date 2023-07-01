@@ -9,6 +9,17 @@ const Header = () => {
 	//for closing animation
 	const [isClosingAdded, setIsClosingAdded] = useState(false);
 
+	const navLinks = [
+		{ id: 1, to: "/", text: "Home" },
+		{ id: 2, to: "/about", text: "About LSH" },
+		{ id: 3, to: "/services", text: "Services" },
+		{ id: 4, to: "/news", text: "News" },
+		{ id: 5, to: "/events", text: "Events" },
+		{ id: 6, to: "/gallery", text: "Gallery" },
+		{ id: 7, to: "/get-involved", text: "Get Involved" },
+		{ id: 8, to: "/contact-us", text: "Contact Us" },
+	];
+
 	const showNavbar = () => {
 		setIsNavOpen(true);
 		document.body.classList.add("open-nav");

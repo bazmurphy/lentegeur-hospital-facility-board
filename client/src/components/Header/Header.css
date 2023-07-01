@@ -43,22 +43,22 @@ body.open-nav {
 	height: 80px;
 }
 
-.navlink {
+.navigation-link {
 	color: black;
 	text-decoration: none;
 	font-size: 14px;
 	transition: all ease-in-out 200ms;
 }
 
-.navlink:hover {
+.navigation-link:hover {
 	color: white;
 }
 
-.navlink.active {
+.navigation-link.active {
 	color: white;
 }
 
-.navlink-image-container {
+.navigation-link-image-container {
 	display: none; /* Hide the arrow by default */
 }
 
@@ -113,6 +113,10 @@ body.open-nav {
 	object-fit: cover;
 }
 
+.navigation-link-icon-container {
+	display: none;
+}
+
 @media only screen and (min-width: 768px) {
 	header nav {
 		position: relative;
@@ -135,17 +139,18 @@ body.open-nav {
 		display: none;
 	}
 
-	.navlink.active {
+	.navigation-link.active {
 		color: black;
 	}
 
-	.navlink.active + .navlink-image-container {
-		display: block; /* Show the arrow when the navlink has the active class */
+	.navigation-link.active + .navigation-link-icon-container {
+		display: block;
+		/* Show the arrow when the navigation-link has the active class */
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.navlink {
+	.navigation-link {
 		font-size: 18px;
 	}
 
