@@ -64,78 +64,22 @@ const Header = () => {
 					}`}
 				>
 					<ul>
-						<li>
-							<NavLink to="/" className="navlink" onClick={closeNavbar}>
-								Home
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink to="/about" className="navlink" onClick={closeNavbar}>
-								About LSH
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink to="/services" className="navlink" onClick={closeNavbar}>
-								Services
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink to="/news" className="navlink" onClick={closeNavbar}>
-								News
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink to="/events" className="navlink" onClick={closeNavbar}>
-								Events
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink to="/gallery" className="navlink" onClick={closeNavbar}>
-								Gallery
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink
-								to="/get-involved"
-								className="navlink"
-								onClick={closeNavbar}
-							>
-								Get Involved
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
-						<li>
-							<NavLink
-								to="/contact-us"
-								className="navlink"
-								onClick={closeNavbar}
-							>
-								Contact Us
-							</NavLink>
-							<div className="navlink-image-container">
-								<AiFillCaretUp />
-							</div>
-						</li>
+						{navLinks.map((navLink) => {
+							return (
+								<li key={navLink.id}>
+									<NavLink
+										to={navLink.to}
+										className="navigation-link"
+										onClick={closeNavbar}
+									>
+										{navLink.text}
+									</NavLink>
+									<div className="navigation-link-icon-container">
+										<AiFillCaretUp />
+									</div>
+								</li>
+							);
+						})}
 					</ul>
 					<button className="nav-btn nav-close-btn" onClick={closeNavbar}>
 						<FaTimes />
