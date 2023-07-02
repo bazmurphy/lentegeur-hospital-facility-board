@@ -1,0 +1,21 @@
+.networking-section {
+	/*  */
+}
+
+.networking-container {
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.networking-image-container {
+	width: 100%;
+	height: 150px;
+}
+
+.networking-image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

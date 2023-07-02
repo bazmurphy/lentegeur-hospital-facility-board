@@ -1,0 +1,17 @@
+.event-page {
+	margin: 0 20px;
+}
+
+.search-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.cards-list-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

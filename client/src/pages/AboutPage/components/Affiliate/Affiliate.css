@@ -1,0 +1,34 @@
+.affiliates {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.affiliates .affiliate {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.affiliate-image-container {
+	width: 50px;
+}
+
+.affiliate-image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* tablet */
+@media screen and (min-width: 480px) {
+	.affiliates {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.affiliates .affiliate {
+		justify-content: center;
+	}
+}

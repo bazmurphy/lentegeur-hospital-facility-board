@@ -1,0 +1,10 @@
+.get-involved-section {
+	margin-bottom: 30px; /* to offset from the next section */
+}
+
+@media screen and (min-width: 768px) {
+	.get-involved-section > p {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
