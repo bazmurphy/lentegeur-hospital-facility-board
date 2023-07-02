@@ -1,1 +1,0 @@
-the `/client/src/layouts` folder is for Layout Components that define a consistent structure
