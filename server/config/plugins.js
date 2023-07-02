@@ -15,4 +15,13 @@ module.exports = ({ env }) => ({
 			breakpoints: {}, // disables automatic image size generation
 		},
 	},
+	transformer: {
+		enabled: true,
+		config: {
+			responseTransforms: {
+				removeAttributesKey: true, // removes the attributes prefix from the response
+				removeDataKey: true, // removes the data key from the response
+			},
+		},
+	},
 });
