@@ -23,7 +23,8 @@
 	"rules": {
 		"react-refresh/only-export-components": "warn",
 		"react/jsx-tag-spacing": "error",
-		"react/no-unused-prop-types": "error",
+		// "react/no-unused-prop-types": "error",
+		"react/prop-types": "off",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "error"
 	}
