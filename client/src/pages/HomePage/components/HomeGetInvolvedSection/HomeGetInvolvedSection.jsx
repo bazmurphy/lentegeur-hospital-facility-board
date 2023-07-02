@@ -1,12 +1,16 @@
 import "./HomeGetInvolvedSection.css";
 import { Link } from "react-router-dom";
 import Line from "../../../../components/Line/Line";
-
+import { animateScroll as scroll } from "react-scroll";
 import { FaHandHoldingMedical, FaPerson } from "react-icons/fa6";
 
 const handleLinkClick = () => {
-	window.scrollTo(0, 0);
-};
+	scroll.scrollToTop({
+	duration: 500, // Adjust the scroll duration as needed
+	smooth: true, // Enable smooth scrolling animation
+	});
+  };
+
 
 const HomeGetInvolvedSection = () => {
 	return (
@@ -26,11 +30,13 @@ const HomeGetInvolvedSection = () => {
 					<FaHandHoldingMedical className="home-get-involved-link-icon" />
 					<span className="home-get-involved-link-title">Fundraising</span>
 				</Link>
-				<Link to="/get-involved" className="home-get-involved-link">
+				<Link to="/get-involved" className="home-get-involved-link" onClick={handleLinkClick}>
 					<FaPerson className="home-get-involved-link-icon" />
 					<span className="home-get-involved-link-title">Volunteer</span>
 				</Link>
 			</div>
+			
+
 		</section>
 	);
 };
