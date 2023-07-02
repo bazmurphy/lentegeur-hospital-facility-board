@@ -1,6 +1,155 @@
-header > nav > ul {
-  display: flex;
-  list-style: none;
-  gap: 10px;
-  padding-left: 0; /* reset */
+header {
+	background-color: var(--gray80);
+}
+
+header nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: hsla(0, 0%, 70%, 0.92);
+	transform: translateY(-100vh);
+}
+
+header nav ul {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: 16px;
+	list-style: none;
+}
+
+/* disabling scrolling of the body in the background whilst the mobile navigation is open */
+.disable-scroll {
+	overflow: hidden;
+}
+
+.header-subcontainer {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	height: 80px;
+}
+
+.navigation-link {
+	color: var(--black);
+	text-decoration: none;
+	font-size: 14px;
+	transition: all ease-in-out 200ms;
+}
+
+.navigation-link:hover {
+	color: var(--white);
+}
+
+.navigation-link.active {
+	color: var(--white);
+}
+
+.navigation-link-image-container {
+	display: none; /* Hide the arrow by default */
+}
+
+/* hamburger button */
+.navigation-menu-button {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1.8rem;
+	display: block;
+	color: var(--black);
+}
+
+/* close mobile menu button */
+.navigation-menu-button-close {
+	position: absolute;
+	top: 18px;
+	right: 20px;
+}
+
+.navigation-open {
+	transform: none;
+	transition: 1s;
+	overflow: hidden;
+}
+
+/* transition for closing mobile navbar */
+.navigation-closing {
+	transition: 1s;
+}
+
+.header-logo-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.header-logo-container h2 {
+	font-size: 16px;
+}
+
+.header-logo-image-container {
+	width: 40px;
+	height: 40px;
+}
+
+.header-logo-image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.navigation-link-icon-container {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	header nav {
+		position: relative;
+		margin-top: 15px;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: flex-end;
+		width: auto;
+		height: auto;
+		background-color: transparent;
+		transform: none;
+	}
+
+	header nav ul {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.navigation-menu-button {
+		display: none;
+	}
+
+	.navigation-link.active {
+		color: var(--black);
+	}
+
+	.navigation-link.active + .navigation-link-icon-container {
+		display: block;
+		/* Show the arrow when the navigation-link has the active class */
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.navigation-link {
+		font-size: 18px;
+	}
+
+	.header-logo-container h2 {
+		font-size: 20px;
+	}
 }
