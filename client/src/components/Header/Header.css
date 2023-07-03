@@ -11,7 +11,7 @@ header nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: hsla(0, 0%, 70%, 0.92);
+	background-color: hsla(0, 0%, 70%, 0.96);
 	transform: translateY(-100vh);
 }
 
@@ -41,7 +41,8 @@ header nav ul {
 .navigation-link {
 	color: var(--black);
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 18px;
+	font-weight: 600;
 	transition: all ease-in-out 200ms;
 }
 
@@ -57,34 +58,47 @@ header nav ul {
 	display: none; /* Hide the arrow by default */
 }
 
-/* hamburger button */
+/* to style both versions of the mobile navigation menu buttons: open ≡ and close X */
 .navigation-menu-button {
-	padding: 5px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	font-size: 1.8rem;
 	display: block;
+	outline: none;
+	border: none;
+	background: transparent;
 	color: var(--black);
+	cursor: pointer;
 }
 
-/* close mobile menu button */
+/* to position the mobile navigation menu X close button */
 .navigation-menu-button-close {
 	position: absolute;
-	top: 18px;
-	right: 20px;
+	top: 24px;
+	right: 16px;
 }
 
+/* the style of the mobile navigation menu ≡ open icon  */
+.navigation-menu-button-icon {
+	font-size: 20px;
+}
+
+/* the style of the mobile navigation menu X close icon  */
+.navigation-menu-button-icon-close {
+	font-size: 26px;
+}
+
+/* mobile navigation menu (on open) */
 .navigation-open {
-	transform: none;
-	transition: 1s;
 	overflow: hidden;
+	transform: none;
+	transition: 0.7s;
+	/* make sure it is on top of all other elements */
+	z-index: 3;
 }
 
-/* transition for closing mobile navbar */
+/* mobile navigation menu (on close) */
 .navigation-closing {
-	transition: 1s;
+	transition: 0.7s;
+	/* make sure it is on top of all other elements */
+	z-index: 3;
 }
 
 .header-logo-container {

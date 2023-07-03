@@ -96,11 +96,11 @@ const Header = () => {
 						className="navigation-menu-button navigation-menu-button-close"
 						onClick={closeNavbar}
 					>
-						<FaTimes />
+						<FaTimes className="navigation-menu-button-icon-close" />
 					</button>
 				</nav>
 				<button className="navigation-menu-button" onClick={showNavbar}>
-					<FaBars />
+					<FaBars className="navigation-menu-button-icon" />
 				</button>
 			</div>
 		</header>
