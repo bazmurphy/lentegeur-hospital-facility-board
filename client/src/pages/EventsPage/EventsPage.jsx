@@ -1,5 +1,5 @@
 import "./EventsPage.css";
-import ContentBox from "../../components/ContentBox/ContentBox";
+import Card from "../../components/Card/Card";
 import Line from "../../components/Line/Line";
 import { useState } from "react";
 
@@ -9,30 +9,33 @@ const eventsData = [
 		title: "Emergency Services",
 		image:
 			"https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-		description:
+		summary:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Emergency",
 		altText: "whatever",
+		date:"1/1/2023",
 	},
 	{
 		id: 2,
 		title: "Surgical Procedures",
 		image:
 			"https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-		description:
+		summary:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Surgical",
 		altText: "whatever",
+		date:"2/1/2023",
 	},
 	{
 		id: 3,
 		title: "Diagnostic Imaging",
 		image:
 			"https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-		description:
+		summary:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		category: "Diagnostic",
 		altText: "whatever",
+		date:"3/1/2023",
 	},
 ];
 
@@ -53,13 +56,13 @@ const EventsPage = () => {
 		const titleMatches = item.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const descriptionMatches = item.description
+		const summaryMatches = item.summary
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
 		const categoryMatches =
 			selectedCategory === "All" || item.category === selectedCategory;
 
-		return (titleMatches || descriptionMatches) && categoryMatches;
+		return (titleMatches || summaryMatches) && categoryMatches;
 	});
 
 	return (
@@ -84,12 +87,14 @@ const EventsPage = () => {
 			<div className="cards-list-container">
 				{filteredEvents.map((item) => {
 					return (
-						<ContentBox
+						<Card
 							key={item.id}
 							title={item.title}
 							image={item.image}
 							altText={item.altText}
-							content={item.description}
+							summary={item.summary}
+							tag={item.category}
+							date={item.date}
 						/>
 					);
 				})}

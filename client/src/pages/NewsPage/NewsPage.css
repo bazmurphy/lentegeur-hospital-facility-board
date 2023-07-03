@@ -6,13 +6,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: 2rem;
 	margin-bottom: 1rem;
 }
 
 .cards-list-container {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
 }
