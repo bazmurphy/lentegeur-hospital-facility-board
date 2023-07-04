@@ -1,1 +1,0 @@
-the `/client/src/pages/AboutPage/components` folder is for Components that are specific to the About Page
