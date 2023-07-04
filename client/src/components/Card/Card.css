@@ -48,6 +48,24 @@
 	gap: 0.5rem;
 }
 
+.card-button {
+	position: absolute;
+	bottom: -5px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background-color: var(--gray60);
+	border: 1px solid var(--black);
+	color: var(--white);
+	cursor: pointer;
+	border-radius: 50%;
+	text-decoration: none;
+}
+
+.card-button:hover {
+	background-color: var(--gray40);
+}
+
 /* this should be in global or tell me if you know better name */
 .flex-space-between {
 	display: flex;

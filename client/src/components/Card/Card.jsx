@@ -39,6 +39,7 @@ function Card({
 						<span className="card-tag">{tag}</span>
 					</div>
 					<p className="card-summary">{summary}</p>
+					<button className="card-button">&#8594;</button>
 				</div>
 			</section>
 		</Link>
