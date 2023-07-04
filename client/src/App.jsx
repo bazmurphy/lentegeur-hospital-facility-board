@@ -15,6 +15,8 @@ import EventsPage from "./pages/EventsPage/EventsPage";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage/GetInvolvedPage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import ContentPage from "./pages/ContentPage/ContentPage";
+import ServicePage from "./pages/ServicePage/ServicePage";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -27,6 +29,9 @@ const router = createBrowserRouter(
 			<Route path="gallery" element={<GalleryPage />} />
 			<Route path="get-involved" element={<GetInvolvedPage />} />
 			<Route path="contact-us" element={<ContactUsPage />} />
+			<Route path="/news/:newsTitle/:id" element={<ContentPage />} />
+			<Route path="/events/:eventTitle/:id" element={<ContentPage />} />
+			<Route path="/services/:serviceTitle/:id" element={<ServicePage />} />
 		</Route>
 	)
 );
