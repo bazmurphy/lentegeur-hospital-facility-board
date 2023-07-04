@@ -12,7 +12,7 @@ function Services({ id, title, image, description, customClassAlignImage }) {
 	}
 	return (
 		<Link
-			className="service-card"
+			className="service-link"
 			to={{
 				pathname: `/services/${convertedTitle}/${id}`,
 			}}
