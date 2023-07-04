@@ -1,1 +1,0 @@
-the `/client/src/pages/ServicesPage/components` folder is for Components that are specific to the Services Page
