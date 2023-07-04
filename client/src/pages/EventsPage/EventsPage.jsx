@@ -55,7 +55,7 @@ const EventsPage = () => {
 		setSearchValue(event.target.value);
 	};
 
-	const handleCategoryChange = (event) => {
+	const handleTagChange = (event) => {
 		setSelectedTag(event.target.value);
 		setSearchValue("");
 	};
@@ -68,7 +68,7 @@ const EventsPage = () => {
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
 		const categoryMatches =
-			selectedTag === "All" || item.category === selectedTag;
+			selectedTag === "All" || item.tag === selectedTag;
 
 		return (titleMatches || summaryMatches) && categoryMatches;
 	});
@@ -84,7 +84,7 @@ const EventsPage = () => {
 					value={searchValue}
 					onChange={handleSearch}
 				/>
-				<select value={selectedTag} onChange={handleCategoryChange}>
+				<select value={selectedTag} onChange={handleTagChange}>
 					<option value="All">All</option>
 					<option value="Emergency">Emergency</option>
 					<option value="Surgical">Surgical</option>
