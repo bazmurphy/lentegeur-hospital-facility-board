@@ -59,15 +59,15 @@
 /* will change this style when we have a good design for it */
 .card-button {
 	position: absolute;
-    bottom: -5px;
+	bottom: -5px;
 	right: -15px;
-    width: 30px;
-    height: 30px;
-    background-color: var(--gray60);
-    border: 1px solid var(--black);
-    color: var(--white);
-    cursor: pointer;
-    border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background-color: var(--gray60);
+	border: 1px solid var(--black);
+	color: var(--white);
+	cursor: pointer;
+	border-radius: 50%;
 }
 
 .card-button:hover {

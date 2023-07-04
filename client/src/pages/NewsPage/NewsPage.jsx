@@ -8,42 +8,43 @@ const newsData = [
 		id: 1,
 		title: "Emergency Services",
 		images: [
-            {
-                url: "https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-                alternativeText: "some alternative text",
-            },
-        ],
-		summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
+			{
+				url: "https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
+				alternativeText: "some alternative text",
+			},
+		],
+		summary:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
 		tag: "Emergency",
-		date:"1/1/2023",
+		date: "1/1/2023",
 	},
 	{
 		id: 2,
 		title: "Surgical Procedures",
 		images: [
-            {
-                url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-                alternativeText: "some alternative text",
-            },
-        ],
+			{
+				url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
+				alternativeText: "some alternative text",
+			},
+		],
 		summary:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
 		tag: "Surgical",
-		date:"2/1/2023",
+		date: "2/1/2023",
 	},
 	{
 		id: 3,
 		title: "Diagnostic Imaging",
 		images: [
-            {
-                url: "https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-                alternativeText: "some alternative text",
-            },
-        ],
+			{
+				url: "https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
+				alternativeText: "some alternative text",
+			},
+		],
 		summary:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
 		tag: "Diagnostic",
-		date:"3/1/2023",
+		date: "3/1/2023",
 	},
 ];
 
@@ -77,18 +78,19 @@ const NewsPage = () => {
 				<p>{filteredNews.length} news found</p>
 			</form>
 			<div className="cards-list-container">
-				{filteredNews.map((item) => {
-					const { url, alternativeText } = item.images[0];
+				{filteredNews.map((newsItem) => {
+					const { id, title, date, tag, summary } = newsItem;
+					const { url, alternativeText } = newsItem.images[0];
 					return (
 						<Card
-							key={item.id}
-							id={item.id}
-							title={item.title}
+							key={id}
+							id={id}
+							title={title}
 							image={url}
 							alternativeText={alternativeText}
-							summary={item.summary}
-							tag={item.tag}
-							date={item.date}
+							summary={summary}
+							tag={tag}
+							date={date}
 						/>
 					);
 				})}
