@@ -61,13 +61,14 @@
 	position: absolute;
 	bottom: -5px;
 	right: -15px;
-	width: 30px;
-	height: 30px;
+	width: 22px;
+	height: 22px;
 	background-color: var(--gray60);
 	border: 1px solid var(--black);
 	color: var(--white);
 	cursor: pointer;
 	border-radius: 50%;
+	text-decoration: none;
 }
 
 .card-button:hover {
