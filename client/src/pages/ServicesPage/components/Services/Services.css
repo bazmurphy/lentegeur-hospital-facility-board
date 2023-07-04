@@ -1,7 +1,21 @@
+.service-card {
+	text-decoration: none;
+	color: var(--black);
+}
+
 .services-container {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
+	/* create temporarily visibility of card */
+	padding: 20px 20px;
+	border: 1px solid var(--black);
+	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.services-container:hover {
+	box-shadow: none;
 }
 
 .service-subcontainer {
@@ -13,8 +27,8 @@
 }
 
 .image-container {
-	width: 350px;
-	height: 160px;
+	width: 240px;
+	height: 120px;
 	overflow: hidden;
 }
 
@@ -30,6 +44,10 @@
 
 /* Desktop */
 @media screen and (min-width: 768px) {
+	.image-container {
+		width: 350px;
+		height: 160px;
+	}
 	.service-subcontainer {
 		flex-direction: row;
 		gap: 2rem;
