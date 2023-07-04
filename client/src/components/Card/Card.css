@@ -1,3 +1,8 @@
+.card-link {
+	text-decoration: none;
+	color: var(--black);
+}
+
 .card-container {
 	display: flex;
 	flex-direction: column;
@@ -54,21 +59,6 @@
 	background-color: var(--gray80);
 	padding: 0.2rem 0.5rem;
 	border-radius: 25px;
-}
-
-/* will change this style when we have a good design for it */
-.card-button {
-	position: absolute;
-	bottom: -5px;
-	right: -15px;
-	width: 22px;
-	height: 22px;
-	background-color: var(--gray60);
-	border: 1px solid var(--black);
-	color: var(--white);
-	cursor: pointer;
-	border-radius: 50%;
-	text-decoration: none;
 }
 
 .card-button:hover {

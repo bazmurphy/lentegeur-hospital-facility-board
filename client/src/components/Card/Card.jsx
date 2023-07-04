@@ -22,27 +22,26 @@ function Card({
 	}
 
 	return (
-		<section className="card-container">
-			<div className="card-image-container">
-				<img className="card-image" src={image} alt={alternativeText} />
-			</div>
-			<div className="card-subcontainer">
-				<h3 className="card-title">{title}</h3>
-				<div className="flex-space-between">
-					<h4 className="card-date">{date}</h4>
-					<span className="card-tag">{tag}</span>
+		<Link
+			className="card-link"
+			to={{
+				pathname: `/${pageName}/${convertedTitle}/${id}`,
+			}}
+		>
+			<section className="card-container">
+				<div className="card-image-container">
+					<img className="card-image" src={image} alt={alternativeText} />
 				</div>
-				<p className="card-summary">{summary}</p>
-				<Link
-					className="card-button"
-					to={{
-						pathname: `/${pageName}/${convertedTitle}/${id}`,
-					}}
-				>
-					&#8594;
-				</Link>
-			</div>
-		</section>
+				<div className="card-subcontainer">
+					<h3 className="card-title">{title}</h3>
+					<div className="flex-space-between">
+						<h4 className="card-date">{date}</h4>
+						<span className="card-tag">{tag}</span>
+					</div>
+					<p className="card-summary">{summary}</p>
+				</div>
+			</section>
+		</Link>
 	);
 }
 
