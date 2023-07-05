@@ -1,5 +1,5 @@
 import "./EventsPage.css";
-import ContentBox from "../../components/ContentBox/ContentBox";
+import Card from "../../components/Card/Card";
 import Line from "../../components/Line/Line";
 import { useState } from "react";
 
@@ -7,45 +7,57 @@ const eventsData = [
 	{
 		id: 1,
 		title: "Emergency Services",
-		image:
-			"https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		category: "Emergency",
-		altText: "whatever",
+		images: [
+			{
+				url: "https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
+				alternativeText: "some alternative text",
+			},
+		],
+		summary:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
+		tag: "Emergency",
+		date: "1/1/2023",
 	},
 	{
 		id: 2,
 		title: "Surgical Procedures",
-		image:
-			"https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		category: "Surgical",
-		altText: "whatever",
+		images: [
+			{
+				url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
+				alternativeText: "some alternative text",
+			},
+		],
+		summary:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
+		tag: "Surgical",
+		date: "2/1/2023",
 	},
 	{
 		id: 3,
 		title: "Diagnostic Imaging",
-		image:
-			"https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		category: "Diagnostic",
-		altText: "whatever",
+		images: [
+			{
+				url: "https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
+				alternativeText: "some alternative text",
+			},
+		],
+		summary:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
+		tag: "Diagnostic",
+		date: "3/1/2023",
 	},
 ];
 
 const EventsPage = () => {
 	const [searchValue, setSearchValue] = useState("");
-	const [selectedCategory, setSelectedCategory] = useState("All");
+	const [selectedTag, setSelectedTag] = useState("All");
 
 	const handleSearch = (event) => {
 		setSearchValue(event.target.value);
 	};
 
-	const handleCategoryChange = (event) => {
-		setSelectedCategory(event.target.value);
+	const handleTagChange = (event) => {
+		setSelectedTag(event.target.value);
 		setSearchValue("");
 	};
 
@@ -53,13 +65,12 @@ const EventsPage = () => {
 		const titleMatches = item.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const descriptionMatches = item.description
+		const summaryMatches = item.summary
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const categoryMatches =
-			selectedCategory === "All" || item.category === selectedCategory;
+		const categoryMatches = selectedTag === "All" || item.tag === selectedTag;
 
-		return (titleMatches || descriptionMatches) && categoryMatches;
+		return (titleMatches || summaryMatches) && categoryMatches;
 	});
 
 	return (
@@ -73,7 +84,7 @@ const EventsPage = () => {
 					value={searchValue}
 					onChange={handleSearch}
 				/>
-				<select value={selectedCategory} onChange={handleCategoryChange}>
+				<select value={selectedTag} onChange={handleTagChange}>
 					<option value="All">All</option>
 					<option value="Emergency">Emergency</option>
 					<option value="Surgical">Surgical</option>
@@ -82,14 +93,19 @@ const EventsPage = () => {
 				<p>{filteredEvents.length} events found</p>
 			</form>
 			<div className="cards-list-container">
-				{filteredEvents.map((item) => {
+				{filteredEvents.map((eventItem) => {
+					const { id, title, date, tag, summary } = eventItem;
+					const { url, alternativeText } = eventItem.images[0];
 					return (
-						<ContentBox
-							key={item.id}
-							title={item.title}
-							image={item.image}
-							altText={item.altText}
-							content={item.description}
+						<Card
+							key={id}
+							id={id}
+							title={title}
+							image={url}
+							alternativeText={alternativeText}
+							summary={summary}
+							tag={tag}
+							date={date}
 						/>
 					);
 				})}
