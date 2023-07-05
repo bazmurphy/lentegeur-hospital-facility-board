@@ -48,7 +48,6 @@ const mockData = [
 	},
 ];
 
-// id, image, alternativeText, date, tag, title, summary })
 const HomeCardList = ({ title }) => {
 	const settings = {
 		centerMode: true,
@@ -93,19 +92,7 @@ const HomeCardList = ({ title }) => {
 		<section className="home-card-list-section">
 			<h2>{title}</h2>
 			<Line />
-			<div className="home-card-list-container">
-				<Slider {...settings}>{renderSlides}</Slider>
-				{/* {mockData.map((item, index) => {
-					return (
-						<HomeCard
-							key={index}
-							title={item.title}
-							image={item.image}
-							content={item.description}
-						/>
-					);
-				})} */}
-			</div>
+			<Slider {...settings}>{renderSlides}</Slider>
 		</section>
 	);
 };
