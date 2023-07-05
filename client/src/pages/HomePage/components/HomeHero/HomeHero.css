@@ -47,7 +47,7 @@
 .slick-next:before {
 	font-size: 40px;
 	/* this is controlling the colour of the prev/next arrows */
-	color: white;
+	color: var(--gray60);
 }
 
 .slick-slide img {

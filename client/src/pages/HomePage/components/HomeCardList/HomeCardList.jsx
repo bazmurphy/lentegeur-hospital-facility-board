@@ -1,5 +1,4 @@
 import "./HomeCardList.css";
-import HomeCard from "../HomeCard/HomeCard";
 import Line from "../../../../components/Line/Line";
 import Card from "../../../../components/Card/Card";
 import Slider from "react-slick";
@@ -61,16 +60,16 @@ const HomeCardList = ({ title }) => {
 		dots: false,
 		responsive: [
 			{
-				breakpoint: 768,
+				breakpoint: 1125,
 				settings: {
-					arrows: false,
+					arrows: true,
 					slidesToShow: 2,
 				},
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 760,
 				settings: {
-					arrows: false,
+					arrows: true,
 					slidesToShow: 1,
 				},
 			},
@@ -82,8 +81,8 @@ const HomeCardList = ({ title }) => {
 			key={item.id}
 			id={item.id}
 			title={item.title}
-			image={item.url}
-			alternativeText={item.alternativeText}
+			image={item.images[0].url}
+			alternativeText={item.images[0].alternativeText}
 			summary={item.summary}
 			tag={item.tag}
 			date={item.date}
