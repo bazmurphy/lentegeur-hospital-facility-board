@@ -148,6 +148,10 @@ header nav ul {
 		display: none;
 	}
 
+	.navigation-link {
+		font-size: 12px;
+	}
+
 	.navigation-link.active {
 		color: var(--black);
 	}
@@ -155,6 +159,12 @@ header nav ul {
 	.navigation-link.active + .navigation-link-icon-container {
 		display: block;
 		/* Show the arrow when the navigation-link has the active class */
+	}
+}
+
+@media only screen and (min-width: 875px) {
+	.navigation-link {
+		font-size: 16px;
 	}
 }
 
