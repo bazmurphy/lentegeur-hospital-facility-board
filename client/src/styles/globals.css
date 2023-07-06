@@ -37,8 +37,8 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 
-  /* global mouse scrolling behaviour */
-  scroll-behavior: smooth;
+	/* global mouse scrolling behaviour */
+	scroll-behavior: smooth;
 }
 
 body {

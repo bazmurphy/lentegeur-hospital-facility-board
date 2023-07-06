@@ -6,11 +6,10 @@ import { FaHandHoldingMedical, FaPerson } from "react-icons/fa6";
 
 const handleLinkClick = () => {
 	scroll.scrollToTop({
-	duration: 500, // Adjust the scroll duration as needed
-	smooth: true, // Enable smooth scrolling animation
+		duration: 500, // Adjust the scroll duration as needed
+		smooth: true, // Enable smooth scrolling animation
 	});
-  };
-
+};
 
 const HomeGetInvolvedSection = () => {
 	return (
@@ -30,13 +29,15 @@ const HomeGetInvolvedSection = () => {
 					<FaHandHoldingMedical className="home-get-involved-link-icon" />
 					<span className="home-get-involved-link-title">Fundraising</span>
 				</Link>
-				<Link to="/get-involved" className="home-get-involved-link" onClick={handleLinkClick}>
+				<Link
+					to="/get-involved"
+					className="home-get-involved-link"
+					onClick={handleLinkClick}
+				>
 					<FaPerson className="home-get-involved-link-icon" />
 					<span className="home-get-involved-link-title">Volunteer</span>
 				</Link>
 			</div>
-			
-
 		</section>
 	);
 };
