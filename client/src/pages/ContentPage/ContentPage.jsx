@@ -1,11 +1,13 @@
 import "./ContentPage.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import eventsData from "../../newsEventsData.json";
 import newsData from "../../newsEventsData.json";
+import GoBackButton from "../../components/GoBackButton/GoBackButton";
 
 const ContentPage = () => {
 	// eslint-disable-next-line no-unused-vars
 	const location = useLocation();
+	const navigate = useNavigate();
 	const { title } = useParams();
 	let data = [];
 
@@ -17,6 +19,9 @@ const ContentPage = () => {
 
 	const element = data.find((el) => el.slug === title);
 
+	const goBack = () => {
+		navigate(-1);
+	};
 	return (
 		<div className="content-page">
 			<h1>{element.title}</h1>
@@ -34,6 +39,7 @@ const ContentPage = () => {
 				</div>
 				<p>{element.description}</p>
 			</div>
+			<GoBackButton goBack={goBack} />
 		</div>
 	);
 };
