@@ -13,8 +13,10 @@ import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import EventsPage from "./pages/EventsPage/EventsPage";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
+import GalleryAlbumPage from "./pages/GalleryPage/GalleryAlbumPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage/GetInvolvedPage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -25,8 +27,10 @@ const router = createBrowserRouter(
 			<Route path="news" element={<NewsPage />} />
 			<Route path="events" element={<EventsPage />} />
 			<Route path="gallery" element={<GalleryPage />} />
+			<Route path="gallery/:slug" element={<GalleryAlbumPage />} />
 			<Route path="get-involved" element={<GetInvolvedPage />} />
 			<Route path="contact-us" element={<ContactUsPage />} />
+			<Route path="*" element={<NotFoundPage />} />
 		</Route>
 	)
 );
