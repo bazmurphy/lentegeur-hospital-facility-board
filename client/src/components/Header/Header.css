@@ -126,7 +126,7 @@ header nav ul {
 	display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	header nav {
 		position: relative;
 		margin-top: 15px;
@@ -148,9 +148,6 @@ header nav ul {
 		display: none;
 	}
 
-	.navigation-link {
-		font-size: 12px;
-	}
 
 	.navigation-link.active {
 		color: var(--black);
@@ -163,9 +160,6 @@ header nav ul {
 }
 
 @media only screen and (min-width: 875px) {
-	.navigation-link {
-		font-size: 16px;
-	}
 }
 
 @media only screen and (min-width: 1024px) {
