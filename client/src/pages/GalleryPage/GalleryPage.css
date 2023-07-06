@@ -1,0 +1,14 @@
+.gallery-page {
+	margin: 0 20px;
+}
+
+.gallery-page-title {
+	/* placeholder */
+}
+
+.gallery-page-list-container {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
