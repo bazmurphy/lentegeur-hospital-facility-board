@@ -50,26 +50,40 @@ const mockData = [
 
 const HomeCardList = ({ title }) => {
 	const settings = {
-		centerMode: true,
-		centerPadding: "10px",
-		slidesToShow: 3,
-		speed: 500,
-		slidesToScroll: 1,
-		arrows: true,
 		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		initialSlide: 0,
 		responsive: [
 			{
-				breakpoint: 1125,
+				breakpoint: 1024,
 				settings: {
-					arrows: true,
-					slidesToShow: 2,
+					slidesToShow: 3,
+					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 760,
+				//slider library approach to responsive is desktop first, then tablet, then mobile. We need to figure it out as a team
+				breakpoint: 1023,
 				settings: {
-					arrows: true,
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
 					slidesToShow: 1,
+					slidesToScroll: 1,
 				},
 			},
 		],
