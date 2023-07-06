@@ -1,0 +1,16 @@
+.error-component-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	/* temporary colour */
+	color: hsl(0, 100%, 40%);
+}
+
+.error-component-title {
+	/* placeholder */
+}
+
+.error-component-message {
+	/* placeholder */
+}
