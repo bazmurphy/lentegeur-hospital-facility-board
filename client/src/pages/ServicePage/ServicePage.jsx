@@ -4,10 +4,8 @@ import servicesData from "../../servicesData.json";
 
 const ServicePage = () => {
 	// eslint-disable-next-line no-unused-vars
-	//i don't need anywhere this title
-	const { title, id } = useParams();
-	console.log("id ", id);
-	const element = servicesData.find((el) => el.id === Number(id));
+	const { title } = useParams();
+	const element = servicesData.find((el) => el.slug === title);
 
 	return (
 		<div className="service-page">

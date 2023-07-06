@@ -1,12 +1,12 @@
 import "./ContentPage.css";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import eventsData from "../../newsEventsData.json";
 import newsData from "../../newsEventsData.json";
 
 const ContentPage = () => {
 	// eslint-disable-next-line no-unused-vars
-	//i don't need anywhere this title
-	const { title, id } = useParams();
+	const location = useLocation();
+	const { title } = useParams();
 	let data = [];
 
 	// Extract the page name from the pathname
@@ -15,7 +15,7 @@ const ContentPage = () => {
 	// checking from which page user is coming
 	pageName === "news" ? (data = newsData) : (data = eventsData);
 
-	const element = data.find((el) => el.id === Number(id));
+	const element = data.find((el) => el.slug === title);
 
 	return (
 		<div className="content-page">

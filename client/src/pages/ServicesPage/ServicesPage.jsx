@@ -9,10 +9,10 @@ const ServicesPage = () => {
 			{servicesData.map((service, index) => (
 				<Services
 					key={index}
-					id={service.id}
 					title={service.title}
 					image={service.image}
 					description={service.description}
+					slug={service.slug}
 					customClassAlignImage={index % 2 === 0 ? "align-left" : "align-right"}
 				/>
 			))}

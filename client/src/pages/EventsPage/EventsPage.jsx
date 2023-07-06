@@ -50,12 +50,11 @@ const EventsPage = () => {
 			</form>
 			<div className="cards-list-container">
 				{filteredEvents.map((eventItem) => {
-					const { id, title, date, tag, summary } = eventItem;
+					const { id, title, date, tag, summary, slug } = eventItem;
 					const { url, alternativeText } = eventItem.images[0];
 					return (
 						<Card
 							key={id}
-							id={id}
 							title={title}
 							image={url}
 							alternativeText={alternativeText}
@@ -63,6 +62,7 @@ const EventsPage = () => {
 							tag={tag}
 							date={date}
 							pageName="events"
+							slug={slug}
 						/>
 					);
 				})}

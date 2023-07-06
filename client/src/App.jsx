@@ -29,9 +29,9 @@ const router = createBrowserRouter(
 			<Route path="gallery" element={<GalleryPage />} />
 			<Route path="get-involved" element={<GetInvolvedPage />} />
 			<Route path="contact-us" element={<ContactUsPage />} />
-			<Route path="/news/:newsTitle/:id" element={<ContentPage />} />
-			<Route path="/events/:eventTitle/:id" element={<ContentPage />} />
-			<Route path="/services/:serviceTitle/:id" element={<ServicePage />} />
+			<Route path="/news/:title" element={<ContentPage />} />
+			<Route path="/events/:title" element={<ContentPage />} />
+			<Route path="/services/:title" element={<ServicePage />} />
 		</Route>
 	)
 );

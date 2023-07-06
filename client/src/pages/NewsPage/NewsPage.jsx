@@ -35,12 +35,11 @@ const NewsPage = () => {
 			</form>
 			<div className="cards-list-container">
 				{filteredNews.map((newsItem) => {
-					const { id, title, date, tag, summary } = newsItem;
+					const { id, title, date, tag, summary, slug } = newsItem;
 					const { url, alternativeText } = newsItem.images[0];
 					return (
 						<Card
 							key={id}
-							id={id}
 							title={title}
 							image={url}
 							alternativeText={alternativeText}
@@ -48,6 +47,7 @@ const NewsPage = () => {
 							tag={tag}
 							date={date}
 							pageName="news"
+							slug={slug}
 						/>
 					);
 				})}

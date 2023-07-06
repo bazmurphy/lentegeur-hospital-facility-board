@@ -1,20 +1,13 @@
 import Line from "../../../../components/Line/Line";
 import "./Services.css";
 import { Link } from "react-router-dom";
-import convertToSnakeCase from "../../../../utils/convertToSnakeCase";
 
-function Services({ id, title, image, description, customClassAlignImage }) {
-	let convertedTitle;
-
-	//checking if title is not empty
-	if (title.length > 0) {
-		convertedTitle = convertToSnakeCase(title);
-	}
+function Services({ title, image, description, customClassAlignImage, slug }) {
 	return (
 		<Link
 			className="service-link"
 			to={{
-				pathname: `/services/${convertedTitle}/${id}`,
+				pathname: `/services/${slug}`,
 			}}
 		>
 			<section className="services-container">
