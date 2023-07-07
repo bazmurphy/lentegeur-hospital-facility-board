@@ -1,14 +1,14 @@
 import "./ContentPage.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import eventsData from "../../newsEventsData.json";
-import newsData from "../../newsEventsData.json";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
 
+import eventsData from "../../newsEventsData.json";
+import newsData from "../../newsEventsData.json";
+
 const ContentPage = () => {
-	// eslint-disable-next-line no-unused-vars
 	const location = useLocation();
 	const navigate = useNavigate();
-	const { title } = useParams();
+	const { slug } = useParams();
 	let data = [];
 
 	// Extract the page name from the pathname
@@ -17,27 +17,29 @@ const ContentPage = () => {
 	// checking from which page user is coming
 	pageName === "news" ? (data = newsData) : (data = eventsData);
 
-	const element = data.find((el) => el.slug === title);
+	const element = data.find((el) => el.slug === slug);
+	const { title, images, tag, date, description } = element;
 
 	const goBack = () => {
 		navigate(-1);
 	};
+
 	return (
 		<div className="content-page">
-			<h1>{element.title}</h1>
+			<h1>{title}</h1>
 			<div className="content-image-container">
 				<img
 					className="content-image"
-					src={element.images[0].url}
-					alt={element.images[0].alternativeText}
+					src={images[0].url}
+					alt={images[0].alternativeText}
 				/>
 			</div>
 			<div className="content-page-container">
 				<div className="category-date-container">
-					<p>{`Category: ${element.tag}`}</p>
-					<p>{`Date: ${element.date}`}</p>
+					<p>{`Category: ${tag}`}</p>
+					<p>{`Date: ${date}`}</p>
 				</div>
-				<p>{element.description}</p>
+				<p>{description}</p>
 			</div>
 			<GoBackButton goBack={goBack} />
 		</div>

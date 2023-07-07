@@ -10,7 +10,7 @@ const ServicesPage = () => {
 				<Services
 					key={index}
 					title={service.title}
-					image={service.image}
+					image={service.images[0].url}
 					description={service.description}
 					slug={service.slug}
 					customClassAlignImage={index % 2 === 0 ? "align-left" : "align-right"}
