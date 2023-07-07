@@ -28,7 +28,7 @@ const servicesData = [
 const ServicesPage = () => {
 	return (
 		<div className="services-page">
-			<h1>Services</h1>
+			<h1 className="services-page-title">Services</h1>
 			{servicesData.map((service, index) => (
 				<Services
 					key={index}
