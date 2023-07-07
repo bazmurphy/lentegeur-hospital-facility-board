@@ -2,6 +2,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeHero.css";
+import SliderImage01 from "../../assets/slider01.jpg";
+import SliderImage02 from "../../assets/slider02.jpg";
+import SliderImage03 from "../../assets/slider03.jpg";
 
 const HomeHero = () => {
 	const settings = {
@@ -20,26 +23,17 @@ const HomeHero = () => {
 						industry.
 					</h2>
 					<div className="slide-image-container">
-						<img
-							src="https://infoguidenigeria.com/wp-content/uploads/2020/01/african-american-black-doctor-man-626x405.jpg"
-							alt="one"
-						/>
+						<img src={SliderImage01} alt="one" />
 					</div>
 				</div>
 				<div className="slide-container">
 					<div className="slide-image-container">
-						<img
-							src="https://t4.ftcdn.net/jpg/03/17/85/49/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
-							alt="two"
-						/>
+						<img src={SliderImage02} alt="two" />
 					</div>
 				</div>
 				<div className="slide-container">
 					<div className="slide-image-container">
-						<img
-							src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
-							alt="three"
-						/>
+						<img src={SliderImage03} alt="three" />
 					</div>
 				</div>
 			</Slider>
