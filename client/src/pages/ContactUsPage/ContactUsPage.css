@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-	main {
+	.contact-us-page {
 		margin: 40px auto;
 	}
 }
