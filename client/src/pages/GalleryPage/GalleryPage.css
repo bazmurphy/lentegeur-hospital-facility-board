@@ -1,5 +1,5 @@
 .gallery-page {
-	margin: 0 20px;
+	margin: 20px;
 }
 
 .gallery-page-title {
@@ -11,4 +11,16 @@
 	gap: 20px;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+	.gallery-page {
+		margin: 40px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.gallery-page {
+		margin: 40px auto;
+	}
 }

@@ -1,9 +1,14 @@
+.card-link {
+	text-decoration: none;
+	color: var(--black);
+}
+
 .card-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 350px;
+	width: 100%;
 	margin: 0 0 2rem 0;
 	border-radius: 25px;
 	/* just for test for now */
@@ -12,14 +17,19 @@
 	transition: all 0.2s ease-in-out;
 }
 
+@media screen and (min-width: 768px) {
+	.card-container {
+		width: 350px;
+	}
+}
+
 .card-container:hover {
 	/* just for test */
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 .card-image-container {
-	/* changed this to make border visible */
-	width: 348px;
+	width: 100%;
 	height: 250px;
 	overflow: hidden;
 	margin-bottom: 0.5rem;
@@ -43,6 +53,24 @@
 	gap: 0.5rem;
 }
 
+.card-button {
+	position: absolute;
+	bottom: -5px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background-color: var(--gray60);
+	border: 1px solid var(--black);
+	color: var(--white);
+	cursor: pointer;
+	border-radius: 50%;
+	text-decoration: none;
+}
+
+.card-button:hover {
+	background-color: var(--gray40);
+}
+
 /* this should be in global or tell me if you know better name */
 .flex-space-between {
 	display: flex;
@@ -56,20 +84,3 @@
 	border-radius: 25px;
 }
 
-/* will change this style when we have a good design for it */
-.card-button {
-	position: absolute;
-	bottom: -5px;
-	right: -15px;
-	width: 30px;
-	height: 30px;
-	background-color: var(--gray60);
-	border: 1px solid var(--black);
-	color: var(--white);
-	cursor: pointer;
-	border-radius: 50%;
-}
-
-.card-button:hover {
-	background-color: var(--gray40);
-}
