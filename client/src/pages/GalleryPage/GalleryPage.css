@@ -1,0 +1,15 @@
+.gallery-page {
+	margin: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.gallery-page {
+		margin: 40px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.gallery-page {
+		margin: 40px auto;
+	}
+}

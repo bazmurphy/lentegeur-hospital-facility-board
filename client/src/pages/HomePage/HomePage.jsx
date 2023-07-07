@@ -1,10 +1,16 @@
 import "./HomePage.css";
+import HomeHero from "./components/HomeHero/HomeHero";
+import HomeCardList from "./components/HomeCardList/HomeCardList";
+import HomeGetInvolvedSection from "./components/HomeGetInvolvedSection/HomeGetInvolvedSection";
 
 const HomePage = () => {
 	return (
-		<>
-			<h1>Home Page</h1>
-		</>
+		<div className="home-page">
+			<HomeHero />
+			<HomeCardList title="Latest News" />
+			<HomeCardList title="Latest Events" />
+			<HomeGetInvolvedSection />
+		</div>
 	);
 };
 
