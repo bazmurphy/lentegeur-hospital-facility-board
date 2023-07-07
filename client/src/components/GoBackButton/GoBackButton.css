@@ -1,0 +1,8 @@
+.go-back-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px;
+	cursor: pointer;
+	transition: all ease-in-out 250ms;
+}
