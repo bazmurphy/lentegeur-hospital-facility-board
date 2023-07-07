@@ -48,6 +48,7 @@ const NewsPage = () => {
 							date={date}
 							pageName="news"
 							slug={slug}
+							passedClass="content"
 						/>
 					);
 				})}

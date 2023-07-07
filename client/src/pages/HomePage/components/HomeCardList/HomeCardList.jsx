@@ -58,30 +58,16 @@ const HomeCardList = ({ title }) => {
 		initialSlide: 0,
 		responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: 1025,
 				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				//slider library approach to responsive is desktop first, then tablet, then mobile. We need to figure it out as a team
-				breakpoint: 1023,
-				settings: {
+					arrows: true,
 					slidesToShow: 2,
-					slidesToScroll: 2,
 				},
 			},
 			{
-				breakpoint: 768,
+				breakpoint: 600,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
-				},
-			},
-			{
-				breakpoint: 480,
-				settings: {
+					arrows: true,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 				},
@@ -99,6 +85,7 @@ const HomeCardList = ({ title }) => {
 			summary={item.summary}
 			tag={item.tag}
 			date={item.date}
+			passedClass="home"
 		/>
 	));
 

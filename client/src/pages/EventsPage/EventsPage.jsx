@@ -63,6 +63,7 @@ const EventsPage = () => {
 							date={date}
 							pageName="events"
 							slug={slug}
+							passedClass="content"
 						/>
 					);
 				})}
