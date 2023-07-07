@@ -1,10 +1,11 @@
 import ScrollToTop from "react-scroll-to-top";
+import "./ScrollToTopButton.css";
 
 function ScrollToTopButton() {
 	return (
-		<div>
-			<ScrollToTop smooth />
-		</div>
+		<>
+			<ScrollToTop smooth className="scroll-to-top-button" />
+		</>
 	);
 }
 

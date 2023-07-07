@@ -1,0 +1,6 @@
+/* make border circle and prettier arrow :) */
+@media (min-width: 768px) {
+	.scroll-to-top-button {
+		display: none;
+	}
+}
