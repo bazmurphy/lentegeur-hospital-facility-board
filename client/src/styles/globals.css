@@ -45,19 +45,6 @@ body {
 
 main {
 	max-width: 1200px;
-	margin: 0 auto 20px auto;
-}
-
-@media screen and (min-width: 768px) {
-	main {
-		margin: 0 auto 40px auto;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	main {
-		margin: 0 auto 40px auto;
-	}
 }
 
 /* h1's are usually the Page title/heading at the top of the Page */
