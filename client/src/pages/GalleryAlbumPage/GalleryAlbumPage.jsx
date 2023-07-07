@@ -65,6 +65,7 @@ const GalleryAlbumPage = () => {
 						{"< Back"}
 					</Link>
 					<h2 className="gallery-album-title">{galleryAlbumData.title}</h2>
+					<p className="gallery-album-summary">{galleryAlbumData.summary}</p>
 					<div className="gallery-album-list">
 						{galleryAlbumData.images.map((image) => {
 							const { id, url, alternativeText } = image;
