@@ -3,7 +3,8 @@ import Line from "../../../../components/Line/Line";
 import Card from "../../../../components/Card/Card";
 import Slider from "react-slick";
 
-import newsEventsData from "../../../../newsEventsData.json";
+import newsData from "../../../../data/newsData.json";
+import eventsData from "../../../../data/eventsData.json";
 
 const HomeCardList = ({ title, subroute }) => {
 	const settings = {
@@ -32,7 +33,15 @@ const HomeCardList = ({ title, subroute }) => {
 		],
 	};
 
-	const renderSlides = newsEventsData.map((item) => {
+	let data = [];
+	if (subroute === "news") {
+		data = newsData;
+	}
+	if (subroute === "events") {
+		data = eventsData;
+	}
+
+	const renderSlides = data.map((item) => {
 		const { id, title, slug, images, summary, tag, date } = item;
 		return (
 			<Card

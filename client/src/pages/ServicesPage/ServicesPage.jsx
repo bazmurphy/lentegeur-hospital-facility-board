@@ -1,6 +1,7 @@
 import "./ServicesPage.css";
 import Services from "./components/Services/Services";
-import servicesData from "../../servicesData.json";
+
+import servicesData from "../../data/servicesData.json";
 
 const ServicesPage = () => {
 	return (

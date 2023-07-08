@@ -1,8 +1,9 @@
 import "./EventsPage.css";
-import Card from "../../components/Card/Card";
 import Line from "../../components/Line/Line";
+import Card from "../../components/Card/Card";
 import { useState } from "react";
-import eventsData from "../../newsEventsData.json";
+
+import eventsData from "../../data/eventsData.json";
 
 const EventsPage = () => {
 	const [searchValue, setSearchValue] = useState("");

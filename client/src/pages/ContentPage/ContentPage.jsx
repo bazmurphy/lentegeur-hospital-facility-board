@@ -2,22 +2,27 @@ import "./ContentPage.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
 
-import eventsData from "../../newsEventsData.json";
-import newsData from "../../newsEventsData.json";
+import newsData from "../../data/newsData.json";
+import eventsData from "../../data/eventsData.json";
 
 const ContentPage = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const { slug } = useParams();
-	let data = [];
 
 	// Extract the page name from the pathname
 	const pageName = location.pathname.substring(1).split("/")[0];
 
-	// checking from which page user is coming
-	pageName === "news" ? (data = newsData) : (data = eventsData);
+	let data = [];
+	// checking which page the user is coming from
+	if (pageName === "news") {
+		data = newsData;
+	}
+	if (pageName === "events") {
+		data = eventsData;
+	}
 
-	const element = data.find((el) => el.slug === slug);
+	const element = data.find((item) => item.slug === slug);
 	const { title, images, tag, date, description } = element;
 
 	const goBack = () => {
