@@ -7,8 +7,8 @@ const HomePage = () => {
 	return (
 		<div className="home-page">
 			<HomeHero />
-			<HomeCardList title="Latest News" />
-			<HomeCardList title="Latest Events" />
+			<HomeCardList title="Latest News" subroute="news" />
+			<HomeCardList title="Latest Events" subroute="events" />
 			<HomeGetInvolvedSection />
 		</div>
 	);

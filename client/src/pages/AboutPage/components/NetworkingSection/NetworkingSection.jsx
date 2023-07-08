@@ -1,8 +1,8 @@
-import placeholderNetworkingImage from "../../../../assets/grey_circle_image.svg";
-import image from "../../../../assets/grey_image.svg";
-import Affiliate from "../Affiliate/Affiliate";
 import "./NetworkingSection.css";
 import Line from "../../../../components/Line/Line";
+import Affiliate from "../Affiliate/Affiliate";
+
+import placeholderNetworkingImage from "../../../../assets/grey_circle_image.svg";
 
 const NetworkingSection = () => {
 	//adding  6 affiliates to the array
@@ -18,7 +18,10 @@ const NetworkingSection = () => {
 			<Line />
 			<div className="networking-container">
 				<div className="networking-image-container">
-					<img src={image} alt="grey square" />
+					<img
+						src={"https://i.ytimg.com/vi/Sx3hJS_JW1k/maxresdefault.jpg"}
+						alt="grey square"
+					/>
 				</div>
 
 				<p>

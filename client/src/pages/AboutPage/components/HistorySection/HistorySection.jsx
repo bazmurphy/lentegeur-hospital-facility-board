@@ -1,7 +1,7 @@
 import "./HistorySection.css";
 import Line from "../../../../components/Line/Line";
 
-import image from "../../../../assets/grey_image.svg";
+import image from "../../../HomePage/assets/slider02.jpg";
 
 const HistorySection = () => {
 	return (
