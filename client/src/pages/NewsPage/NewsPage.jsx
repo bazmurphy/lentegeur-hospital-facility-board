@@ -2,7 +2,8 @@ import "./NewsPage.css";
 import Card from "../../components/Card/Card";
 import Line from "../../components/Line/Line";
 import { useState } from "react";
-import newsData from "../../newsEventsData.json";
+
+import newsData from "../../data/newsData.json";
 
 const NewsPage = () => {
 	const [searchValue, setSearchValue] = useState("");
@@ -20,6 +21,7 @@ const NewsPage = () => {
 			.includes(searchValue.toLowerCase());
 		return titleMatches || summaryMatches;
 	});
+
 	return (
 		<div className="news-page">
 			<h1>News</h1>
@@ -48,6 +50,7 @@ const NewsPage = () => {
 							date={date}
 							pageName="news"
 							slug={slug}
+							passedClass="content"
 						/>
 					);
 				})}

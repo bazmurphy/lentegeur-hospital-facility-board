@@ -12,6 +12,7 @@ function Card({
 	summary,
 	pageName,
 	slug,
+	passedClass,
 }) {
 	return (
 		<Link
@@ -20,8 +21,20 @@ function Card({
 				pathname: `/${pageName}/${slug}`,
 			}}
 		>
-			<section className="card-container">
-				<div className="card-image-container">
+			<section
+				className={
+					passedClass === "home"
+						? "card-container card-container-home"
+						: "card-container card-container-content"
+				}
+			>
+				<div
+					className={
+						passedClass === "home"
+							? "card-image-container card-image-container-home"
+							: "card-image-container card-image-container-content"
+					}
+				>
 					<img className="card-image" src={image} alt={alternativeText} />
 				</div>
 				<div className="card-subcontainer">

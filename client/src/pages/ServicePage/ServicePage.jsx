@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
 
-import servicesData from "../../servicesData.json";
+import servicesData from "../../data/servicesData.json";
 
 const ServicePage = () => {
 	const { slug } = useParams();
