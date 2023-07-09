@@ -53,7 +53,6 @@ main {
 
 /* h1's are usually the Page title/heading at the top of the Page */
 h1 {
-	margin-top: 15px; /* this may change */
 	font-size: 24px;
 	font-weight: 800;
 	text-align: center;
