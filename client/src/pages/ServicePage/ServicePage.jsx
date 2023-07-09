@@ -5,6 +5,7 @@ import Line from "../../components/Line/Line";
 import Loading from "../../components/Loading/Loading";
 import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
+import parseContent from "../../utils/parseContent";
 
 const ServicePage = () => {
 	const { slug } = useParams();
@@ -50,10 +51,12 @@ const ServicePage = () => {
 							alt={data.data[0].images[0].alternativeText}
 						/>
 					</div>
+					<div className="service-category-tag-container">
+						<p>Category: {data.data[0].category}</p>
+						<p>Tags: {data.data[0].tags}</p>
+					</div>
 					<div className="service-content-container">
-						{/* <p>Category: {data.data[0].category}</p> */}
-						{/* <p>Tags: {data.data[0].tags}</p> */}
-						<p>{data.data[0].content}</p>
+						{parseContent(data.data[0].content)}
 					</div>
 				</>
 			)}
