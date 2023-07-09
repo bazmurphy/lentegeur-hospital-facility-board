@@ -21,8 +21,7 @@ const NewsPage = () => {
 		queryKey: ["news-articles"],
 		queryFn: fetchNewsArticles,
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const newsArticlesData = data?.data;
 
 	const [searchValue, setSearchValue] = useState("");
 
@@ -30,8 +29,7 @@ const NewsPage = () => {
 		setSearchValue(event.target.value);
 	};
 
-	// please note the ? optional chaining
-	const filteredNewsArticles = data?.data.filter((newsArticle) => {
+	const filteredNewsArticles = newsArticlesData?.filter((newsArticle) => {
 		const titleMatches = newsArticle.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
@@ -50,7 +48,7 @@ const NewsPage = () => {
 			<Line />
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent errorMessage={error} />}
-			{filteredNewsArticles && (
+			{!!filteredNewsArticles && (
 				<>
 					<form className="search-form">
 						<input

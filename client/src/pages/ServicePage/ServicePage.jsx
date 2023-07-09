@@ -26,8 +26,7 @@ const ServicePage = () => {
 		queryKey: ["services", slug],
 		queryFn: () => fetchService(slug),
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const serviceData = data?.data[0];
 
 	const navigate = useNavigate();
 	const goBack = () => {
@@ -40,23 +39,23 @@ const ServicePage = () => {
 		<div className="service-page">
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent errorMessage={error} />}
-			{data && (
+			{!!serviceData && (
 				<>
-					<h1>{data.data[0].title}</h1>
+					<h1>{serviceData.title}</h1>
 					<Line />
 					<div className="service-image-container">
 						<img
 							className="service-image"
-							src={data.data[0].images[0].url}
-							alt={data.data[0].images[0].alternativeText}
+							src={serviceData.images[0].url}
+							alt={serviceData.images[0].alternativeText}
 						/>
 					</div>
 					<div className="service-category-tag-container">
-						<p>Category: {data.data[0].category}</p>
-						<p>Tags: {data.data[0].tags}</p>
+						<p>Category: {serviceData.category}</p>
+						<p>Tags: {serviceData.tags}</p>
 					</div>
 					<div className="service-content-container">
-						{parseContent(data.data[0].content)}
+						{parseContent(serviceData.content)}
 					</div>
 				</>
 			)}

@@ -19,16 +19,15 @@ const ServicesPage = () => {
 		queryKey: ["services"],
 		queryFn: fetchServices,
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const servicesData = data?.data;
 
 	return (
 		<div className="services-page">
 			<h1 className="services-page-title">Services</h1>
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent errorMessage={error} />}
-			{data &&
-				data.data.map((service, index) => {
+			{!!servicesData &&
+				servicesData.map((service, index) => {
 					const { id, title, slug, images, category, tags, summary } = service;
 					const { url, alternativeText } = images[0];
 					return (

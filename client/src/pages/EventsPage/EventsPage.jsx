@@ -21,8 +21,7 @@ const EventsPage = () => {
 		queryKey: ["events"],
 		queryFn: fetchEvents,
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const eventsData = data?.data;
 
 	const [searchValue, setSearchValue] = useState("");
 	const [selectedCategory, setselectedCategory] = useState("All");
@@ -36,7 +35,7 @@ const EventsPage = () => {
 		setSearchValue("");
 	};
 
-	const filteredEvents = data?.data.filter((eventArticle) => {
+	const filteredEvents = eventsData?.filter((eventArticle) => {
 		const titleMatches = eventArticle.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
@@ -54,7 +53,7 @@ const EventsPage = () => {
 			<Line />
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent errorMessage={error} />}
-			{filteredEvents && (
+			{!!filteredEvents && (
 				<>
 					<form className="search-form">
 						<input
