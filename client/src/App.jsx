@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -20,17 +21,19 @@ import ContentPage from "./pages/ContentPage/ContentPage";
 import ServicePage from "./pages/ServicePage/ServicePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
 			<Route index element={<HomePage />} />
 			<Route path="about" element={<AboutPage />} />
 			<Route path="services" element={<ServicesPage />} />
-			<Route path="/services/:slug" element={<ServicePage />} />
+			<Route path="services/:slug" element={<ServicePage />} />
 			<Route path="news" element={<NewsPage />} />
-			<Route path="/news/:slug" element={<ContentPage />} />
+			<Route path="news/:slug" element={<ContentPage />} />
 			<Route path="events" element={<EventsPage />} />
-			<Route path="/events/:slug" element={<ContentPage />} />
+			<Route path="events/:slug" element={<ContentPage />} />
 			<Route path="gallery" element={<GalleryPage />} />
 			<Route path="gallery/:slug" element={<GalleryAlbumPage />} />
 			<Route path="get-involved" element={<GetInvolvedPage />} />
@@ -41,7 +44,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-	return <RouterProvider router={router}></RouterProvider>;
+	return (
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router}></RouterProvider>
+		</QueryClientProvider>
+	);
 };
 
 export default App;
