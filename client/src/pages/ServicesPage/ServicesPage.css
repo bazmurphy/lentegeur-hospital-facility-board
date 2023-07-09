@@ -6,6 +6,7 @@
 
 .services-page-title {
 	margin-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -18,8 +19,4 @@
 	.services-page {
 		margin: 40px auto;
 	}
-}
-
-.services-page-title {
-	padding-bottom: 20px;
 }
