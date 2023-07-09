@@ -1,6 +1,6 @@
 import "./GalleryAlbumPage.css";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import Line from "../../components/Line/Line";
 import Loading from "../../components/Loading/Loading";
@@ -8,66 +8,42 @@ import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 
 const GalleryAlbumPage = () => {
 	const { slug } = useParams();
-	// console.log("GalleryAlbumPage slug:", slug);
 
-	const [galleryAlbumData, setGalleryAlbumData] = useState(null);
-	const [isLoading, setIsLoading] = useState(false);
-	const [isError, setIsError] = useState(false);
-	const [errorMessage, setErrorMessage] = useState(null);
+	const fetchGalleryAlbum = async (slug) => {
+		const response = await fetch(
+			`${
+				import.meta.env.VITE_API_URL
+			}/gallery-albums?filters[slug][$eq]=${slug}&populate=images`
+		);
+		if (!response.ok) {
+			throw new Error("Network response was not ok");
+		}
+		return response.json();
+	};
 
-	useEffect(() => {
-		const fetchGalleryAlbumData = async () => {
-			try {
-				setIsLoading(true);
-				setIsError(false);
-				setErrorMessage(null);
+	const { isLoading, isError, data, error } = useQuery({
+		queryKey: ["gallery-album", slug],
+		queryFn: () => fetchGalleryAlbum(slug),
+	});
 
-				const response = await fetch(
-					`${
-						import.meta.env.VITE_API_URL
-					}/gallery-albums?filters[slug][$eq]=${slug}&populate=images`
-				);
-				// console.log("fetchGalleryAlbumData response:", response);
-				if (!response.ok) {
-					throw new Error(`${response.status} ${response.statusText}`);
-				}
-
-				const json = await response.json();
-				// console.log("fetchGalleryAlbumData json:", json);
-				if (json.data.length === 0) {
-					throw new Error(`No Gallery Album "${slug}" was was found`);
-				}
-
-				// we must array destructure the single object that comes back from the response
-				const [data] = json.data;
-				// console.log("fetchGalleryAlbumData data:", data);
-
-				setGalleryAlbumData(data);
-			} catch (error) {
-				setIsError(true);
-				setErrorMessage(error.message);
-			} finally {
-				setIsLoading(false);
-			}
-		};
-		fetchGalleryAlbumData();
-	}, [slug]);
+	// need to implement destructuring on "data"
+	// that adheres to the philosophy of React Query
 
 	return (
 		<div className="gallery-album-page">
 			<h1>Gallery Album Page</h1>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={errorMessage} />}
-			{galleryAlbumData && (
+			{isError && <ErrorComponent errorMessage={error} />}
+			{data && (
 				<div className="gallery-album-container">
 					<Link to="/gallery" className="gallery-album-link-back">
 						{"< Back"}
 					</Link>
-					<h2 className="gallery-album-title">{galleryAlbumData.title}</h2>
-					<p className="gallery-album-summary">{galleryAlbumData.summary}</p>
+					<h2 className="gallery-album-title">{data.data[0].title}</h2>
+					<p className="gallery-album-summary">{data.data[0].summary}</p>
 					<div className="gallery-album-list">
-						{galleryAlbumData.images.map((image) => {
+						{data.data[0].images.map((image) => {
 							const { id, url, alternativeText } = image;
 							return (
 								<div key={id} className="gallery-album-image-container">
