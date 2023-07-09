@@ -22,10 +22,9 @@ const GalleryAlbumPage = () => {
 	};
 
 	const { isLoading, isError, data, error } = useQuery({
-		queryKey: ["gallery-album", slug],
+		queryKey: ["gallery-albums", slug],
 		queryFn: () => fetchGalleryAlbum(slug),
 	});
-
 	// need to implement destructuring on "data"
 	// that adheres to the philosophy of React Query
 
