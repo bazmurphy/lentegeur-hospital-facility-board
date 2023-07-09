@@ -18,7 +18,7 @@ const EventsPage = () => {
 	};
 
 	const { isLoading, isError, data, error } = useQuery({
-		queryKey: ["news-articles"],
+		queryKey: ["events"],
 		queryFn: fetchEvents,
 	});
 	// need to implement destructuring on "data"
