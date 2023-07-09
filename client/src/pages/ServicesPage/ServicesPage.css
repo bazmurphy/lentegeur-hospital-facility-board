@@ -1,8 +1,11 @@
 .services-page {
-	margin: 0 20px;
+	margin: 20px;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+}
+
+.services-page-title {
+	margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {

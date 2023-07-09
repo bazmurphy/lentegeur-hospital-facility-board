@@ -18,6 +18,10 @@
 	object-fit: cover;
 }
 
+.service-content-container {
+	/* placeholder */
+}
+
 .go-back-button {
 }
 
@@ -32,7 +36,7 @@
 		gap: 15px;
 	}
 
-	.service-description-container {
+	.service-content-container {
 		width: 70%;
 		margin: 40px auto;
 	}
