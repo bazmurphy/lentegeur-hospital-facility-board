@@ -1,12 +1,11 @@
 import "./Card.css";
 import { Link } from "react-router-dom";
 
-// i put disable because id is unused
-// eslint-disable-next-line no-unused-vars
 function Card({
 	image,
 	alternativeText,
 	date,
+	// category,
 	tag,
 	title,
 	summary,
@@ -41,6 +40,7 @@ function Card({
 					<h3 className="card-title">{title}</h3>
 					<div className="flex-space-between">
 						<h4 className="card-date">{date}</h4>
+						{/* <span className="card-category">{category}</span> */}
 						<span className="card-tag">{tag}</span>
 					</div>
 					<p className="card-summary">{summary}</p>
