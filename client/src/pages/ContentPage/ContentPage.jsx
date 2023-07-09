@@ -5,6 +5,7 @@ import Line from "../../components/Line/Line";
 import Loading from "../../components/Loading/Loading";
 import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
+import parseContent from "../../utils/parseContent";
 
 const ContentPage = () => {
 	const location = useLocation();
@@ -50,20 +51,20 @@ const ContentPage = () => {
 				<>
 					<h1>{data.data[0].title}</h1>
 					<Line />
-					<div className="content-image-container">
+					<div className="content-page-image-container">
 						<img
-							className="content-image"
+							className="content-page-image"
 							src={data.data[0].images[0].url}
 							alt={data.data[0].images[0].alternativeText}
 						/>
 					</div>
-					<div className="content-page-container">
-						<div className="category-date-container">
-							<p>{`Category: ${data.data[0].category}`}</p>
-							<p>{`Tags: ${data.data[0].tags}`}</p>
-							<p>{`Date: ${data.data[0].date}`}</p>
-						</div>
-						<p>{data.data[0].content}</p>
+					<div className="content-page-category-date-container">
+						<p>{`Category: ${data.data[0].category}`}</p>
+						{/* <p>{`Tags: ${data.data[0].tags}`}</p> */}
+						<p>{`Date: ${data.data[0].date}`}</p>
+					</div>
+					<div className="content-page-content-container">
+						{parseContent(data.data[0].content)}
 					</div>
 					<GoBackButton goBack={goBack} />
 				</>
