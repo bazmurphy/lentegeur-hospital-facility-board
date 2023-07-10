@@ -1,0 +1,30 @@
+.home-service-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	color: inherit;
+	text-decoration: none;
+	border: 1px dotted black;
+}
+
+.home-service-card-image-container {
+	width: 140px;
+	height: 140px;
+}
+
+.home-service-card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 100%;
+	border: 4px solid var(--green11);
+}
+
+.home-service-card-title {
+	text-align: center;
+}
+
+.home-service-card-summary {
+	/* placeholder */
+}
