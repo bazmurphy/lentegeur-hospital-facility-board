@@ -18,6 +18,8 @@
 	--gray80: hsl(0, 0%, 80%);
 	--gray90: hsl(0, 0%, 90%);
 	--black: hsl(0, 0%, 0%);
+	--yellow: hsl(59deg 89% 50%);
+	--green: hsl(130deg 60% 37%);
 }
 
 * {
