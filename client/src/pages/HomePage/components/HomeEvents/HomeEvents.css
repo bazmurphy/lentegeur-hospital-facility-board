@@ -1,0 +1,15 @@
+.home-events-section{
+    background-color: var(--green04);
+    padding: .5rem 0;
+}
+
+.home-events-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.home-events-title{
+    color: var(--white);
+}
