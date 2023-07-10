@@ -7,7 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-	--white: hsl(0, 0%, 100%);
+	--black: hsl(0, 0%, 0%);
 	--gray10: hsl(0, 0%, 10%);
 	--gray20: hsl(0, 0%, 20%);
 	--gray30: hsl(0, 0%, 30%);
@@ -17,9 +17,28 @@
 	--gray70: hsl(0, 0%, 70%);
 	--gray80: hsl(0, 0%, 80%);
 	--gray90: hsl(0, 0%, 90%);
-	--black: hsl(0, 0%, 0%);
-	--yellow: hsl(59deg 89% 50%);
-	--green: hsl(130deg 60% 37%);
+	--white: hsl(0, 0%, 100%);
+
+	--yellow-logo: hsl(59deg 89% 50%);
+	--green-logo: hsl(130deg 60% 37%);
+
+	--green01: #0c4d13;
+	--green02: #24711a;
+	--green03: #89e045;
+	--green04: #192516;
+	--green05: #364f33;
+	--green06: #d3ffcc;
+	--green07: #0f4111;
+	--green08: #2f8943;
+	--green09: #262e24;
+	--green10: #b5efb8;
+	--green11: #d8ffd2;
+	--green12: #4cbe3f;
+	--green13: #2f492b;
+	--green14: #63ad59;
+	--green15: #21c932;
+
+	--image-glass: rgba(30, 172, 39, 0.3);
 }
 
 * {
