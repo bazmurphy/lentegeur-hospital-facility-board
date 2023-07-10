@@ -2,6 +2,7 @@ import "./HomeEvents.css";
 import { useQuery } from "@tanstack/react-query";
 import Line from "../../../../components/Line/Line";
 import EventsCard from "./components/EventsCard/EventsCard";
+import EventsCardRight from "./components/EventsCardRight/EventsCardRight";
 import Loading from "../../../../components/Loading/Loading";
 import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent";
 
@@ -20,7 +21,7 @@ function HomeEvents({ path, apiRoute }) {
 		queryKey: [`${apiRoute}`],
 		queryFn: fetchHomeEvents,
 	});
-	const HomeEventsData= data?.data;
+	const HomeEventsData = data?.data;
 
 	return (
 		<section className="home-events-section">
@@ -30,20 +31,37 @@ function HomeEvents({ path, apiRoute }) {
 			{isError && <ErrorComponent error={error} />}
 			<div className="home-events-container">
 				{!!HomeEventsData &&
-					HomeEventsData.map((homeEvent) => {
+					HomeEventsData.map((homeEvent, index) => {
 						const { slug, title, images, startDate, summary } = homeEvent;
-						return (
-							<EventsCard
-								key={slug}
-								title={title}
-								slug={slug}
-								image={images[0].url}
-								alternativeText={images[0].alternativeText}
-								date={startDate}
-								summary={summary}
-								pageName={path}
-							/>
-						);
+						const isEventsCardRight = index % 4 === 2 || index % 4 === 3;
+
+						if (isEventsCardRight) {
+							return (
+								<EventsCardRight
+									key={slug}
+									title={title}
+									slug={slug}
+									image={images[0].url}
+									alternativeText={images[0].alternativeText}
+									date={startDate}
+									summary={summary}
+									pageName={path}
+								/>
+							);
+						} else {
+							return (
+								<EventsCard
+									key={slug}
+									title={title}
+									slug={slug}
+									image={images[0].url}
+									alternativeText={images[0].alternativeText}
+									date={startDate}
+									summary={summary}
+									pageName={path}
+								/>
+							);
+						}
 					})}
 			</div>
 		</section>
