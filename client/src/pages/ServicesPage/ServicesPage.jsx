@@ -1,22 +1,51 @@
 import "./ServicesPage.css";
-import Services from "./components/Services/Services";
-
-import servicesData from "../../data/servicesData.json";
+import Loading from "../../components/Loading/Loading";
+import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
+import ServiceCard from "./components/ServiceCard/ServiceCard";
+import { useQuery } from "@tanstack/react-query";
 
 const ServicesPage = () => {
+	const fetchServices = async () => {
+		const response = await fetch(
+			`${import.meta.env.VITE_API_URL}/services?populate=images`
+		);
+		if (!response.ok) {
+			throw new Error("Network response was not ok");
+		}
+		return response.json();
+	};
+
+	const { isLoading, isError, data, error } = useQuery({
+		queryKey: ["services"],
+		queryFn: fetchServices,
+	});
+	const servicesData = data?.data;
+
 	return (
 		<div className="services-page">
 			<h1 className="services-page-title">Services</h1>
-			{servicesData.map((service, index) => (
-				<Services
-					key={index}
-					title={service.title}
-					image={service.images[0].url}
-					description={service.description}
-					slug={service.slug}
-					customClassAlignImage={index % 2 === 0 ? "align-left" : "align-right"}
-				/>
-			))}
+			{isLoading && <Loading />}
+			{isError && <ErrorComponent error={error} />}
+			{!!servicesData &&
+				servicesData.map((service, index) => {
+					const { id, title, slug, images, category, tags, summary } = service;
+					const { url, alternativeText } = images[0];
+					return (
+						<ServiceCard
+							key={id}
+							title={title}
+							slug={slug}
+							image={url}
+							alternativeText={alternativeText}
+							category={category}
+							tags={tags}
+							summary={summary}
+							customClassAlignImage={
+								index % 2 === 0 ? "align-left" : "align-right"
+							}
+						/>
+					);
+				})}
 		</div>
 	);
 };

@@ -11,6 +11,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@tanstack/react-query": "^4.29.19",
+		"html-react-parser": "^4.0.0",
 		"pigeon-maps": "^0.21.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

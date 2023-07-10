@@ -148,7 +148,6 @@ header nav ul {
 		display: none;
 	}
 
-
 	.navigation-link.active {
 		color: var(--black);
 	}

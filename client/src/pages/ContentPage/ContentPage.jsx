@@ -1,52 +1,92 @@
 import "./ContentPage.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import Line from "../../components/Line/Line";
+import Loading from "../../components/Loading/Loading";
+import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
-
-import newsData from "../../data/newsData.json";
-import eventsData from "../../data/eventsData.json";
+import parseContent from "../../utils/parseContent";
 
 const ContentPage = () => {
 	const location = useLocation();
-	const navigate = useNavigate();
+	const path = location.pathname.substring(1).split("/")[0];
+
+	let route;
+	if (path === "news") {
+		route = "news-articles";
+	}
+	if (path === "events") {
+		route = "events";
+	}
+
 	const { slug } = useParams();
 
-	// Extract the page name from the pathname
-	const pageName = location.pathname.substring(1).split("/")[0];
+	const fetchContentPage = async (slug) => {
+		const response = await fetch(
+			`${
+				import.meta.env.VITE_API_URL
+			}/${route}?filters[slug][$eq]=${slug}&populate=images`
+		);
+		if (!response.ok) {
+			throw new Error("Network response was not ok");
+		}
+		return response.json();
+	};
 
-	let data = [];
-	// checking which page the user is coming from
-	if (pageName === "news") {
-		data = newsData;
-	}
-	if (pageName === "events") {
-		data = eventsData;
-	}
+	const { isLoading, isError, data, error } = useQuery({
+		queryKey: [`${route}`, slug],
+		queryFn: () => fetchContentPage(slug),
+	});
+	const contentData = data?.data[0];
 
-	const element = data.find((item) => item.slug === slug);
-	const { title, images, tag, date, description } = element;
-
+	const navigate = useNavigate();
 	const goBack = () => {
 		navigate(-1);
 	};
 
 	return (
 		<div className="content-page">
-			<h1>{title}</h1>
-			<div className="content-image-container">
-				<img
-					className="content-image"
-					src={images[0].url}
-					alt={images[0].alternativeText}
-				/>
-			</div>
-			<div className="content-page-container">
-				<div className="category-date-container">
-					<p>{`Category: ${tag}`}</p>
-					<p>{`Date: ${date}`}</p>
-				</div>
-				<p>{description}</p>
-			</div>
-			<GoBackButton goBack={goBack} />
+			{isLoading && <Loading />}
+			{isError && <ErrorComponent error={error} />}
+			{!!contentData && (
+				<>
+					<h1>{contentData.title}</h1>
+					<Line />
+					<div className="content-page-subcontainer">
+						<div className="content-page-image-container">
+							<img
+								className="content-page-image"
+								src={contentData.images[0].url}
+								alt={contentData.images[0].alternativeText}
+							/>
+						</div>
+						<div className="content-page-category-tags-date-container">
+							{contentData.category && (
+								<span className="content-page-category">{`Category: ${contentData.category}`}</span>
+							)}
+							{contentData.tags && (
+								<span className="content-page-tags-container">
+									Tags:{" "}
+									{contentData.tags.map((tag) => {
+										return (
+											<span key={tag} className="content-page-tag">
+												{tag}
+											</span>
+										);
+									})}
+								</span>
+							)}
+							{contentData.date && (
+								<span className="content-page-date">{`Date: ${contentData.date}`}</span>
+							)}
+						</div>
+						<div className="content-page-content-container">
+							{parseContent(contentData.content)}
+						</div>
+					</div>
+					<GoBackButton goBack={goBack} />
+				</>
+			)}
 		</div>
 	);
 };

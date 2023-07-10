@@ -40,7 +40,7 @@
 
 @media screen and (min-width: 768px) {
 	.gallery-album-page {
-		margin: 40px;
+		margin: 40px 20px;
 	}
 
 	.gallery-album-summary {
