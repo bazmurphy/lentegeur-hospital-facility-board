@@ -1,41 +1,35 @@
 import "./HomeGetInvolvedSection.css";
 import { Link } from "react-router-dom";
-import Line from "../../../../components/Line/Line";
-import { animateScroll as scroll } from "react-scroll";
 import { FaHandHoldingMedical, FaPerson } from "react-icons/fa6";
-
-const handleLinkClick = () => {
-	scroll.scrollToTop({
-		duration: 500, // Adjust the scroll duration as needed
-		smooth: true, // Enable smooth scrolling animation
-	});
-};
 
 const HomeGetInvolvedSection = () => {
 	return (
 		<section className="home-get-involved-section">
-			<h2>Get Involved</h2>
-			<Line />
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting
-				industry. Lorem Ipsum has been the industrys standard...
-			</p>
-			<div className="home-get-involved-links-container">
+			<h2 className="home-get-involved-title">Get Involved</h2>
+			<div className="home-get-involved-cards-container">
 				<Link
-					to="/get-involved"
-					onClick={handleLinkClick}
-					className="home-get-involved-link"
+					to="/get-involved#donate"
+					className="home-get-involved-card fundraising"
 				>
-					<FaHandHoldingMedical className="home-get-involved-link-icon" />
-					<span className="home-get-involved-link-title">Fundraising</span>
+					<FaHandHoldingMedical className="home-get-involved-card-icon" />
+					<div className="home-get-involved-card-subcontainer">
+						<span className="home-get-involved-card-title">Fundraising</span>
+						<p className="home-get-involved-card-summary">
+							Help Us Help Others...
+						</p>
+					</div>
 				</Link>
 				<Link
-					to="/get-involved"
-					className="home-get-involved-link"
-					onClick={handleLinkClick}
+					to="/get-involved#volunteer"
+					className="home-get-involved-card volunteer"
 				>
-					<FaPerson className="home-get-involved-link-icon" />
-					<span className="home-get-involved-link-title">Volunteer</span>
+					<div className="home-get-involved-card-subcontainer">
+						<span className="home-get-involved-card-title">Volunteer</span>
+						<p className="home-get-involved-card-summary">
+							Make a Difference...
+						</p>
+					</div>
+					<FaPerson className="home-get-involved-card-icon" />
 				</Link>
 			</div>
 		</section>
