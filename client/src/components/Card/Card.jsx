@@ -2,15 +2,15 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 
 function Card({
+	slug,
+	title,
 	image,
 	alternativeText,
+	category,
+	tags,
 	date,
-	// category,
-	tag,
-	title,
 	summary,
 	pageName,
-	slug,
 	passedClass,
 }) {
 	return (
@@ -21,27 +21,27 @@ function Card({
 			}}
 		>
 			<section
-				className={
+				className={`card-container ${
 					passedClass === "home"
-						? "card-container card-container-home"
-						: "card-container card-container-content"
-				}
+						? "card-container-home"
+						: "card-container-content"
+				}`}
 			>
 				<div
-					className={
+					className={`card-image-container ${
 						passedClass === "home"
-							? "card-image-container card-image-container-home"
-							: "card-image-container card-image-container-content"
-					}
+							? "card-image-container-home"
+							: "card-image-container-content"
+					}`}
 				>
 					<img className="card-image" src={image} alt={alternativeText} />
 				</div>
 				<div className="card-subcontainer">
 					<h3 className="card-title">{title}</h3>
 					<div className="flex-space-between">
-						<h4 className="card-date">{date}</h4>
-						{/* <span className="card-category">{category}</span> */}
-						<span className="card-tag">{tag}</span>
+						{date && <h4 className="card-date">{date}</h4>}
+						{category && <span className="card-category">{category}</span>}
+						{tags && <span className="card-tags">{tags}</span>}
 					</div>
 					<p className="card-summary">{summary}</p>
 					<button className="card-button">&#8594;</button>

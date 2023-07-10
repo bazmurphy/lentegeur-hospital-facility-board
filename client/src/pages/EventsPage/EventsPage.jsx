@@ -52,7 +52,7 @@ const EventsPage = () => {
 			<h1>Events</h1>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			{!!filteredEvents && (
 				<>
 					<form className="search-form">

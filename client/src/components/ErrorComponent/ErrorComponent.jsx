@@ -2,7 +2,7 @@
 import "./ErrorComponent.css";
 
 const ErrorComponent = ({ error }) => {
-	// console.log("Error component errorMessage:", errorMessage);
+	// console.log("ErrorComponent error:", error);
 	return (
 		<div className="error-component-container">
 			<h3 className="error-component-title">Error</h3>

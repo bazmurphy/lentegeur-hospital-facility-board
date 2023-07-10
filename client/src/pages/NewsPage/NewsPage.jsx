@@ -47,7 +47,7 @@ const NewsPage = () => {
 			<h1>News</h1>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			{!!filteredNewsArticles && (
 				<>
 					<form className="search-form">

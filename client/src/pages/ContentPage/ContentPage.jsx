@@ -47,7 +47,7 @@ const ContentPage = () => {
 	return (
 		<div className="content-page">
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			{!!contentData && (
 				<>
 					<h1>{contentData.title}</h1>
@@ -59,10 +59,12 @@ const ContentPage = () => {
 							alt={contentData.images[0].alternativeText}
 						/>
 					</div>
-					<div className="content-page-category-date-container">
-						<p>{`Category: ${contentData.category}`}</p>
-						{/* <p>{`Tags: ${data.data[0].tags}`}</p> */}
-						<p>{`Date: ${contentData.date}`}</p>
+					<div className="content-page-category-tags-date-container">
+						{contentData.category && (
+							<p>{`Category: ${contentData.category}`}</p>
+						)}
+						{contentData.tags && <p>{`Tags: ${contentData.tags}`}</p>}
+						{contentData.date && <p>{`Date: ${contentData.date}`}</p>}
 					</div>
 					<div className="content-page-content-container">
 						{parseContent(contentData.content)}

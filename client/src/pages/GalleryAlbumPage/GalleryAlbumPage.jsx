@@ -25,24 +25,23 @@ const GalleryAlbumPage = () => {
 		queryKey: ["gallery-albums", slug],
 		queryFn: () => fetchGalleryAlbum(slug),
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const galleryAlbumData = data?.data[0];
 
 	return (
 		<div className="gallery-album-page">
 			<h1>Gallery Album Page</h1>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
-			{data && (
+			{isError && <ErrorComponent error={error} />}
+			{!!galleryAlbumData && (
 				<div className="gallery-album-container">
 					<Link to="/gallery" className="gallery-album-link-back">
 						{"< Back"}
 					</Link>
-					<h2 className="gallery-album-title">{data.data[0].title}</h2>
-					<p className="gallery-album-summary">{data.data[0].summary}</p>
+					<h2 className="gallery-album-title">{galleryAlbumData.title}</h2>
+					<p className="gallery-album-summary">{galleryAlbumData.summary}</p>
 					<div className="gallery-album-list">
-						{data.data[0].images.map((image) => {
+						{galleryAlbumData.images.map((image) => {
 							const { id, url, alternativeText } = image;
 							return (
 								<div key={id} className="gallery-album-image-container">

@@ -25,7 +25,7 @@ const ServicesPage = () => {
 		<div className="services-page">
 			<h1 className="services-page-title">Services</h1>
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			{!!servicesData &&
 				servicesData.map((service, index) => {
 					const { id, title, slug, images, category, tags, summary } = service;

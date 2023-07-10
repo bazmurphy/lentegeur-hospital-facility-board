@@ -20,18 +20,17 @@ const GalleryPage = () => {
 		queryKey: ["gallery-albums"],
 		queryFn: fetchGalleryAlbums,
 	});
-	// need to implement destructuring on "data"
-	// that adheres to the philosophy of React Query
+	const galleryAlbumsData = data?.data;
 
 	return (
 		<div className="gallery-page">
 			<h1 className="gallery-page-title">Gallery Page</h1>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			<div className="gallery-page-list-container">
-				{data &&
-					data.data.map((galleryAlbum) => {
+				{!!galleryAlbumsData &&
+					galleryAlbumsData.map((galleryAlbum) => {
 						return <GalleryCard key={galleryAlbum.slug} props={galleryAlbum} />;
 					})}
 			</div>

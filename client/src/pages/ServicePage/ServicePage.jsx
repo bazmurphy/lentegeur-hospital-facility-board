@@ -33,12 +33,10 @@ const ServicePage = () => {
 		navigate(-1);
 	};
 
-	console.log(data?.data[0]);
-
 	return (
 		<div className="service-page">
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
+			{isError && <ErrorComponent error={error} />}
 			{!!serviceData && (
 				<>
 					<h1>{serviceData.title}</h1>
@@ -51,8 +49,8 @@ const ServicePage = () => {
 						/>
 					</div>
 					<div className="service-category-tag-container">
-						<p>Category: {serviceData.category}</p>
-						<p>Tags: {serviceData.tags}</p>
+						{serviceData.category && <p>Category: {serviceData.category}</p>}
+						{serviceData.tags && <p>Tags: {serviceData.tags}</p>}
 					</div>
 					<div className="service-content-container">
 						{parseContent(serviceData.content)}

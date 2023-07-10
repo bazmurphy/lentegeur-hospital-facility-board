@@ -21,6 +21,7 @@ const HomeCardList = ({ title, path, apiRoute }) => {
 		queryKey: [`${apiRoute}`],
 		queryFn: fetchHomeCards,
 	});
+	const HomeCardsData = data?.data;
 
 	const sliderSettings = {
 		dots: false,
@@ -53,22 +54,23 @@ const HomeCardList = ({ title, path, apiRoute }) => {
 			<h2>{title}</h2>
 			<Line />
 			{isLoading && <Loading />}
-			{isError && <ErrorComponent errorMessage={error} />}
-			{data && (
+			{isError && <ErrorComponent error={error} />}
+			{!!HomeCardsData && (
 				<Slider {...sliderSettings}>
-					{data?.data.map((item) => {
-						const { id, title, slug, images, summary, tag, date } = item;
+					{HomeCardsData.map((homeCard) => {
+						const { slug, title, images, category, tags, date, summary } =
+							homeCard;
 						return (
 							<Card
-								key={id}
-								id={id}
+								key={slug}
 								title={title}
+								slug={slug}
 								image={images[0].url}
 								alternativeText={images[0].alternativeText}
-								summary={summary}
-								tag={tag}
+								category={category}
+								tags={tags}
 								date={date}
-								slug={slug}
+								summary={summary}
 								pageName={path}
 								passedClass="home"
 							/>
