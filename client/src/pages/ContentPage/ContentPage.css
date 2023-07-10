@@ -1,15 +1,19 @@
 .content-page {
 	margin: 20px;
+	position: relative;
+}
+
+/* container children: image, category/tags/data, content */
+.content-page-subcontainer {
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-	position: relative;
+	align-items: center;
+	gap: 20px;
 }
 
 .content-page-image-container {
 	width: 280px;
-	margin: 0 auto;
-	display: block;
 }
 
 .content-page-image {
@@ -20,7 +24,9 @@
 }
 
 .content-page-category-tags-date-container {
+	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
@@ -67,17 +73,15 @@
 @media screen and (min-width: 768px) {
 	.content-page {
 		margin: 40px 20px;
-		gap: 15px;
 	}
 
-	.content-page-category-tags-date-container {
-		margin: 0 auto;
-		width: 75%;
+	.content-page-subcontainer {
+		width: 80%;
 	}
+}
 
-	.content-page-content-container {
-		/* repeated because likely to be different from above */
-		margin: 0 auto;
-		width: 75%;
+@media screen and (min-width: 1200px) {
+	.content-page {
+		margin: 40px auto;
 	}
 }

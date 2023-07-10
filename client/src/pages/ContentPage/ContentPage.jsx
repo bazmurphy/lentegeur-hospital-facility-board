@@ -52,35 +52,37 @@ const ContentPage = () => {
 				<>
 					<h1>{contentData.title}</h1>
 					<Line />
-					<div className="content-page-image-container">
-						<img
-							className="content-page-image"
-							src={contentData.images[0].url}
-							alt={contentData.images[0].alternativeText}
-						/>
-					</div>
-					<div className="content-page-category-tags-date-container">
-						{contentData.category && (
-							<span className="content-page-category">{`Category: ${contentData.category}`}</span>
-						)}
-						{contentData.tags && (
-							<span className="content-page-tags-container">
-								Tags:{" "}
-								{contentData.tags.map((tag) => {
-									return (
-										<span key={tag} className="content-page-tag">
-											{tag}
-										</span>
-									);
-								})}
-							</span>
-						)}
-						{contentData.date && (
-							<span className="content-page-date">{`Date: ${contentData.date}`}</span>
-						)}
-					</div>
-					<div className="content-page-content-container">
-						{parseContent(contentData.content)}
+					<div className="content-page-subcontainer">
+						<div className="content-page-image-container">
+							<img
+								className="content-page-image"
+								src={contentData.images[0].url}
+								alt={contentData.images[0].alternativeText}
+							/>
+						</div>
+						<div className="content-page-category-tags-date-container">
+							{contentData.category && (
+								<span className="content-page-category">{`Category: ${contentData.category}`}</span>
+							)}
+							{contentData.tags && (
+								<span className="content-page-tags-container">
+									Tags:{" "}
+									{contentData.tags.map((tag) => {
+										return (
+											<span key={tag} className="content-page-tag">
+												{tag}
+											</span>
+										);
+									})}
+								</span>
+							)}
+							{contentData.date && (
+								<span className="content-page-date">{`Date: ${contentData.date}`}</span>
+							)}
+						</div>
+						<div className="content-page-content-container">
+							{parseContent(contentData.content)}
+						</div>
 					</div>
 					<GoBackButton goBack={goBack} />
 				</>
