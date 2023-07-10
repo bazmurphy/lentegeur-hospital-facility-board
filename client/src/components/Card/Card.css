@@ -11,8 +11,7 @@
 
 	margin: 0 0 2rem 0;
 	border-radius: 25px;
-	/* just for test for now */
-	border: 1px solid var(--gray60);
+	border: 1px solid var(--gray70);
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 	transition: all 0.2s ease-in-out;
 }
@@ -32,7 +31,6 @@
 }
 
 .card-container:hover {
-	/* just for test */
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
@@ -70,41 +68,59 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 75%;
+	width: 80%;
 	gap: 0.5rem;
+}
+
+.flex-space-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.card-date {
+	font-size: 14px;
+	padding: 0.2rem 0.5rem;
+	border-radius: 25px;
+	background-color: var(--gray90);
+}
+
+.card-category {
+	font-size: 14px;
+	padding: 0.2rem 0.5rem;
+	border-radius: 25px;
+	background-color: var(--gray80);
+}
+
+.card-tags-container {
+	display: flex;
+	gap: 4px;
+	padding: 0.2rem 0.5rem;
+	border-radius: 25px;
+	background-color: var(--gray70);
+}
+
+.card-tag {
+	font-size: 14px;
 }
 
 .card-button {
 	position: absolute;
-	bottom: -5px;
+	bottom: -10px;
 	right: -15px;
-	width: 28px;
-	height: 28px;
+	padding: 6px;
+	border: 0;
+	border-radius: 50%;
 	background-color: var(--gray60);
-	border: 1px solid var(--black);
 	color: var(--white);
 	cursor: pointer;
-	border-radius: 50%;
-	text-decoration: none;
 }
 
 .card-button:hover {
 	background-color: var(--gray40);
 }
 
-/* this should be in global or tell me if you know better name */
-.flex-space-between {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.card-tags {
-	background-color: var(--gray80);
-	padding: 0.2rem 0.5rem;
-	border-radius: 25px;
-}
-
-.card-category {
-	/* placeholder */
+.card-button-icon {
+	display: block;
 }

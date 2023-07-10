@@ -1,5 +1,6 @@
 import "./Card.css";
 import { Link } from "react-router-dom";
+import { MdArrowForwardIos } from "react-icons/md";
 
 function Card({
 	slug,
@@ -41,10 +42,20 @@ function Card({
 					<div className="flex-space-between">
 						{date && <h4 className="card-date">{date}</h4>}
 						{category && <span className="card-category">{category}</span>}
-						{tags && <span className="card-tags">{tags}</span>}
+						{tags && (
+							<p className="card-tags-container">
+								{tags.map((tag) => (
+									<span key={tag} className="card-tag">
+										{tag}
+									</span>
+								))}
+							</p>
+						)}
 					</div>
 					<p className="card-summary">{summary}</p>
-					<button className="card-button">&#8594;</button>
+					<button className="card-button">
+						<MdArrowForwardIos className="card-button-icon" />
+					</button>
 				</div>
 			</section>
 		</Link>
