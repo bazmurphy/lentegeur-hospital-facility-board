@@ -94,7 +94,7 @@ const EventsPage = () => {
 									alternativeText={alternativeText}
 									date={date}
 									category={category}
-									tag={tags}
+									tags={tags}
 									summary={summary}
 									pageName="events"
 									passedClass="content"
