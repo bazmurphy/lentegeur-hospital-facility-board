@@ -61,10 +61,23 @@ const ContentPage = () => {
 					</div>
 					<div className="content-page-category-tags-date-container">
 						{contentData.category && (
-							<p>{`Category: ${contentData.category}`}</p>
+							<span className="content-page-category">{`Category: ${contentData.category}`}</span>
 						)}
-						{contentData.tags && <p>{`Tags: ${contentData.tags}`}</p>}
-						{contentData.date && <p>{`Date: ${contentData.date}`}</p>}
+						{contentData.tags && (
+							<span className="content-page-tags-container">
+								Tags:{" "}
+								{contentData.tags.map((tag) => {
+									return (
+										<span key={tag} className="content-page-tag">
+											{tag}
+										</span>
+									);
+								})}
+							</span>
+						)}
+						{contentData.date && (
+							<span className="content-page-date">{`Date: ${contentData.date}`}</span>
+						)}
 					</div>
 					<div className="content-page-content-container">
 						{parseContent(contentData.content)}
