@@ -1,13 +1,13 @@
 import "./HomePage.css";
 import HomeHero from "./components/HomeHero/HomeHero";
-import HomeEvents from "./components/HomeEvents/HomeEvents";
+import HomeEventsSection from "./components/HomeEventsSection/HomeEventsSection";
 import HomeGetInvolvedSection from "./components/HomeGetInvolvedSection/HomeGetInvolvedSection";
 
 const HomePage = () => {
 	return (
 		<div className="home-page">
 			<HomeHero />
-			<HomeEvents path="events" apiRoute="events" />
+			<HomeEventsSection />
 			<HomeGetInvolvedSection />
 		</div>
 	);

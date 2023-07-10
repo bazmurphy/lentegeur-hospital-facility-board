@@ -1,14 +1,14 @@
-.event-container-right {
+.event-container {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--green05);
+	text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-	.event-container-right {
-		flex-direction: row-reverse;
+	.event-container {
+		flex-direction: row;
 		width: 50%;
-        margin-top: 1rem;
 	}
 }
 

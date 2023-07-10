@@ -1,15 +1,15 @@
-import "./HomeEvents.css";
+import "./HomeEventsSection.css";
 import { useQuery } from "@tanstack/react-query";
 import Line from "../../../../components/Line/Line";
-import EventsCard from "./components/EventsCard/EventsCard";
-import EventsCardRight from "./components/EventsCardRight/EventsCardRight";
+import EventCard from "./components/EventCard/EventCard";
+import EventCardRight from "./components/EventCardRight/EventCardRight";
 import Loading from "../../../../components/Loading/Loading";
 import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent";
 
-function HomeEvents({ path, apiRoute }) {
-	const fetchHomeEvents = async () => {
+const HomeEventsSection = () => {
+	const fetchEvents = async () => {
 		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/${apiRoute}?populate=images`
+			`${import.meta.env.VITE_API_URL}/events?populate=images`
 		);
 		if (!response.ok) {
 			throw new Error("Network response was not ok");
@@ -18,10 +18,10 @@ function HomeEvents({ path, apiRoute }) {
 	};
 
 	const { isLoading, isError, data, error } = useQuery({
-		queryKey: [`${apiRoute}`],
-		queryFn: fetchHomeEvents,
+		queryKey: ["events"],
+		queryFn: fetchEvents,
 	});
-	const HomeEventsData = data?.data;
+	const eventsData = data?.data;
 
 	return (
 		<section className="home-events-section">
@@ -30,14 +30,14 @@ function HomeEvents({ path, apiRoute }) {
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent error={error} />}
 			<div className="home-events-container">
-				{!!HomeEventsData &&
-					HomeEventsData.map((homeEvent, index) => {
+				{!!eventsData &&
+					eventsData.map((homeEvent, index) => {
 						const { slug, title, images, startDate, summary } = homeEvent;
 						const isEventsCardRight = index % 4 === 2 || index % 4 === 3;
 
 						if (isEventsCardRight) {
 							return (
-								<EventsCardRight
+								<EventCardRight
 									key={slug}
 									title={title}
 									slug={slug}
@@ -45,12 +45,11 @@ function HomeEvents({ path, apiRoute }) {
 									alternativeText={images[0].alternativeText}
 									date={startDate}
 									summary={summary}
-									pageName={path}
 								/>
 							);
 						} else {
 							return (
-								<EventsCard
+								<EventCard
 									key={slug}
 									title={title}
 									slug={slug}
@@ -58,7 +57,6 @@ function HomeEvents({ path, apiRoute }) {
 									alternativeText={images[0].alternativeText}
 									date={startDate}
 									summary={summary}
-									pageName={path}
 								/>
 							);
 						}
@@ -66,6 +64,6 @@ function HomeEvents({ path, apiRoute }) {
 			</div>
 		</section>
 	);
-}
+};
 
-export default HomeEvents;
+export default HomeEventsSection;
