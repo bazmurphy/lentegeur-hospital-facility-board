@@ -1,7 +1,7 @@
 import "./Line.css";
 
-const Line = () => {
-	return <div className="line"></div>;
+const Line = ({ extraClass }) => {
+	return <div className={`line ${extraClass}`}></div>;
 };
 
 export default Line;
