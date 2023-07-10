@@ -41,38 +41,38 @@ const ServicePage = () => {
 				<>
 					<h1>{serviceData.title}</h1>
 					<Line />
-					<div className="service-page-image-container">
-						<img
-							className="service-page-image"
-							src={serviceData.images[0].url}
-							alt={serviceData.images[0].alternativeText}
-						/>
+					<div className="service-page-subcontainer">
+						<div className="service-page-image-container">
+							<img
+								className="service-page-image"
+								src={serviceData.images[0].url}
+								alt={serviceData.images[0].alternativeText}
+							/>
+						</div>
+						<div className="service-page-category-tag-container">
+							{serviceData.category && (
+								<span className="service-page-category">{`Category: ${serviceData.category}`}</span>
+							)}
+							{serviceData.tags && (
+								<span className="service-page-tags-container">
+									Tags:{" "}
+									{serviceData.tags.map((tag) => {
+										return (
+											<span key={tag} className="service-page-tag">
+												{tag}
+											</span>
+										);
+									})}
+								</span>
+							)}
+						</div>
+						<div className="service-page-content-container">
+							{parseContent(serviceData.content)}
+						</div>
 					</div>
-
-					<div className="service-page-category-tag-container">
-						{serviceData.category && (
-							<span className="service-page-category">{`Category: ${serviceData.category}`}</span>
-						)}
-						{serviceData.tags && (
-							<span className="service-page-tags-container">
-								Tags:{" "}
-								{serviceData.tags.map((tag) => {
-									return (
-										<span key={tag} className="service-page-tag">
-											{tag}
-										</span>
-									);
-								})}
-							</span>
-						)}
-					</div>
-
-					<div className="service-page-content-container">
-						{parseContent(serviceData.content)}
-					</div>
+					<GoBackButton goBack={goBack} />
 				</>
 			)}
-			<GoBackButton goBack={goBack} />
 		</div>
 	);
 };
