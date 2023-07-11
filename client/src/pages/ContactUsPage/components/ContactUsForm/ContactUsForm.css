@@ -32,7 +32,8 @@
 .contact-us-form-textarea {
 	width: 100%;
 	padding: 6px;
-	background-color: var(--green11);
+	background-color: #e9ffe6;
+	border-radius: 10px;
 }
 
 .contact-us-form-label {
@@ -51,8 +52,9 @@
 .contact-us-form-submit {
 	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
-	background-color: var(--gray70);
+	background-color: #31572c;
 	color: var(--white);
+	border-radius: 30px;
 	cursor: pointer;
 }
 
