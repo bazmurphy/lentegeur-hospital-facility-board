@@ -11,6 +11,7 @@
 .news-card-container:hover .overlay,
 .news-card-container:focus .overlay {
 	opacity: 1;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .news-card-image-container {
@@ -30,6 +31,11 @@
 	transform: translate(0px, 70px);
 	transition: 0.5s all ease-in-out;
 	z-index: 3;
+}
+
+.news-card-details:hover {
+	background-color: hsla(0, 0%, 0%, 0.4);
+	padding: 1rem 2rem;
 }
 
 .news-card-details-subcontainer {
@@ -54,7 +60,7 @@
 	right: 0;
 	height: 100%;
 	width: 100%;
-	opacity: 0;
+	opacity: 1;
 	transition: 0.5s ease;
-	background: rgba(24, 23, 23, 0.6);
+	background: rgba(25, 59, 5, 0.6);
 }
