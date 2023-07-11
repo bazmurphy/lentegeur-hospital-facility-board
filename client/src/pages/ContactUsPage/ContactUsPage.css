@@ -1,5 +1,5 @@
 .contact-us-page {
-	margin: 20px;
+	background-color: var(--green18);
 }
 
 @media screen and (min-width: 768px) {
