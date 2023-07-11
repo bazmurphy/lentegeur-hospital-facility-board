@@ -32,7 +32,7 @@
 .contact-us-form-textarea {
 	width: 100%;
 	padding: 6px;
-	background-color: #e9ffe6;
+	background-color: var(--green18);
 	border-radius: 10px;
 }
 
@@ -52,14 +52,14 @@
 .contact-us-form-submit {
 	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
-	background-color: #31572c;
+	background-color: var(--green01);
 	color: var(--white);
 	border-radius: 30px;
 	cursor: pointer;
 }
 
 .contact-us-form-submit:hover {
-	background-color: var(--gray60);
+	background-color: var(--green08);
 }
 
 @media screen and (min-width: 768px) {
