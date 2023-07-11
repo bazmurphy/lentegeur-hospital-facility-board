@@ -1,3 +1,7 @@
 .contact-us-section {
-	margin-bottom: 30px;
+	margin-bottom: 70px;
+}
+.contact-us-line {
+	background-color: var(--green17);
+	width: 50%;
 }
