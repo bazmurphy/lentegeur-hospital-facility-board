@@ -6,8 +6,8 @@ const HistorySection = ({ historySectionImage, historySectionText }) => {
 	return (
 		<section className="history-section">
 			<h2>History</h2>
-			<Line />
-			<div className="history-container">
+			<Line extraClass="history-line" />
+			<div className={"history-container"}>
 				<div className="history-image-container">
 					<img
 						src={historySectionImage.url}
