@@ -1,8 +1,16 @@
 .go-back-button {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 20px;
+	left: 20px;
 	padding: 5px;
 	cursor: pointer;
 	transition: all ease-in-out 250ms;
+	background-color: var(--green17);
+	color: white;
+	font-weight: 800;
+}
+
+.go-back-button:hover {
+	background-color: var(--yellow-logo);
+	color: var(--green07);
 }
