@@ -11,7 +11,7 @@ const Header = () => {
 
 	const navLinks = [
 		{ id: 1, to: "/", text: "Home" },
-		{ id: 2, to: "/about", text: "About LSH" },
+		{ id: 2, to: "/about", text: "About" },
 		{ id: 3, to: "/services", text: "Services" },
 		{ id: 4, to: "/news", text: "News" },
 		{ id: 5, to: "/events", text: "Events" },
@@ -59,8 +59,8 @@ const Header = () => {
 				<div className="header-logo-container">
 					<div className="header-logo-image-container">
 						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Circle_Davys-Grey_Solid.svg"
-							alt="logo"
+							src="./logo.png"
+							alt="Lentegeur Hospital Facility Board Logo"
 						/>
 					</div>
 					<h2 className="header-logo-title">
