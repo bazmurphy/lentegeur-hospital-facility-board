@@ -9,8 +9,9 @@
 .contact-us-form {
 	display: grid;
 	row-gap: 15px;
-	background-color: hsl(0, 0%, 85%);
+	background-color: var(--green02);
 	padding: 25px 20px;
+	border-radius: 30px;
 }
 
 .contact-us-form-group {
@@ -31,7 +32,7 @@
 .contact-us-form-textarea {
 	width: 100%;
 	padding: 6px;
-	background-color: hsl(0, 6%, 90%);
+	background-color: var(--green11);
 }
 
 .contact-us-form-label {
