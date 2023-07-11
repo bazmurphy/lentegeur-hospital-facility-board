@@ -1,4 +1,4 @@
-.event-container-right {
+.home-event-container-right {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--green05);
@@ -6,31 +6,32 @@
 }
 
 @media screen and (min-width: 768px) {
-	.event-container-right {
+	.home-event-container-right {
 		flex-direction: row-reverse;
 		width: 50%;
 		margin-top: 1rem;
+		height: 400px;
 	}
 }
 
-.event-image-container {
+.home-event-image-container-right {
 	width: 100%;
 	height: 100%;
 }
 
 @media screen and (min-width: 768px) {
-	.event-image-container {
+	.home-event-image-container-right {
 		width: 40%;
 	}
 }
 
-.event-image {
+.home-event-image-right {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.event-details {
+.home-event-details-right {
 	padding: 1rem;
 	width: 100%;
 	display: flex;
@@ -40,38 +41,38 @@
 }
 
 @media screen and (min-width: 768px) {
-	.event-details {
+	.home-event-details-right {
 		width: 60%;
 		align-items: center;
 		justify-content: center;
 	}
 }
 
-.event-title {
+.home-event-title-right {
 	color: var(--black);
 	text-decoration: none;
 	transition: 0.5s all ease-in-out;
 }
 
-.event-title:hover,
-.event-title:focus {
+.home-event-container-right:hover .home-event-title-right,
+.home-event-container-right:focus .home-event-title-right {
 	color: var(--yellow-logo);
 }
 
-.event-summary {
+.home-event-summary-right {
 	color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
-	.event-summary {
-		padding: 0 4rem;
+	.home-event-summary-right {
+		padding: 0 7%;
 	}
 }
 
-.event-date {
+.home-event-date-right {
 	color: var(--white);
 	align-self: flex-end;
 	background: rgba(241, 248, 243, 0.08);
-	padding: 0.5rem 1rem;
+	padding: 3px 7px;
 	border-radius: 25px;
 }

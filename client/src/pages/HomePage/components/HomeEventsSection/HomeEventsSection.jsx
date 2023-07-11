@@ -1,8 +1,8 @@
 import "./HomeEventsSection.css";
 import { useQuery } from "@tanstack/react-query";
 import Line from "../../../../components/Line/Line";
-import EventCard from "./components/EventCard/EventCard";
-import EventCardRight from "./components/EventCardRight/EventCardRight";
+import HomeEventCardLeft from "./components/HomeEventCardLeft/HomeEventCardLeft";
+import HomeEventCardRight from "./components/HomeEventCardRight/HomeEventCardRight";
 import Loading from "../../../../components/Loading/Loading";
 import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent";
 
@@ -37,7 +37,7 @@ const HomeEventsSection = () => {
 
 						if (isEventsCardRight) {
 							return (
-								<EventCardRight
+								<HomeEventCardRight
 									key={slug}
 									title={title}
 									slug={slug}
@@ -49,7 +49,7 @@ const HomeEventsSection = () => {
 							);
 						} else {
 							return (
-								<EventCard
+								<HomeEventCardLeft
 									key={slug}
 									title={title}
 									slug={slug}

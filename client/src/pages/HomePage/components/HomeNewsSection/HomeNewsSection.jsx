@@ -1,7 +1,7 @@
 import "./HomeNewsSection.css";
 import { useQuery } from "@tanstack/react-query";
 import Line from "../../../../components/Line/Line";
-import NewsCard from "./components/NewsCard/NewsCard";
+import NewsCard from "./components/HomeNewsCard/HomeNewsCard";
 import Loading from "../../../../components/Loading/Loading";
 import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent";
 import Slider from "react-slick";
