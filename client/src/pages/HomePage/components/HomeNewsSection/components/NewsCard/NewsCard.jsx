@@ -12,7 +12,7 @@ function NewsCard({
 }) {
 	return (
 		<>
-			<Link to={`/news-articles/${slug}`} className="news-card-container">
+			<Link to={`/news/${slug}`} className="news-card-container">
 				<div className="news-card-details">
 					<h2>{title}</h2>
 					<div className="news-card-details-subcontainer">
