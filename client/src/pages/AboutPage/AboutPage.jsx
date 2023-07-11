@@ -7,9 +7,9 @@ import NetworkingSection from "./components/NetworkingSection/NetworkingSection"
 import { useQuery } from "@tanstack/react-query";
 
 const AboutPage = () => {
-	const fetchAboutPageContent = async () => {
+	const fetchAboutPage = async () => {
 		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/about-page?populate=images`
+			`${import.meta.env.VITE_API_URL}/about-page?populate=*`
 		);
 		if (!response.ok) {
 			throw new Error("Network response was not ok");
@@ -17,9 +17,9 @@ const AboutPage = () => {
 		return response.json();
 	};
 
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, data, error } = useQuery({
 		queryKey: ["about-page"],
-		queryFn: fetchAboutPageContent,
+		queryFn: fetchAboutPage,
 	});
 	const aboutPageContent = data?.data;
 
@@ -30,13 +30,14 @@ const AboutPage = () => {
 		networkAffiliatesSectionImage,
 		networkAffiliatesSectionText,
 		networkAffiliatesSectionLogos,
-	} = aboutPageContent;
+	} = aboutPageContent || {};
+	// the || {} is to prevent a destructuring error since "data" maybe undefined
 
 	return (
 		<>
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent error={error} />}
-			{!!aboutPageContent && (
+			{isSuccess && (
 				<div className="about-page">
 					<h1>About</h1>
 					<HistorySection
