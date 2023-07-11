@@ -1,14 +1,17 @@
 import "./HomePage.css";
 import HomeHero from "./components/HomeHero/HomeHero";
-import HomeCardList from "./components/HomeCardList/HomeCardList";
+import HomeServicesSection from "./components/HomeServicesSection/HomeServicesSection";
+import HomeEventsSection from "./components/HomeEventsSection/HomeEventsSection";
+import HomeNewsSection from "./components/HomeNewsSection/HomeNewsSection";
 import HomeGetInvolvedSection from "./components/HomeGetInvolvedSection/HomeGetInvolvedSection";
 
 const HomePage = () => {
 	return (
 		<div className="home-page">
 			<HomeHero />
-			<HomeCardList title="Latest News" path="news" apiRoute="news-articles" />
-			<HomeCardList title="Latest Events" path="events" apiRoute="events" />
+			<HomeServicesSection />
+			<HomeEventsSection />
+			<HomeNewsSection />
 			<HomeGetInvolvedSection />
 		</div>
 	);

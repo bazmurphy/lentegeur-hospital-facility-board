@@ -1,17 +1,15 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { AiFillCaretUp } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
 const Header = () => {
 	const [isNavigationOpen, setIsNavigationOpen] = useState(false);
-	//for closing animation
 	const [isNavigationClosing, setIsNavigationClosing] = useState(false);
 
 	const navLinks = [
 		{ id: 1, to: "/", text: "Home" },
-		{ id: 2, to: "/about", text: "About LSH" },
+		{ id: 2, to: "/about", text: "About" },
 		{ id: 3, to: "/services", text: "Services" },
 		{ id: 4, to: "/news", text: "News" },
 		{ id: 5, to: "/events", text: "Events" },
@@ -59,8 +57,8 @@ const Header = () => {
 				<div className="header-logo-container">
 					<div className="header-logo-image-container">
 						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Circle_Davys-Grey_Solid.svg"
-							alt="logo"
+							src="./logo.png"
+							alt="Lentegeur Hospital Facility Board Logo"
 						/>
 					</div>
 					<h2 className="header-logo-title">
@@ -85,9 +83,7 @@ const Header = () => {
 									>
 										{navLink.text}
 									</NavLink>
-									<div className="navigation-link-icon-container">
-										<AiFillCaretUp />
-									</div>
+									<div className="navigation-link-underline"></div>
 								</li>
 							);
 						})}
