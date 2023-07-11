@@ -1,9 +1,5 @@
-.contact-us-form-container {
-	/* placeholder for future adjustment */
-}
-
 .contact-us-form-container > p {
-	margin-bottom: 10px; /* gap below the "Fields mark with an asterisk (*) are required." */
+	margin: 20px; /* gap below the "Fields mark with an asterisk (*) are required." */
 }
 
 .contact-us-form {
@@ -11,7 +7,7 @@
 	row-gap: 15px;
 	background-color: var(--green02);
 	padding: 25px 20px;
-	border-radius: 30px;
+	border-radius: none;
 }
 
 .contact-us-form-group {
@@ -74,6 +70,7 @@
 		row-gap: 25px; /* larger row-gap for Desktop */
 		column-gap: 50px; /* adjust this center column gap */
 		padding: 40px 50px; /* larger padding for Desktop */
+		border-radius: 10px;
 	}
 
 	.contact-us-form-message-container {
