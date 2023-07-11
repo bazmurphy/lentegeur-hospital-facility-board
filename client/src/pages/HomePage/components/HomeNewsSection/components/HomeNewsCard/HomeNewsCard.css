@@ -31,6 +31,8 @@
 	transform: translate(0px, 70px);
 	transition: 0.5s all ease-in-out;
 	z-index: 3;
+	display: flex;
+	flex-direction: column;
 }
 
 .home-news-card-details:hover {
@@ -53,13 +55,14 @@
 }
 
 .home-news-card-overlay {
+	height: 100%;
+	width: 100%;
 	position: absolute;
+	z-index: 2;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 100%;
-	width: 100%;
 	opacity: 1;
 	transition: 0.5s ease;
 	background: rgba(25, 59, 5, 0.6);
