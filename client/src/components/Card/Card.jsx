@@ -36,12 +36,12 @@ function Card({
 					}`}
 				>
 					<img className="card-image" src={image} alt={alternativeText} />
+					{category && <span className="card-category">{category}</span>}
 				</div>
 				<div className="card-subcontainer">
-					<h3 className="card-title">{title}</h3>
+					<h3 className="card-title">{title.toUpperCase()}</h3>
 					<div className="flex-space-between">
 						{date && <h4 className="card-date">{date}</h4>}
-						{category && <span className="card-category">{category}</span>}
 						{tags && (
 							<p className="card-tags-container">
 								{tags.map((tag) => (
