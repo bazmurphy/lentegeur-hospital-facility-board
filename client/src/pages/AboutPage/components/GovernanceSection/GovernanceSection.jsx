@@ -6,7 +6,7 @@ const GovernanceSection = ({ governanceSectionText }) => {
 	return (
 		<section className="governance-section">
 			<h2>Governance</h2>
-			<Line />
+			<Line extraClass="governance-line" />
 			<div className="governance-text-container">
 				{parseContent(governanceSectionText)}
 			</div>

@@ -1,5 +1,11 @@
 .history-section {
 	margin-bottom: 30px;
+	padding: 0 20px;
+}
+
+.history-line {
+	background-color: black;
+	margin-bottom: 25px;
 }
 
 .history-container {

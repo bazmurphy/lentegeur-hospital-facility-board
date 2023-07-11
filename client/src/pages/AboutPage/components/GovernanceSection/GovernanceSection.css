@@ -1,5 +1,11 @@
 .governance-section {
 	margin-bottom: 30px;
+	padding: 30px 20px;
+	background-color: var(--green08);
+}
+
+.governance-section h2 {
+	color: white;
 }
 
 .governance-container {
@@ -10,4 +16,9 @@
 
 .governance-text-container {
 	/* placeholder */
+}
+
+.governance-line {
+	background-color: var(--white);
+	margin-bottom: 20px;
 }
