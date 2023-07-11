@@ -56,12 +56,6 @@ const EventsPage = () => {
 			{!!filteredEvents && (
 				<>
 					<form className="search-form">
-						<input
-							type="text"
-							placeholder="Search"
-							value={searchValue}
-							onChange={handleSearch}
-						/>
 						<select value={selectedCategory} onChange={handleCategoryChange}>
 							<option value="All">All</option>
 							{/* make a unique array of categories */}
@@ -75,6 +69,12 @@ const EventsPage = () => {
 								</option>
 							))}
 						</select>
+						<input
+							type="text"
+							placeholder="Search"
+							value={searchValue}
+							onChange={handleSearch}
+						/>
 						<p>
 							{filteredEvents.length} Event
 							{filteredEvents.length > 1 ? "s" : ""} found
