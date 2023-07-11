@@ -11,6 +11,10 @@
 	padding: 1rem 0 1rem 0;
 }
 
+ .home-events-container > :nth-child(n + 3) {
+    display: none;
+  }
+
 @media screen and (min-width: 768px) {
 	.home-events-container {
 		flex-direction: row;
@@ -18,6 +22,9 @@
         gap: 0;
 		padding: 0;
 	}
+	 .home-events-container > :nth-child(n + 3) {
+    display: flex;
+  }
 }
 
 .home-events-title {
