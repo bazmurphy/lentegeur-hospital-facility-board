@@ -1,16 +1,25 @@
 .go-back-button {
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 7px;
+	left: 7px;
 	padding: 5px;
 	cursor: pointer;
 	transition: all ease-in-out 250ms;
 	background-color: var(--green17);
 	color: white;
 	font-weight: 800;
+	font-size: 12px;
 }
 
 .go-back-button:hover {
 	background-color: var(--yellow-logo);
 	color: var(--green07);
+}
+
+@media screen and (min-width: 768px) {
+	.go-back-button {
+		font-size: 16px;
+		top: 20px;
+		left: 20px;
+	}
 }
