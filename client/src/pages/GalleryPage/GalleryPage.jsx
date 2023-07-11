@@ -25,7 +25,7 @@ const GalleryPage = () => {
 	return (
 		<div className="gallery-page">
 			<h1 className="gallery-page-title">Gallery Page</h1>
-			<Line />
+			<Line extraClass={"gallery-line"} />
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent error={error} />}
 			<div className="gallery-page-list-container">
