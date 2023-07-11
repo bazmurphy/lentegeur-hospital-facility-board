@@ -57,12 +57,6 @@ const NewsPage = () => {
 			{!!filteredNewsArticles && (
 				<>
 					<form className="search-form">
-						<input
-							type="text"
-							placeholder="Search"
-							value={searchValue}
-							onChange={handleSearch}
-						/>
 						<select value={selectedCategory} onChange={handleCategoryChange}>
 							<option value="All">All</option>
 							{/* make a unique array of categories */}
@@ -76,6 +70,12 @@ const NewsPage = () => {
 								</option>
 							))}
 						</select>
+						<input
+							type="text"
+							placeholder="Search"
+							value={searchValue}
+							onChange={handleSearch}
+						/>
 						<p>
 							{filteredNewsArticles.length} News Article
 							{filteredNewsArticles.length > 1 ? "s" : ""} found

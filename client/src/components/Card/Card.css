@@ -8,11 +8,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	margin: 0 0 2rem 0;
-	border-radius: 25px;
-	border: 1px solid var(--gray70);
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	background-color: var(--white);
 	transition: all 0.2s ease-in-out;
 }
 
@@ -24,20 +20,27 @@
 	width: 280px;
 }
 
+.card-container-content:hover {
+	box-shadow: rgba(2, 86, 20, 0.16) 0px 3px 6px,
+		rgba(3, 65, 32, 0.23) 0px 3px 6px;
+}
+
 @media screen and (min-width: 768px) {
 	.card-container-content {
 		width: 350px;
 	}
 }
 
-.card-container:hover {
+.card-link:hover {
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 .card-image-container {
+	position: relative;
 	height: 250px;
 	overflow: hidden;
-	margin-bottom: 0.5rem;
+	margin-top: 20px;
+	margin-bottom: 1rem;
 	border-radius: 25px;
 }
 
@@ -46,12 +49,20 @@
 }
 
 .card-image-container-content {
-	width: 278px;
+	width: 240px;
+	height: 160px;
+}
+
+.card-title {
+	color: var(--green08);
+	margin-bottom: 15px;
 }
 
 @media screen and (min-width: 768px) {
 	.card-image-container-content {
-		width: 348px;
+		width: 300px;
+		height: 200px;
+		margin-top: 25px;
 	}
 }
 
@@ -67,7 +78,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	width: 80%;
 	gap: 0.5rem;
 }
@@ -81,16 +91,18 @@
 
 .card-date {
 	font-size: 14px;
-	padding: 0.2rem 0.5rem;
 	border-radius: 25px;
-	background-color: var(--gray90);
 }
 
 .card-category {
+	position: absolute;
+	top: 10px;
+	left: 10px;
 	font-size: 14px;
-	padding: 0.2rem 0.5rem;
+	padding: 0 10px;
 	border-radius: 25px;
-	background-color: var(--gray80);
+	background-color: var(--green17);
+	color: white;
 }
 
 .card-tags-container {
@@ -112,13 +124,13 @@
 	padding: 6px;
 	border: 0;
 	border-radius: 50%;
-	background-color: var(--gray60);
+	background-color: var(--green17);
 	color: var(--white);
 	cursor: pointer;
 }
 
 .card-button:hover {
-	background-color: var(--gray40);
+	background-color: var(--green07);
 }
 
 .card-button-icon {
