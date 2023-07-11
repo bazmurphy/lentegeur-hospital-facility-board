@@ -72,8 +72,8 @@ header nav ul {
 	color: var(--yellow-logo);
 }
 
-.navigation-link-image-container {
-	display: none; /* Hide the arrow by default */
+.navigation-link-underline {
+	display: none;
 }
 
 /* to style both versions of the mobile navigation menu buttons: open ≡ and close X */
@@ -145,11 +145,6 @@ header nav ul {
 	object-fit: cover;
 }
 
-.navigation-link-icon-container {
-	display: none;
-	color: var(--yellow-logo);
-}
-
 @media only screen and (min-width: 960px) {
 	header nav {
 		position: relative;
@@ -176,9 +171,12 @@ header nav ul {
 		color: var(--yellow-logo);
 	}
 
-	.navigation-link.active + .navigation-link-icon-container {
+	.navigation-link.active + .navigation-link-underline {
 		display: block;
-		/* Show the arrow when the navigation-link has the active class */
+		width: 80%;
+		height: 2px;
+		margin: 0 auto;
+		background-color: var(--yellow-logo);
 	}
 }
 

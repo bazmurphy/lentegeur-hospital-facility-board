@@ -1,12 +1,10 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { AiFillCaretUp } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
 const Header = () => {
 	const [isNavigationOpen, setIsNavigationOpen] = useState(false);
-	//for closing animation
 	const [isNavigationClosing, setIsNavigationClosing] = useState(false);
 
 	const navLinks = [
@@ -85,9 +83,7 @@ const Header = () => {
 									>
 										{navLink.text}
 									</NavLink>
-									<div className="navigation-link-icon-container">
-										<AiFillCaretUp />
-									</div>
+									<div className="navigation-link-underline"></div>
 								</li>
 							);
 						})}
