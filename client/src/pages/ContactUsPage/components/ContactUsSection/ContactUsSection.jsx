@@ -6,7 +6,7 @@ const ContactUsSection = () => {
 	return (
 		<section className="contact-us-section">
 			<h1>Contact Us</h1>
-			<Line />
+			<Line extraClass={"contact-us-line"} />
 			<ContactUsForm />
 		</section>
 	);

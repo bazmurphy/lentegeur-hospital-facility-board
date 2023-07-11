@@ -1,9 +1,14 @@
 .visit-us-section {
-	/* placeholder for future adjustment */
+	padding: 20px 70px 70px 70px;
+	background: var(--green08);
+	color: var(--yellow-logo);
 }
-
 .visit-us-section > h2 {
 	text-align: center;
+}
+.visit-us-line {
+	background-color: var(--yellow-logo);
+	width: 50%;
 }
 
 .visit-us-container {
