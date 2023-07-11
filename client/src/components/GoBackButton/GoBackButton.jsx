@@ -3,7 +3,7 @@ import "./GoBackButton.css";
 const GoBackButton = ({ goBack }) => {
 	return (
 		<button onClick={goBack} className="go-back-button">
-			Back
+			&#8592; Back
 		</button>
 	);
 };
