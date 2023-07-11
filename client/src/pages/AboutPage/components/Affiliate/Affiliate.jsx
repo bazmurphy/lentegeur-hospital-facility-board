@@ -1,12 +1,16 @@
 import "./Affiliate.css";
 
-const Affiliate = ({ image, name, altText }) => {
+const Affiliate = ({ url, alternativeText }) => {
 	return (
-		<div className="affiliate">
-			<div className="affiliate-image-container">
-				<img src={image} alt={altText} />
+		<div className="networking-affiliate">
+			<div className="networking-affiliate-image-container">
+				<img
+					src={url}
+					alt={alternativeText}
+					className="networking-affiliate-image"
+				/>
 			</div>
-			<p>{name}</p>
+			<p className="networking-affiliate-name">{alternativeText}</p>
 		</div>
 	);
 };

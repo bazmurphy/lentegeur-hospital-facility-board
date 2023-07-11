@@ -1,5 +1,5 @@
 .networking-section {
-	/*  */
+	/* placeholder */
 }
 
 .networking-container {
@@ -14,8 +14,12 @@
 	height: 150px;
 }
 
-.networking-image-container img {
+.networking-image {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.networking-text-container {
+	/* placeholder */
 }
