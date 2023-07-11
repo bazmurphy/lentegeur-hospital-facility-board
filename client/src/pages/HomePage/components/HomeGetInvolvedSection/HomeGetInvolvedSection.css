@@ -1,5 +1,4 @@
 .home-get-involved-section {
-	/* margin: 0 20px; */
 	background: linear-gradient(0deg, hsl(108, 20%, 30%), var(--green09));
 	border-bottom: 6px solid var(--green12);
 }
@@ -103,11 +102,11 @@
 .home-get-involved-card-icon {
 	font-size: 90px;
 	color: var(--green12);
-	filter: drop-shadow(0 0 1px var(--green04));
+	filter: drop-shadow(0 0 2px var(--green04));
 }
 
 .home-get-involved-card-icon:hover {
-	filter: drop-shadow(0 0 3px var(--green04));
+	filter: drop-shadow(0 0 4px var(--green04));
 }
 
 .home-get-involved-card:hover {
@@ -132,6 +131,7 @@
 	font-weight: 600;
 	color: var(--green13);
 	font-size: 16px;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px) {
