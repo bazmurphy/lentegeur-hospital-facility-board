@@ -9,7 +9,9 @@ import Slider from "react-slick";
 function HomeNewsSection() {
 	const fetchEvents = async () => {
 		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/news-articles?populate=images`
+			`${
+				import.meta.env.VITE_API_URL
+			}/news-articles?populate=images&sort=date:DESC`
 		);
 		if (!response.ok) {
 			throw new Error("Network response was not ok");

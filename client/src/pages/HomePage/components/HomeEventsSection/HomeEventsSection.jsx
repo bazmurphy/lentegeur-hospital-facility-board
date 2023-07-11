@@ -9,7 +9,9 @@ import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent
 const HomeEventsSection = () => {
 	const fetchEvents = async () => {
 		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/events?populate=images`
+			`${
+				import.meta.env.VITE_API_URL
+			}/events?populate=images&sort=startDate:ASC`
 		);
 		if (!response.ok) {
 			throw new Error("Network response was not ok");
