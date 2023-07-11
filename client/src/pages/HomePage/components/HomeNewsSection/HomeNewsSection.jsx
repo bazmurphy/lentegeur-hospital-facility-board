@@ -34,6 +34,16 @@ function HomeNewsSection() {
 		autoplaySpeed: 5000,
 		responsive: [
 			{
+				breakpoint: 900,
+				settings: {
+					arrows: false,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 3000,
+				},
+			},
+			{
 				breakpoint: 600,
 				settings: {
 					arrows: false,
