@@ -23,7 +23,7 @@ const HomeServicesSection = () => {
 	});
 	const servicesData = data?.data;
 
-	const [numberOfCards, setNumberOfCards] = useState(null);
+	const [numberOfCards, setNumberOfCards] = useState(6);
 
 	useEffect(() => {
 		// this is to set the number of Cards based on the window width
@@ -33,7 +33,7 @@ const HomeServicesSection = () => {
 				setNumberOfCards(3);
 			} else if (window.innerWidth <= 1000) {
 				setNumberOfCards(4);
-			} else if (window.innerWidth <= 1200) {
+			} else {
 				setNumberOfCards(6);
 			}
 		};
