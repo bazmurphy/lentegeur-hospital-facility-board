@@ -1,0 +1,41 @@
+.home-events-section {
+	background-color: var(--green04);
+	padding: 0.5rem 0;
+}
+
+.home-events-title {
+	color: var(--white);
+}
+
+.home-events-line {
+	background-color: var(--white);
+	width: 50%;
+}
+
+.home-events-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 1rem 0 1rem 0;
+}
+
+.home-events-container > :nth-child(n + 3) {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.home-events-container {
+		flex-direction: row;
+		margin-bottom: 1rem;
+		gap: 0;
+		padding: 0;
+	}
+	.home-events-container > :nth-child(n + 3) {
+		display: flex;
+	}
+}
+
+.home-events-title {
+	color: var(--white);
+}
