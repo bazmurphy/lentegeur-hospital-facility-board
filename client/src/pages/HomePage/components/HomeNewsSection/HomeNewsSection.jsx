@@ -60,7 +60,7 @@ function HomeNewsSection() {
 	return (
 		<section className="home-news-section">
 			<h1 className="home-news-title">Latest News</h1>
-			<Line />
+			<Line extraClass={"home-news-line"} />
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent error={error} />}
 			<Slider {...sliderSettings}>

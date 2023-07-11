@@ -2,7 +2,7 @@ import "./HomeServicesSection.css";
 import Line from "../../../../components/Line/Line";
 import Loading from "../../../../components/Loading/Loading";
 import ErrorComponent from "../../../../components/ErrorComponent/ErrorComponent";
-import HomeServiceCard from "../HomeServiceCard/HomeServiceCard";
+import HomeServiceCard from "./components/HomeServiceCard/HomeServiceCard";
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 
@@ -30,7 +30,7 @@ const HomeServicesSection = () => {
 		// i have tried to roughly estimate the transitions
 		const handleResize = () => {
 			if (window.innerWidth <= 600) {
-				setNumberOfCards(3);
+				setNumberOfCards(2);
 			} else if (window.innerWidth <= 1000) {
 				setNumberOfCards(4);
 			} else {

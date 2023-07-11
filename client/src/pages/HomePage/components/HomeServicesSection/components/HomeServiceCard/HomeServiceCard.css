@@ -15,6 +15,10 @@
 	-webkit-backdrop-filter: blur(3.5px);
 }
 
+.home-service-card:hover {
+	box-shadow: 0 2px 10px hsla(101, 38%, 15%, 0.25);
+}
+
 .home-service-card-image-container {
 	width: 140px;
 	height: 140px;

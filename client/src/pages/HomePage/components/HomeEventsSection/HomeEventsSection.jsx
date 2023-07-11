@@ -28,7 +28,7 @@ const HomeEventsSection = () => {
 	return (
 		<section className="home-events-section">
 			<h1 className="home-events-title">Upcoming Events</h1>
-			<Line />
+			<Line extraClass={"home-events-line"} />
 			{isLoading && <Loading />}
 			{isError && <ErrorComponent error={error} />}
 			<div className="home-events-container">
