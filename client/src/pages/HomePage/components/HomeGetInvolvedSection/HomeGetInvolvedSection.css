@@ -103,10 +103,11 @@
 .home-get-involved-card-icon {
 	font-size: 90px;
 	color: var(--green12);
+	filter: drop-shadow(0 0 1px var(--green04));
 }
 
 .home-get-involved-card-icon:hover {
-	color: var(--yellow-logo);
+	filter: drop-shadow(0 0 3px var(--green04));
 }
 
 .home-get-involved-card:hover {
