@@ -1,5 +1,9 @@
 header {
-	background-color: var(--gray80);
+	background: linear-gradient(
+		180deg,
+		hsl(126, 73%, 5%) 0%,
+		hsl(126, 73%, 25%) 100%
+	);
 }
 
 header nav {
@@ -11,8 +15,21 @@ header nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: hsla(0, 0%, 70%, 0.96);
 	transform: translateY(-100vh);
+	background: linear-gradient(
+		340deg,
+		hsla(126, 76%, 5%, 0.97) 0%,
+		hsla(130, 56%, 9%, 0.97) 10%,
+		hsla(132, 65%, 13%, 0.97) 20%,
+		hsla(131, 71%, 17%, 0.97) 30%,
+		hsla(130, 74%, 21%, 0.97) 40%,
+		hsla(126, 73%, 25%, 0.97) 50%,
+		hsla(130, 74%, 21%, 0.97) 60%,
+		hsla(131, 71%, 17%, 0.97) 70%,
+		hsla(132, 65%, 13%, 0.97) 80%,
+		hsla(130, 56%, 9%, 0.97) 90%,
+		hsla(126, 76%, 5%, 0.97) 100%
+	);
 }
 
 header nav ul {
@@ -44,6 +61,7 @@ header nav ul {
 	font-size: 18px;
 	font-weight: 600;
 	transition: all ease-in-out 200ms;
+	color: var(--white);
 }
 
 .navigation-link:hover {
@@ -51,11 +69,11 @@ header nav ul {
 }
 
 .navigation-link.active {
-	color: var(--white);
+	color: var(--yellow-logo);
 }
 
-.navigation-link-image-container {
-	display: none; /* Hide the arrow by default */
+.navigation-link-underline {
+	display: none;
 }
 
 /* to style both versions of the mobile navigation menu buttons: open ≡ and close X */
@@ -64,8 +82,12 @@ header nav ul {
 	outline: none;
 	border: none;
 	background: transparent;
-	color: var(--black);
+	color: var(--white);
 	cursor: pointer;
+}
+
+.navigation-menu-button:hover {
+	color: var(--yellow-logo);
 }
 
 /* to position the mobile navigation menu X close button */
@@ -109,6 +131,7 @@ header nav ul {
 
 .header-logo-container h2 {
 	font-size: 16px;
+	color: var(--white);
 }
 
 .header-logo-image-container {
@@ -122,10 +145,6 @@ header nav ul {
 	object-fit: cover;
 }
 
-.navigation-link-icon-container {
-	display: none;
-}
-
 @media only screen and (min-width: 960px) {
 	header nav {
 		position: relative;
@@ -135,7 +154,7 @@ header nav ul {
 		align-items: flex-end;
 		width: auto;
 		height: auto;
-		background-color: transparent;
+		background: transparent;
 		transform: none;
 	}
 
@@ -149,12 +168,15 @@ header nav ul {
 	}
 
 	.navigation-link.active {
-		color: var(--black);
+		color: var(--yellow-logo);
 	}
 
-	.navigation-link.active + .navigation-link-icon-container {
+	.navigation-link.active + .navigation-link-underline {
 		display: block;
-		/* Show the arrow when the navigation-link has the active class */
+		width: 80%;
+		height: 2px;
+		margin: 0 auto;
+		background-color: var(--yellow-logo);
 	}
 }
 

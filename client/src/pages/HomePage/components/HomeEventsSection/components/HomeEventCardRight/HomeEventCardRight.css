@@ -50,7 +50,7 @@
 }
 
 .home-event-title-right {
-	color: var(--black);
+	color: var(--white);
 	text-decoration: none;
 	transition: 0.5s all ease-in-out;
 }
