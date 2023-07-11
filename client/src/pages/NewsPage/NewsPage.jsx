@@ -24,9 +24,15 @@ const NewsPage = () => {
 	const newsArticlesData = data?.data;
 
 	const [searchValue, setSearchValue] = useState("");
+	const [selectedCategory, setselectedCategory] = useState("All");
 
 	const handleSearch = (event) => {
 		setSearchValue(event.target.value);
+	};
+
+	const handleCategoryChange = (event) => {
+		setselectedCategory(event.target.value);
+		setSearchValue("");
 	};
 
 	const filteredNewsArticles = newsArticlesData?.filter((newsArticle) => {
@@ -57,6 +63,19 @@ const NewsPage = () => {
 							value={searchValue}
 							onChange={handleSearch}
 						/>
+						<select value={selectedCategory} onChange={handleCategoryChange}>
+							<option value="All">All</option>
+							{/* make a unique array of categories */}
+							{/* then map over it to generate the options */}
+							{/* (!) BUT this is very inefficient if there are many Events */}
+							{[
+								...new Set(data?.data.map((eventItem) => eventItem.category)),
+							].map((category) => (
+								<option key={category} value={category}>
+									{category}
+								</option>
+							))}
+						</select>
 						<p>
 							{filteredNewsArticles.length} News Article
 							{filteredNewsArticles.length > 1 ? "s" : ""} found
