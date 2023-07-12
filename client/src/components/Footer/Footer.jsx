@@ -3,9 +3,6 @@ import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
-const url =
-	"https://gmail.us21.list-manage.com/subscribe/post?u=062ecc3ec4949eb98966db14b&amp;id=0664e89465&amp;f_id=00da28e7f0";
-
 const Footer = () => {
 	const navLinks = [
 		{ id: 1, to: "/", text: "Home" },
@@ -75,37 +72,46 @@ const Footer = () => {
 				<div className="footer-subcontainer">
 					<h4 className="footer-subheading">SUBSCRIBE</h4>
 					<MailchimpSubscribe
-						url={url}
-						render={({ subscribe, status, message }) => (
-							<form
-								onSubmit={(event) => handleSubmit(subscribe, event)}
-								className="footer-subscribe-form"
-							>
-								<input
-									type="email"
-									name="email"
-									className="footer-subscribe-form-input"
-									placeholder="Your email"
-									value={email} // Set the value of the email input
-									onChange={(e) => setEmail(e.target.value)} // Handle input changes
-								/>
-								<button type="submit" className="footer-subscribe-form-button">
-									Subscribe
-								</button>
-								{status === "sending" && (
-									<div style={{ color: "blue" }}>sending...</div>
-								)}
-								{status === "error" && (
-									<div
-										style={{ color: "red" }}
-										dangerouslySetInnerHTML={{ __html: message }}
+						url={`${import.meta.env.VITE_MAILCHIMP_URL}`}
+						render={({ subscribe, status, message }) => {
+							console.log(subscribe);
+							return (
+								<form
+									onSubmit={(event) => handleSubmit(subscribe, event)}
+									className="footer-subscribe-form"
+								>
+									<input
+										type="email"
+										name="email"
+										className="footer-subscribe-form-input"
+										placeholder="Your email"
+										value={email} // Set the value of the email input
+										onChange={(event) => setEmail(event.target.value)} // Handle input changes
 									/>
-								)}
-								{status === "success" && (
-									<div style={{ color: "green" }}>Subscribed!</div>
-								)}
-							</form>
-						)}
+									<button
+										type="submit"
+										className="footer-subscribe-form-button"
+									>
+										Subscribe
+									</button>
+									{status === "sending" && (
+										<div className="footer-subscribe-form-status-loading">
+											Subscribing...
+										</div>
+									)}
+									{status === "error" && (
+										<div className="footer-subscribe-form-status-error">
+											{message}
+										</div>
+									)}
+									{status === "success" && (
+										<div className="footer-subscribe-form-status-success">
+											Subscribed!
+										</div>
+									)}
+								</form>
+							);
+						}}
 					/>
 				</div>
 			</div>
