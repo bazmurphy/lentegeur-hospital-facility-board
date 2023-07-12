@@ -58,6 +58,15 @@
 	background-color: var(--green08);
 }
 
+.contact-us-form-submit-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.contact-us-form-submit-result {
+}
+
 @media screen and (min-width: 768px) {
 	.contact-us-form-container {
 		margin: 0 auto;
@@ -81,6 +90,7 @@
 		height: 160px; /* more height on the textarea for Desktop */
 	}
 
+	.contact-us-form-submit-container,
 	.contact-us-form-submit {
 		grid-column: 1 / 3; /* spread across both columns */
 		justify-self: end; /* override default grid item rule and place at the end */

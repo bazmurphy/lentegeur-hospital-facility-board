@@ -1,4 +1,4 @@
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 import "./ContactUsForm.css";
 
 const ContactUsForm = () => {
@@ -6,15 +6,12 @@ const ContactUsForm = () => {
 	// we can switch it to a "controlled" form (using State) if required
 	const formRef = useRef(null);
 	const [result, setResult] = useState("");
-	
 
 	const reasons = [
 		{ id: 1, option: "Compliments" },
 		{ id: 2, option: "Complaints" },
 		{ id: 3, option: "Suggestions" },
 	];
-
-	
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -166,11 +163,13 @@ const ContactUsForm = () => {
 						className="contact-us-form-textarea"
 					/>
 				</div>
-				<button type="submit" className="contact-us-form-submit">
-					SUBMIT
-				</button>
+				<div className="contact-us-form-submit-container">
+					<span className="contact-us-form-submit-result">{result}</span>
+					<button type="submit" className="contact-us-form-submit">
+						SUBMIT
+					</button>
+				</div>
 			</form>
-			<span>{result}</span>
 		</div>
 	);
 };
