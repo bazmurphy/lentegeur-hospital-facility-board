@@ -1,12 +1,11 @@
-import "./ContactUsForm.css";
 import { useRef, useState } from "react";
+import "./ContactUsForm.css";
 
 const ContactUsForm = () => {
 	// this is deliberately using an "uncontrolled" form
 	// we can switch it to a "controlled" form (using State) if required
 	const formRef = useRef(null);
-
-	// mocking a form submission (to test disabling the submit button)
+	const [result, setResult] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const reasons = [
@@ -15,44 +14,31 @@ const ContactUsForm = () => {
 		{ id: 3, option: "Suggestions" },
 	];
 
-	const handleSubmit = async (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
+		setResult("Sending....");
+		setIsSubmitting(true); // Disable the submit button
+		const formData = new FormData(event.target);
 
-		setIsSubmitting(true);
+		formData.append("access_key", `${import.meta.env.VITE_WEB3FORMS_KEY}`);
 
-		const formData = new FormData(formRef.current);
-		const firstname = formData.get("firstname");
-		const lastname = formData.get("lastname");
-		const email = formData.get("email");
-		const phone = formData.get("phone");
-		const subject = formData.get("subject");
-		const reason = formData.get("reason");
-		const message = formData.get("message");
+		const response = await fetch(`${import.meta.env.VITE_WEB3FORMS_URL}`, {
+			method: "POST",
+			body: formData,
+		}).then((response) => response.json());
 
-		const requestBody = {
-			firstname,
-			lastname,
-			email,
-			phone,
-			subject,
-			reason,
-			message,
-		};
-		console.log("Contact Us Form Submit requestBody:", requestBody);
-
-		// mocking a network request/response cycle delay
-		await new Promise((resolve) => setTimeout(resolve, 3000));
-
-		setIsSubmitting(false);
-
-		// reset the Form after successful Submission
-		formRef.current.reset();
+		if (response.success) {
+			setResult(response.message);
+			formRef.current.reset(); // Reset the form fields
+		} else {
+			setResult(response.message);
+		}
+		setIsSubmitting(false); // Enable the submit button
 	};
-
 	return (
 		<div className="contact-us-form-container">
 			<p>Fields marked with an asterisk (*) are required.</p>
-			<form ref={formRef} onSubmit={handleSubmit} className="contact-us-form">
+			<form ref={formRef} onSubmit={onSubmit} className="contact-us-form">
 				<div className="contact-us-form-group">
 					<label
 						htmlFor="contact-us-form-firstname"
@@ -178,18 +164,18 @@ const ContactUsForm = () => {
 						className="contact-us-form-textarea"
 					/>
 				</div>
-				<button
-					type="submit"
-					disabled={isSubmitting}
-					className="contact-us-form-submit"
-				>
-					{isSubmitting ? (
-						<div className="form-submit-loading-icon" />
-					) : (
-						"SUBMIT"
-					)}
-					{/* later: transition the loader into a tick after success */}
-				</button>
+				<div className="contact-us-form-submit-container">
+					<span className="contact-us-form-submit-result">{result}</span>
+					<button
+						type="submit"
+						disabled={isSubmitting}
+						className={`contact-us-form-submit ${
+							isSubmitting ? "disabled" : ""
+						}`}
+					>
+						{isSubmitting ? "Submitting..." : "SUBMIT"}
+					</button>
+				</div>
 			</form>
 		</div>
 	);
