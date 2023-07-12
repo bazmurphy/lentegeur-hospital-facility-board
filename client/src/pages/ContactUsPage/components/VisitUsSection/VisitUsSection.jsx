@@ -11,18 +11,37 @@ const VisitUsSection = () => {
 				<div className="visit-us-address-container">
 					<h3>ADDRESS</h3>
 					<p>
-						<span>Lorem, ipsum dolor.</span>
-						<span>Lorem, ipsum dolor.</span>
-						<span>Lorem, ipsum dolor.</span>
-						<span>Lorem, ipsum dolor.</span>
+						<span>Highlands Drive</span>
+						<span>Lentegeur</span>
+						<span>Cape Town</span>
+						<span>7786</span>
+						<span>South Africa</span>
 					</p>
 				</div>
 				<div className="visit-us-contacts-container">
 					<h3>CONTACTS</h3>
 					<p>
-						<span>8 201 45 343 4343</span>
-						<span>44 343 343 34 322</span>
-						<span>info@hospital.com</span>
+						<span>
+							<ul className="contact-us-contacts-list">
+								<li>
+									<a href="tel:+27213701411" className="contact-link">
+										+27 21 370 1411
+									</a>
+								</li>
+							</ul>
+						</span>
+						<span>
+							<ul className="contact-us-contacts-list">
+								<li>
+									<a
+										href="mailto:board@lentegeurhospital.co.za"
+										className="contact-link"
+									>
+										board@lentegeurhospital.co.za
+									</a>
+								</li>
+							</ul>
+						</span>
 					</p>
 				</div>
 				<VisitUsMap />
