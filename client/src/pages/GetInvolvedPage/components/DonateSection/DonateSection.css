@@ -2,8 +2,12 @@
 	margin-bottom: 30px; /* to offset from the next section */
 }
 
-.donate-section > h2 {
-	/* placeholder for future adjustment */
+.donate-title {
+	/* placeholder */
+}
+
+.donate-line {
+	background-color: black;
 }
 
 .donate-section-subcontainer {

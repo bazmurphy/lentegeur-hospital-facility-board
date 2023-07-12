@@ -2,11 +2,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeHero.css";
-import SliderImage01 from "../../assets/slider01.jpg";
-import SliderImage02 from "../../assets/slider02.jpg";
-import SliderImage03 from "../../assets/slider03.jpg";
 
-const HomeHero = () => {
+const HomeHero = ({ homePageData }) => {
+	const {
+		heroImageOne,
+		heroTitleOne,
+		heroImageTwo,
+		heroTitleTwo,
+		heroImageThree,
+		heroTitleThree,
+	} = homePageData;
+
 	const settings = {
 		dots: true, // Display dots at the bottom indicating image count
 		arrows: true, // Display navigation arrows
@@ -17,25 +23,35 @@ const HomeHero = () => {
 	return (
 		<section className="home-hero-section">
 			<Slider {...settings}>
-				<div className="slide-container">
-					<h2 className="slide-title">
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry.
-					</h2>
-					<div className="slide-image-container">
-						<img src={SliderImage01} alt="one" />
+				{heroImageOne && (
+					<div className="slide-container">
+						{heroTitleOne && <h2 className="slide-title">{heroTitleOne}</h2>}
+						<div className="slide-image-container">
+							<img src={heroImageOne.url} alt={heroImageOne.alternativeText} />
+						</div>
 					</div>
-				</div>
-				<div className="slide-container">
-					<div className="slide-image-container">
-						<img src={SliderImage02} alt="two" />
+				)}
+				{heroImageTwo && (
+					<div className="slide-container">
+						{heroTitleTwo && <h2 className="slide-title">{heroTitleTwo}</h2>}
+						<div className="slide-image-container">
+							<img src={heroImageTwo.url} alt={heroImageTwo.alternativeText} />
+						</div>
 					</div>
-				</div>
-				<div className="slide-container">
-					<div className="slide-image-container">
-						<img src={SliderImage03} alt="three" />
+				)}
+				{heroImageThree && (
+					<div className="slide-container">
+						{heroTitleThree && (
+							<h2 className="slide-title">{heroTitleThree}</h2>
+						)}
+						<div className="slide-image-container">
+							<img
+								src={heroImageThree.url}
+								alt={heroImageThree.alternativeText}
+							/>
+						</div>
 					</div>
-				</div>
+				)}
 			</Slider>
 		</section>
 	);

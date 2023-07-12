@@ -1,14 +1,17 @@
 .volunteer-section {
-	/* placeholder for future adjustment */
+	/* placeholder */
 }
 
-.volunteer-section > h2 {
-	/* placeholder for future adjustment */
+.volunteer-title {
+	/* placeholder */
+}
+
+.volunteer-line {
+	background-color: black;
 }
 
 .volunteer-image-container {
 	height: 200px;
-	overflow: hidden;
 	margin-bottom: 20px; /* to offset from the paragraph */
 }
 
@@ -19,12 +22,12 @@
 	object-position: center;
 }
 
-.volunteer-section > p {
+.volunteer-subcontainer {
 	margin-bottom: 20px; /* to offset from the form*/
 }
 
 @media screen and (min-width: 700px) {
-	.volunteer-section > p {
+	.volunteer-subcontainer {
 		width: 80%;
 		margin: 0 auto 30px auto; /* to center and offset from the form */
 	}

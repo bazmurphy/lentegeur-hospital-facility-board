@@ -10,43 +10,60 @@ import HomeGetInvolvedSection from "./components/HomeGetInvolvedSection/HomeGetI
 import queryFetch from "../../utils/queryFetch";
 
 const HomePage = () => {
-	const [servicesQuery, eventsQuery, newsArticlesQuery] = useQueries({
-		queries: [
-			{
-				queryKey: ["services"],
-				queryFn: () => queryFetch({ endPoint: "/services" }),
-			},
-			{
-				queryKey: ["events"],
-				queryFn: () =>
-					queryFetch({
-						endPoint: "/events",
-						sortBy: "startDate",
-						sortOrder: "ASC",
-					}),
-			},
-			{
-				queryKey: ["news-articles"],
-				queryFn: () =>
-					queryFetch({
-						endPoint: "/news-articles",
-						sortBy: "date",
-						sortOrder: "DESC",
-					}),
-			},
-		],
-	});
+	const [homePageQuery, servicesQuery, eventsQuery, newsArticlesQuery] =
+		useQueries({
+			queries: [
+				{
+					queryKey: ["home-page"],
+					queryFn: () => queryFetch({ endPoint: "/home-page" }),
+				},
+				{
+					queryKey: ["services"],
+					queryFn: () => queryFetch({ endPoint: "/services" }),
+				},
+				{
+					queryKey: ["events"],
+					queryFn: () =>
+						queryFetch({
+							endPoint: "/events",
+							sortBy: "startDate",
+							sortOrder: "ASC",
+						}),
+				},
+				{
+					queryKey: ["news-articles"],
+					queryFn: () =>
+						queryFetch({
+							endPoint: "/news-articles",
+							sortBy: "date",
+							sortOrder: "DESC",
+						}),
+				},
+			],
+		});
 
-	const isLoading = [servicesQuery, eventsQuery, newsArticlesQuery].some(
-		(query) => query.isLoading
-	);
-	const isError = [servicesQuery, eventsQuery, newsArticlesQuery].some(
-		(query) => query.isError
-	);
-	const isSuccess = [servicesQuery, eventsQuery, newsArticlesQuery].every(
-		(query) => query.isSuccess
-	);
+	const isLoading = [
+		homePageQuery,
+		servicesQuery,
+		eventsQuery,
+		newsArticlesQuery,
+	].some((query) => query.isLoading);
 
+	const isError = [
+		homePageQuery,
+		servicesQuery,
+		eventsQuery,
+		newsArticlesQuery,
+	].some((query) => query.isError);
+
+	const isSuccess = [
+		homePageQuery,
+		servicesQuery,
+		eventsQuery,
+		newsArticlesQuery,
+	].every((query) => query.isSuccess);
+
+	const homePageData = homePageQuery.data?.data;
 	const servicesData = servicesQuery.data?.data;
 	const eventsData = eventsQuery.data?.data;
 	const newsArticlesData = newsArticlesQuery.data?.data;
@@ -57,13 +74,16 @@ const HomePage = () => {
 			{isError && (
 				<ErrorPage
 					error={
-						servicesQuery.error || eventsQuery.error || newsArticlesQuery.error
+						homePageQuery.error ||
+						servicesQuery.error ||
+						eventsQuery.error ||
+						newsArticlesQuery.error
 					}
 				/>
 			)}
 			{isSuccess && (
 				<div className="home-page">
-					<HomeHero />
+					<HomeHero homePageData={homePageData} />
 					<HomeServicesSection servicesData={servicesData} />
 					<HomeEventsSection eventsData={eventsData} />
 					<HomeNewsSection newsArticlesData={newsArticlesData} />

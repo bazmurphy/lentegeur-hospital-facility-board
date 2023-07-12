@@ -2,8 +2,16 @@
 	margin-bottom: 30px; /* to offset from the next section */
 }
 
+.get-involved-title {
+	/* placeholder */
+}
+
+.get-involved-line {
+	background-color: black;
+}
+
 @media screen and (min-width: 768px) {
-	.get-involved-section > p {
+	.get-involved-subcontainer {
 		width: 80%;
 		margin: 0 auto;
 	}
