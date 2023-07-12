@@ -67,19 +67,21 @@
 
 body {
 	min-width: 320px;
-	overflow-x: hidden; /* this is to prevent the content jumping left when a scroll bar appears */
+	/* overflow-x: hidden;  */
+	/* this is to prevent the content jumping left when a scroll bar appears */
 }
 
 #root {
 	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 }
 
 main {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
+	display: grid;
 }
 
 footer {

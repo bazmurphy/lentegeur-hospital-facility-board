@@ -19,12 +19,14 @@
 
 .slide-image-container {
 	height: 350px;
-	max-width: 1200px;
+}
+
+.slick-slider {
+	background-color: #f1fef1;
 }
 
 .slick-list {
-	height: 350px;
-	max-width: 1200px;
+	width: 100vw;
 }
 
 /* arrows */
@@ -82,5 +84,11 @@
 @media screen and (min-width: 1024px) {
 	.slide-title {
 		font-size: 40px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.slick-list {
+		width: 1200px;
 	}
 }

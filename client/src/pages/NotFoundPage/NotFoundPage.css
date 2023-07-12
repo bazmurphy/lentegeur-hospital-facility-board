@@ -31,12 +31,12 @@
 
 @media screen and (min-width: 768px) {
 	.not-found-page {
-		padding: 40px;
+		padding: 40px 20px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.not-found-page {
-		margin: 0 auto;
+		/* placeholder */
 	}
 }
