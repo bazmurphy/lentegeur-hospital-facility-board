@@ -1,17 +1,15 @@
 import "./GetInvolvedSection.css";
 import Line from "../../../../components/Line/Line";
+import parseContent from "../../../../utils/parseContent";
 
-const GetInvolvedSection = () => {
+const GetInvolvedSection = ({ getInvolvedSectionText }) => {
 	return (
 		<section className="get-involved-section">
-			<h1>Get Involved</h1>
-			<Line />
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-				ratione consequatur inventore aliquam atque iste aperiam itaque
-				voluptatum at officiis ipsam facilis, nam eaque quisquam quia et
-				sapiente quae minima!
-			</p>
+			<h1 className="get-involved-title">Get Involved</h1>
+			<Line extraClass={"get-involved-line"} />
+			<div className="get-involved-subcontainer">
+				{parseContent(getInvolvedSectionText)}
+			</div>
 		</section>
 	);
 };

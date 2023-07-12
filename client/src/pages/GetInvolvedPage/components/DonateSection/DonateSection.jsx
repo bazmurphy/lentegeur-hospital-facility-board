@@ -1,56 +1,53 @@
 import "./DonateSection.css";
 import Line from "../../../../components/Line/Line";
+import parseContent from "../../../../utils/parseContent";
 
-const Donate = () => {
+const Donate = ({
+	donateSectionText,
+	bankAccountName,
+	bankName,
+	bankAccountNumber,
+	bankBranchCode,
+	bankSwiftCode,
+}) => {
 	return (
 		<section className="donate-section">
-			<h2>Donate</h2>
-			<Line />
+			<h2 className="donate-title">Donate</h2>
+			<Line extraClass={"donate-line"} />
 			<div className="donate-section-subcontainer">
-				<p>
-					Thank you for your willingness to donate to the Lentegeur Psychiatric
-					Hospital Facility Board.
-				</p>
-				<p>
-					Your financial support will directly impact the lives of all who are
-					facing mental health challenges.
-				</p>
-				{/* <p>
-					<a
-						href="https://external-link-to-donation-platform"
-						target="_blank"
-						className="donate-link"
-						rel="noreferrer"
-					>
-						Click here
-					</a>{" "}
-					to be taken to securely donate through *Platform*.
-				</p> */}
+				{parseContent(donateSectionText)}
 			</div>
 			<div className="donate-account-details-container">
-				<p>Donations may be made to:</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Name:</span>
-					<span className="donate-account-value">
-						Lentegeur Hospital Facility Board
-					</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Bank:</span>
-					<span className="donate-account-value">FNB</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Account Number:</span>
-					<span className="donate-account-value">59204188287</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">Branch Code:</span>
-					<span className="donate-account-value">250555</span>
-				</p>
-				<p className="donate-account-detail">
-					<span className="donate-account-label">SwiftCode:</span>
-					<span className="donate-account-value">FIRNAJJ</span>
-				</p>
+				{bankAccountName && (
+					<p className="donate-account-detail">
+						<span className="donate-account-label">Name:</span>
+						<span className="donate-account-value">{bankAccountName}</span>
+					</p>
+				)}
+				{bankName && (
+					<p className="donate-account-detail">
+						<span className="donate-account-label">Bank:</span>
+						<span className="donate-account-value">{bankName}</span>
+					</p>
+				)}
+				{bankAccountNumber && (
+					<p className="donate-account-detail">
+						<span className="donate-account-label">Account Number:</span>
+						<span className="donate-account-value">{bankAccountNumber}</span>
+					</p>
+				)}
+				{bankBranchCode && (
+					<p className="donate-account-detail">
+						<span className="donate-account-label">Branch Code:</span>
+						<span className="donate-account-value">{bankBranchCode}</span>
+					</p>
+				)}
+				{bankSwiftCode && (
+					<p className="donate-account-detail">
+						<span className="donate-account-label">SwiftCode:</span>
+						<span className="donate-account-value">{bankSwiftCode}</span>
+					</p>
+				)}
 			</div>
 		</section>
 	);
