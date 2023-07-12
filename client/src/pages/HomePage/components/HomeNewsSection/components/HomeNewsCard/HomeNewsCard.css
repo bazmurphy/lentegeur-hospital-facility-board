@@ -3,6 +3,11 @@
 	color: var(--white);
 	position: relative;
 }
+
+.home-news-card-container a {
+	color: white;
+}
+
 .home-news-card-container:hover .home-news-card-details,
 .home-news-card-container:focus .home-news-card-details {
 	transform: translate(0px, 20px);
