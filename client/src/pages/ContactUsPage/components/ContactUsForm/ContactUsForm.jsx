@@ -1,13 +1,12 @@
+import { useRef,useState } from "react";
 import "./ContactUsForm.css";
-import { useRef, useState } from "react";
 
 const ContactUsForm = () => {
 	// this is deliberately using an "uncontrolled" form
 	// we can switch it to a "controlled" form (using State) if required
 	const formRef = useRef(null);
-
-	// mocking a form submission (to test disabling the submit button)
-	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [result, setResult] = useState("");
+	
 
 	const reasons = [
 		{ id: 1, option: "Compliments" },
@@ -15,44 +14,33 @@ const ContactUsForm = () => {
 		{ id: 3, option: "Suggestions" },
 	];
 
-	const handleSubmit = async (event) => {
+	
+
+	const onSubmit = async (event) => {
 		event.preventDefault();
+		setResult("Sending....");
+		const formData = new FormData(event.target);
 
-		setIsSubmitting(true);
+		formData.append("access_key", "1f67ca1a-8ce7-43fa-89fc-c43ec6b983cf");
 
-		const formData = new FormData(formRef.current);
-		const firstname = formData.get("firstname");
-		const lastname = formData.get("lastname");
-		const email = formData.get("email");
-		const phone = formData.get("phone");
-		const subject = formData.get("subject");
-		const reason = formData.get("reason");
-		const message = formData.get("message");
+		const res = await fetch("https://api.web3forms.com/submit", {
+			method: "POST",
+			body: formData,
+		}).then((res) => res.json());
 
-		const requestBody = {
-			firstname,
-			lastname,
-			email,
-			phone,
-			subject,
-			reason,
-			message,
-		};
-		console.log("Contact Us Form Submit requestBody:", requestBody);
-
-		// mocking a network request/response cycle delay
-		await new Promise((resolve) => setTimeout(resolve, 3000));
-
-		setIsSubmitting(false);
-
-		// reset the Form after successful Submission
-		formRef.current.reset();
+		if (res.success) {
+			console.log("Success", res);
+			setResult(res.message);
+			formRef.current.reset(); // Reset the form fields
+		} else {
+			console.log("Error", res);
+			setResult(res.message);
+		}
 	};
-
 	return (
 		<div className="contact-us-form-container">
 			<p>Fields marked with an asterisk (*) are required.</p>
-			<form ref={formRef} onSubmit={handleSubmit} className="contact-us-form">
+			<form ref={formRef} onSubmit={onSubmit} className="contact-us-form">
 				<div className="contact-us-form-group">
 					<label
 						htmlFor="contact-us-form-firstname"
@@ -178,19 +166,11 @@ const ContactUsForm = () => {
 						className="contact-us-form-textarea"
 					/>
 				</div>
-				<button
-					type="submit"
-					disabled={isSubmitting}
-					className="contact-us-form-submit"
-				>
-					{isSubmitting ? (
-						<div className="form-submit-loading-icon" />
-					) : (
-						"SUBMIT"
-					)}
-					{/* later: transition the loader into a tick after success */}
+				<button type="submit" className="contact-us-form-submit">
+					SUBMIT
 				</button>
 			</form>
+			<span>{result}</span>
 		</div>
 	);
 };
