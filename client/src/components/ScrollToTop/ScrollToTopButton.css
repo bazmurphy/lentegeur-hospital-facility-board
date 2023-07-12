@@ -1,3 +1,13 @@
+.scroll-to-top {
+	background-color: #0f5814a9 !important;
+	padding-top: 3px;
+	box-shadow: none;
+}
+
+.scroll-to-top svg {
+	fill: white;
+}
+
 /* make border circle and prettier arrow :) */
 @media (min-width: 768px) {
 	.scroll-to-top-button {
