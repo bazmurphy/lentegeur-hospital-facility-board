@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "get_involved_pages",
+  "info": {
+    "singularName": "get-involved-page",
+    "pluralName": "get-involved-pages",
+    "displayName": "GetInvolvedPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "getInvolvedSectionText": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "donateSectionText": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "bankAccountName": {
+      "type": "string",
+      "required": true
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "bankAccountNumber": {
+      "type": "string"
+    },
+    "bankBranchCode": {
+      "type": "string"
+    },
+    "bankSwiftCode": {
+      "type": "string"
+    },
+    "volunteerSectionImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "volunteerSectionText": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}
