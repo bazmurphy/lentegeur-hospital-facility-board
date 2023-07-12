@@ -1,28 +1,25 @@
-.not-found-page {
+.error-page {
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: hsl(0, 100%, 92%);
+	background-color: hsl(0, 100%, 94%);
 }
 
-.not-found-page-title {
-	color: red;
+.error-page-title {
+	color: hsl(0, 100%, 40%);
 }
 
-.not-found-page-line {
-	background-color: red;
+.error-page-line {
+	background-color: hsl(0, 100%, 40%);
 }
 
-.not-found-page- {
-	background-color: red;
-}
-
-.not-found-page-message {
+.error-page-message {
 	text-align: center;
+	color: hsl(0, 100%, 40%);
 }
 
-.not-found-page-link {
+.error-page-link {
 	display: block;
 	text-align: center;
 	text-decoration: none;
@@ -30,13 +27,13 @@
 }
 
 @media screen and (min-width: 768px) {
-	.not-found-page {
+	.error-page {
 		padding: 40px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
-	.not-found-page {
+	.error-page {
 		margin: 0 auto;
 	}
 }

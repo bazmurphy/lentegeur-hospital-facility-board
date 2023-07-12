@@ -1,40 +1,37 @@
 import "./GalleryPage.css";
 import { useQuery } from "@tanstack/react-query";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Line from "../../components/Line/Line";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GalleryCard from "./components/GalleryCard/GalleryCard";
+import queryFetch from "../../utils/queryFetch";
 
 const GalleryPage = () => {
-	const fetchGalleryAlbums = async () => {
-		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/gallery-albums?populate=images`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
 		queryKey: ["gallery-albums"],
-		queryFn: fetchGalleryAlbums,
+		queryFn: () => queryFetch({ endPoint: "/gallery-albums" }),
 	});
+
 	const galleryAlbumsData = data?.data;
 
 	return (
-		<div className="gallery-page">
-			<h1 className="gallery-page-title">Gallery Page</h1>
-			<Line />
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
-			<div className="gallery-page-list-container">
-				{!!galleryAlbumsData &&
-					galleryAlbumsData.map((galleryAlbum) => {
-						return <GalleryCard key={galleryAlbum.slug} props={galleryAlbum} />;
-					})}
-			</div>
-		</div>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="gallery-page">
+					<h1 className="gallery-page-title">Gallery Page</h1>
+					<Line />
+					<div className="gallery-page-list-container">
+						{galleryAlbumsData.map((galleryAlbum) => {
+							return (
+								<GalleryCard key={galleryAlbum.slug} props={galleryAlbum} />
+							);
+						})}
+					</div>
+				</div>
+			)}
+		</>
 	);
 };
 

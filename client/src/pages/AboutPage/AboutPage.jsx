@@ -1,26 +1,18 @@
 import "./AboutPage.css";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
+import { useQuery } from "@tanstack/react-query";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import HistorySection from "./components/HistorySection/HistorySection";
 import GovernanceSection from "./components/GovernanceSection/GovernanceSection";
 import NetworkingSection from "./components/NetworkingSection/NetworkingSection";
-import { useQuery } from "@tanstack/react-query";
+import queryFetch from "../../utils/queryFetch";
 
 const AboutPage = () => {
-	const fetchAboutPage = async () => {
-		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/about-page?populate=*`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, isSuccess, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
 		queryKey: ["about-page"],
-		queryFn: fetchAboutPage,
+		queryFn: () => queryFetch({ endPoint: "/about-page" }),
 	});
+
 	const aboutPageContent = data?.data;
 
 	const {
@@ -35,8 +27,8 @@ const AboutPage = () => {
 
 	return (
 		<>
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
 			{isSuccess && (
 				<div className="about-page">
 					<h1>About</h1>

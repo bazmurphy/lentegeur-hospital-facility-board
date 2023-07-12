@@ -1,42 +1,39 @@
 import "./ContentPage.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Line from "../../components/Line/Line";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
+import queryFetch from "../../utils/queryFetch";
 import parseContent from "../../utils/parseContent";
 
 const ContentPage = () => {
 	const location = useLocation();
 	const path = location.pathname.substring(1).split("/")[0];
 
-	let route;
+	let dynamicEndPoint;
+	let dynamicQueryKey;
+
 	if (path === "news") {
-		route = "news-articles";
-	}
-	if (path === "events") {
-		route = "events";
+		dynamicQueryKey = "news-articles";
+		dynamicEndPoint = "/news-articles";
+	} else if (path === "events") {
+		dynamicQueryKey = "events";
+		dynamicEndPoint = "/events";
 	}
 
 	const { slug } = useParams();
 
-	const fetchContentPage = async (slug) => {
-		const response = await fetch(
-			`${
-				import.meta.env.VITE_API_URL
-			}/${route}?filters[slug][$eq]=${slug}&populate=images`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
-		queryKey: [`${route}`, slug],
-		queryFn: () => fetchContentPage(slug),
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
+		queryKey: [dynamicQueryKey, slug],
+		queryFn: () =>
+			queryFetch({
+				endPoint: dynamicEndPoint,
+				slug: slug,
+			}),
 	});
+
 	const contentData = data?.data[0];
 
 	const navigate = useNavigate();
@@ -45,11 +42,11 @@ const ContentPage = () => {
 	};
 
 	return (
-		<div className="content-page">
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
-			{!!contentData && (
-				<>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="content-page">
 					<h1>{contentData.title}</h1>
 					<Line extraClass="content-page-line" />
 					<div className="content-page-subcontainer">
@@ -60,16 +57,13 @@ const ContentPage = () => {
 								alt={contentData.images[0].alternativeText}
 							/>
 						</div>
-
 						{/* <div className="content-page-category-tags-date-container"> */}
 						{contentData.category && (
 							<span className="content-page-category">{`Category: ${contentData.category}`}</span>
 						)}
-
 						{contentData.date && (
 							<span className="content-page-date">{`Date: ${contentData.date}`}</span>
 						)}
-
 						{contentData.tags && (
 							<span className="content-page-tags-container">
 								Tags:{" "}
@@ -87,11 +81,10 @@ const ContentPage = () => {
 							{parseContent(contentData.content)}
 						</div>
 					</div>
-
 					<GoBackButton goBack={goBack} />
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 
