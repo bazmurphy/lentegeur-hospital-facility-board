@@ -1,116 +1,107 @@
 import "./EventsPage.css";
-import Card from "../../components/Card/Card";
-import Line from "../../components/Line/Line";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-
-const eventsData = [
-	{
-		id: 1,
-		title: "Emergency Services",
-		images: [
-			{
-				url: "https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Emergency",
-		date: "1/1/2023",
-	},
-	{
-		id: 2,
-		title: "Surgical Procedures",
-		images: [
-			{
-				url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Surgical",
-		date: "2/1/2023",
-	},
-	{
-		id: 3,
-		title: "Diagnostic Imaging",
-		images: [
-			{
-				url: "https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Diagnostic",
-		date: "3/1/2023",
-	},
-];
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Line from "../../components/Line/Line";
+import Card from "../../components/Card/Card";
+import queryFetch from "../../utils/queryFetch";
 
 const EventsPage = () => {
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
+		queryKey: ["events"],
+		queryFn: () =>
+			queryFetch({
+				endPoint: "/events",
+				sortBy: "startDate",
+				sortOrder: "ASC",
+			}),
+	});
+
+	const eventsData = data?.data;
+
 	const [searchValue, setSearchValue] = useState("");
-	const [selectedTag, setSelectedTag] = useState("All");
+	const [selectedCategory, setselectedCategory] = useState("All");
 
 	const handleSearch = (event) => {
 		setSearchValue(event.target.value);
 	};
 
-	const handleTagChange = (event) => {
-		setSelectedTag(event.target.value);
+	const handleCategoryChange = (event) => {
+		setselectedCategory(event.target.value);
 		setSearchValue("");
 	};
 
-	const filteredEvents = eventsData.filter((item) => {
-		const titleMatches = item.title
+	const filteredEvents = eventsData?.filter((eventArticle) => {
+		const titleMatches = eventArticle.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const summaryMatches = item.summary
+		const summaryMatches = eventArticle.summary
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const categoryMatches = selectedTag === "All" || item.tag === selectedTag;
-
+		const categoryMatches =
+			selectedCategory === "All" || eventArticle.category === selectedCategory;
 		return (titleMatches || summaryMatches) && categoryMatches;
 	});
 
 	return (
-		<div className="event-page">
-			<h1>Events</h1>
-			<Line />
-			<form className="search-form">
-				<input
-					type="text"
-					placeholder="Search"
-					value={searchValue}
-					onChange={handleSearch}
-				/>
-				<select value={selectedTag} onChange={handleTagChange}>
-					<option value="All">All</option>
-					<option value="Emergency">Emergency</option>
-					<option value="Surgical">Surgical</option>
-					<option value="Diagnostic">Diagnostic</option>
-				</select>
-				<p>{filteredEvents.length} events found</p>
-			</form>
-			<div className="cards-list-container">
-				{filteredEvents.map((eventItem) => {
-					const { id, title, date, tag, summary } = eventItem;
-					const { url, alternativeText } = eventItem.images[0];
-					return (
-						<Card
-							key={id}
-							id={id}
-							title={title}
-							image={url}
-							alternativeText={alternativeText}
-							summary={summary}
-							tag={tag}
-							date={date}
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="event-page">
+					<h1>Events</h1>
+					<Line />
+					<form className="search-form">
+						<select value={selectedCategory} onChange={handleCategoryChange}>
+							<option value="All">All</option>
+							{/* make a unique array of categories */}
+							{/* then map over it to generate the options */}
+							{/* (!) BUT this is very inefficient if there are many Events */}
+							{[
+								...new Set(data?.data.map((eventItem) => eventItem.category)),
+							].map((category) => (
+								<option key={category} value={category}>
+									{category}
+								</option>
+							))}
+						</select>
+						<input
+							type="text"
+							placeholder="Search"
+							value={searchValue}
+							onChange={handleSearch}
 						/>
-					);
-				})}
-			</div>
-		</div>
+						<p>
+							{filteredEvents.length} Event
+							{filteredEvents.length > 1 ? "s" : ""} found
+						</p>
+					</form>
+					<div className="cards-list-container">
+						{filteredEvents.map((eventItem) => {
+							const { id, title, slug, date, category, tags, summary } =
+								eventItem;
+							const { url, alternativeText } = eventItem.images[0];
+							return (
+								<Card
+									key={id}
+									title={title}
+									slug={slug}
+									image={url}
+									alternativeText={alternativeText}
+									date={date}
+									category={category}
+									tags={tags}
+									summary={summary}
+									pageName="events"
+									passedClass="content"
+								/>
+							);
+						})}
+					</div>
+				</div>
+			)}
+		</>
 	);
 };
 

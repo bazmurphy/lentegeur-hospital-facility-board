@@ -6,7 +6,7 @@ const VisitUsSection = () => {
 	return (
 		<section className="visit-us-section">
 			<h2>Visit Us</h2>
-			<Line />
+			<Line extraClass={"visit-us-line"} />
 			<div className="visit-us-container">
 				<div className="visit-us-address-container">
 					<h3>ADDRESS</h3>

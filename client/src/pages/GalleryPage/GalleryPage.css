@@ -1,0 +1,26 @@
+.gallery-page {
+	margin: 20px;
+}
+
+.gallery-page-title {
+	/* placeholder */
+}
+
+.gallery-page-list-container {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+	.gallery-page {
+		margin: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.gallery-page {
+		margin: 40px auto;
+	}
+}

@@ -1,13 +1,36 @@
 .event-page {
-	margin: 0 20px;
+	padding: 20px;
+	background-color: var(--green16);
 }
 
-.search-form {
+@media screen and (min-width: 768px) {
+	.event-page {
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.event-page {
+		margin: 0 auto;
+		padding: 40px 0;
+	}
+}
+
+.event-page .search-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: 5px;
+	margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	.event-page .search-form {
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
 }
 
 .cards-list-container {

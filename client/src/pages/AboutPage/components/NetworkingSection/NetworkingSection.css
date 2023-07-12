@@ -1,5 +1,9 @@
 .networking-section {
-	/*  */
+	padding: 0 20px;
+}
+
+.networking-line {
+	background-color: var(--black);
 }
 
 .networking-container {
@@ -10,12 +14,17 @@
 }
 
 .networking-image-container {
+	margin: 15px 0;
 	width: 100%;
 	height: 150px;
 }
 
-.networking-image-container img {
+.networking-image {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.networking-text-container {
+	/* placeholder */
 }

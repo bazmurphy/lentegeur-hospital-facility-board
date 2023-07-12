@@ -1,44 +1,48 @@
 import "./ServicesPage.css";
-import Services from "./components/Services/Services";
-
-const servicesData = [
-	{
-		title: "Emergency Services",
-		image:
-			"https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	},
-	{
-		title: "Surgical Procedures",
-		image:
-			"https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	},
-	{
-		title: "Diagnostic Imaging",
-		image:
-			"https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	},
-];
+import { useQuery } from "@tanstack/react-query";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import ServiceCard from "./components/ServiceCard/ServiceCard";
+import queryFetch from "../../utils/queryFetch";
 
 const ServicesPage = () => {
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
+		queryKey: ["services"],
+		queryFn: () => queryFetch({ endPoint: "/services" }),
+	});
+
+	const servicesData = data?.data;
+
 	return (
-		<div className="services-page">
-			<h1>Services</h1>
-			{servicesData.map((service, index) => (
-				<Services
-					key={index}
-					title={service.title}
-					image={service.image}
-					description={service.description}
-					customClassAlignImage={index % 2 === 0 ? "align-left" : "align-right"}
-				/>
-			))}
-		</div>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="services-page">
+					<h1 className="services-page-title">Services</h1>
+					{servicesData.map((service, index) => {
+						const { id, title, slug, images, category, tags, summary } =
+							service;
+						const { url, alternativeText } = images[0];
+						return (
+							<ServiceCard
+								key={id}
+								title={title}
+								slug={slug}
+								image={url}
+								alternativeText={alternativeText}
+								category={category}
+								tags={tags}
+								summary={summary}
+								customClassAlignImage={
+									index % 2 === 0 ? "align-left" : "align-right"
+								}
+							/>
+						);
+					})}
+				</div>
+			)}
+		</>
 	);
 };
 

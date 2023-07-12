@@ -7,7 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-	--white: hsl(0, 0%, 100%);
+	--black: hsl(0, 0%, 0%);
 	--gray10: hsl(0, 0%, 10%);
 	--gray20: hsl(0, 0%, 20%);
 	--gray30: hsl(0, 0%, 30%);
@@ -17,7 +17,31 @@
 	--gray70: hsl(0, 0%, 70%);
 	--gray80: hsl(0, 0%, 80%);
 	--gray90: hsl(0, 0%, 90%);
-	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
+
+	--yellow-logo: hsl(59deg 89% 50%);
+	--green-logo: hsl(130deg 60% 37%);
+
+	--green01: #0c4d13;
+	--green02: #24711a;
+	--green03: #89e045;
+	--green04: #192516;
+	--green05: #364f33;
+	--green06: #d3ffcc;
+	--green07: #0f4111;
+	--green08: #2f8943;
+	--green09: #262e24;
+	--green10: #b5efb8;
+	--green11: #d8ffd2;
+	--green12: #4cbe3f;
+	--green13: #2f492b;
+	--green14: #63ad59;
+	--green15: #21c932;
+	--green16: #e9ffe7;
+	--green17: #316a29;
+	--green18: #e9ffe6;
+
+	--image-glass: rgba(30, 172, 39, 0.3);
 }
 
 * {
@@ -36,6 +60,9 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+
+	/* global mouse scrolling behaviour */
+	scroll-behavior: smooth;
 }
 
 body {
@@ -43,26 +70,24 @@ body {
 	overflow-x: hidden; /* this is to prevent the content jumping left when a scroll bar appears */
 }
 
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 main {
+	width: 100%;
 	max-width: 1200px;
-	margin: 20px 0;
+	margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
-	main {
-		margin: 40px 0;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	main {
-		margin: 40px auto;
-	}
+footer {
+	margin-top: auto;
 }
 
 /* h1's are usually the Page title/heading at the top of the Page */
 h1 {
-	margin-top: 15px; /* this may change */
 	font-size: 24px;
 	font-weight: 800;
 	text-align: center;
@@ -107,6 +132,17 @@ p {
 
 @media screen and (min-width: 768px) {
 	p {
+		font-size: 16px;
+	}
+}
+
+span {
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+	span {
 		font-size: 16px;
 	}
 }

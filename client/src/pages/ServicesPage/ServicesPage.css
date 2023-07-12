@@ -1,3 +1,21 @@
 .services-page {
-	margin: 0 20px;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.services-page-title {
+	margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.services-page {
+		margin: 40px 20px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.services-page {
+		margin: 40px auto;
+	}
 }

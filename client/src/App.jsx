@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -13,8 +14,14 @@ import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import EventsPage from "./pages/EventsPage/EventsPage";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
+import GalleryAlbumPage from "./pages/GalleryAlbumPage/GalleryAlbumPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage/GetInvolvedPage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import ContentPage from "./pages/ContentPage/ContentPage";
+import ServicePage from "./pages/ServicePage/ServicePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -22,17 +29,26 @@ const router = createBrowserRouter(
 			<Route index element={<HomePage />} />
 			<Route path="about" element={<AboutPage />} />
 			<Route path="services" element={<ServicesPage />} />
+			<Route path="services/:slug" element={<ServicePage />} />
 			<Route path="news" element={<NewsPage />} />
+			<Route path="news/:slug" element={<ContentPage />} />
 			<Route path="events" element={<EventsPage />} />
+			<Route path="events/:slug" element={<ContentPage />} />
 			<Route path="gallery" element={<GalleryPage />} />
+			<Route path="gallery/:slug" element={<GalleryAlbumPage />} />
 			<Route path="get-involved" element={<GetInvolvedPage />} />
 			<Route path="contact-us" element={<ContactUsPage />} />
+			<Route path="*" element={<NotFoundPage />} />
 		</Route>
 	)
 );
 
 const App = () => {
-	return <RouterProvider router={router}></RouterProvider>;
+	return (
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router}></RouterProvider>
+		</QueryClientProvider>
+	);
 };
 
 export default App;

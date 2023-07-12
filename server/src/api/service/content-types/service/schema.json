@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "minLength": 3,
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "category1",
+        "category2",
+        "category3",
+        "category4",
+        "category5",
+        "category6"
+      ],
+      "required": true
+    },
+    "tags": {
+      "type": "customField",
+      "options": [
+        "tag1",
+        "tag2",
+        "tag3",
+        "tag4",
+        "tag5",
+        "tag6"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "summary": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "maxLength": 200,
+      "minLength": 3
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

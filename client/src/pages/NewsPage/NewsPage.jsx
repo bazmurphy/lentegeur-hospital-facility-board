@@ -1,101 +1,108 @@
 import "./NewsPage.css";
-import Card from "../../components/Card/Card";
-import Line from "../../components/Line/Line";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-
-const newsData = [
-	{
-		id: 1,
-		title: "Emergency Services",
-		images: [
-			{
-				url: "https://clevelandcliniclondon.uk/-/scassets/images/org/locations/london/hospital-services/hospital-services-feature.jpg",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Emergency",
-		date: "1/1/2023",
-	},
-	{
-		id: 2,
-		title: "Surgical Procedures",
-		images: [
-			{
-				url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/Female_Doctor_Daughter_Mother_1296x728-header-1296x729.jpg?w=1155&h=2268",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Surgical",
-		date: "2/1/2023",
-	},
-	{
-		id: 3,
-		title: "Diagnostic Imaging",
-		images: [
-			{
-				url: "https://s3-prod.modernhealthcare.com/s3fs-public/SPONSORED_170619878_AR_-1_RXMUPRMWBUGI.jpg",
-				alternativeText: "some alternative text",
-			},
-		],
-		summary:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum semper magna, vitae dapibus felis volutpat. Duis feugiat, mauris a ultricies lobortis, ligula risus viverra massa, nec pellentesque tellus ligula non mi.",
-		tag: "Diagnostic",
-		date: "3/1/2023",
-	},
-];
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Line from "../../components/Line/Line";
+import Card from "../../components/Card/Card";
+import queryFetch from "../../utils/queryFetch";
 
 const NewsPage = () => {
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
+		queryKey: ["news-articles"],
+		queryFn: () =>
+			queryFetch({
+				endPoint: "/news-articles",
+				sortBy: "date",
+				sortOrder: "DESC",
+			}),
+	});
+
+	const newsArticlesData = data?.data;
+
 	const [searchValue, setSearchValue] = useState("");
+	const [selectedCategory, setselectedCategory] = useState("All");
 
 	const handleSearch = (event) => {
 		setSearchValue(event.target.value);
 	};
 
-	const filteredNews = newsData.filter((item) => {
-		const titleMatches = item.title
+	const handleCategoryChange = (event) => {
+		setselectedCategory(event.target.value);
+		setSearchValue("");
+	};
+
+	const filteredNewsArticles = newsArticlesData?.filter((newsArticle) => {
+		const titleMatches = newsArticle.title
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const summaryMatches = item.summary
+		const summaryMatches = newsArticle.summary
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		return titleMatches || summaryMatches;
+		const categoryMatches = newsArticle.category
+			.toLowerCase()
+			.includes(searchValue.toLowerCase());
+		return titleMatches || summaryMatches || categoryMatches;
 	});
+
 	return (
-		<div className="news-page">
-			<h1>News</h1>
-			<Line />
-			<form className="search-form">
-				<input
-					type="text"
-					placeholder="Search"
-					value={searchValue}
-					onChange={handleSearch}
-				/>
-				<p>{filteredNews.length} news found</p>
-			</form>
-			<div className="cards-list-container">
-				{filteredNews.map((newsItem) => {
-					const { id, title, date, tag, summary } = newsItem;
-					const { url, alternativeText } = newsItem.images[0];
-					return (
-						<Card
-							key={id}
-							id={id}
-							title={title}
-							image={url}
-							alternativeText={alternativeText}
-							summary={summary}
-							tag={tag}
-							date={date}
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="news-page">
+					<h1>News</h1>
+					<Line />
+					<form className="search-form">
+						<select value={selectedCategory} onChange={handleCategoryChange}>
+							<option value="All">All</option>
+							{/* make a unique array of categories */}
+							{/* then map over it to generate the options */}
+							{/* (!) BUT this is very inefficient if there are many Events */}
+							{[
+								...new Set(data?.data.map((eventItem) => eventItem.category)),
+							].map((category) => (
+								<option key={category} value={category}>
+									{category}
+								</option>
+							))}
+						</select>
+						<input
+							type="text"
+							placeholder="Search"
+							value={searchValue}
+							onChange={handleSearch}
 						/>
-					);
-				})}
-			</div>
-		</div>
+						<p>
+							{filteredNewsArticles.length} News Article
+							{filteredNewsArticles.length > 1 ? "s" : ""} found
+						</p>
+					</form>
+					<div className="cards-list-container">
+						{filteredNewsArticles.map((newsArticle) => {
+							const { id, title, slug, date, category, tags, summary } =
+								newsArticle;
+							const { url, alternativeText } = newsArticle.images[0];
+							return (
+								<Card
+									key={id}
+									title={title}
+									slug={slug}
+									image={url}
+									alternativeText={alternativeText}
+									date={date}
+									category={category}
+									tag={tags}
+									summary={summary}
+									pageName="news"
+									passedClass="content"
+								/>
+							);
+						})}
+					</div>
+				</div>
+			)}
+		</>
 	);
 };
 

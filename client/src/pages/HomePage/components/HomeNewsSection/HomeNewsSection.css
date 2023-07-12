@@ -1,0 +1,17 @@
+.slick-list {
+	height: 100%;
+}
+
+.home-news-section {
+	background-color: var(--green10);
+}
+
+.home-news-title {
+	margin-top: 10px;
+	color: var(--green07);
+}
+
+.home-news-line {
+	background-color: var(--green07);
+	width: 95%;
+}

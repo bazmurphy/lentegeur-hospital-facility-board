@@ -1,0 +1,62 @@
+.gallery-album-page {
+	margin: 20px;
+}
+
+.gallery-album-title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.gallery-album-summary {
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.gallery-album-link-back {
+	display: inline-block;
+	text-decoration: none;
+	color: var(--black);
+	font-weight: 600;
+}
+
+.gallery-album-list {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.gallery-album-image-container {
+	width: 400px;
+	height: 300px;
+}
+
+.gallery-album-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.gallery-album-page {
+		margin: 40px 20px;
+	}
+
+	.gallery-album-summary {
+		/* not sure on this percentage */
+		width: 80%;
+	}
+
+	.gallery-album-image-container {
+		/* this should be a different aspect ratio for tablet/desktop */
+		width: 400px;
+		height: 300px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.gallery-album-page {
+		margin: 40px auto;
+	}
+}
