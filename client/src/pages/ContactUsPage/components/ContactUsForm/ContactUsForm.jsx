@@ -6,6 +6,7 @@ const ContactUsForm = () => {
 	// we can switch it to a "controlled" form (using State) if required
 	const formRef = useRef(null);
 	const [result, setResult] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const reasons = [
 		{ id: 1, option: "Compliments" },
@@ -16,6 +17,7 @@ const ContactUsForm = () => {
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		setResult("Sending....");
+		setIsSubmitting(true); // Disable the submit button
 		const formData = new FormData(event.target);
 
 		formData.append("access_key", "1f67ca1a-8ce7-43fa-89fc-c43ec6b983cf");
@@ -33,6 +35,7 @@ const ContactUsForm = () => {
 			console.log("Error", res);
 			setResult(res.message);
 		}
+		setIsSubmitting(false); // Enable the submit button
 	};
 	return (
 		<div className="contact-us-form-container">
@@ -165,8 +168,14 @@ const ContactUsForm = () => {
 				</div>
 				<div className="contact-us-form-submit-container">
 					<span className="contact-us-form-submit-result">{result}</span>
-					<button type="submit" className="contact-us-form-submit">
-						SUBMIT
+					<button
+						type="submit"
+						disabled={isSubmitting}
+						className={`contact-us-form-submit ${
+							isSubmitting ? "disabled" : ""
+						}`}
+					>
+						{isSubmitting ? "Submitting..." : "SUBMIT"}
 					</button>
 				</div>
 			</form>
