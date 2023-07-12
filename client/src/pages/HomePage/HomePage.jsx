@@ -74,7 +74,7 @@ const HomePage = () => {
 			{isError && (
 				<ErrorPage
 					error={
-						homePageData.error ||
+						homePageQuery.error ||
 						servicesQuery.error ||
 						eventsQuery.error ||
 						newsArticlesQuery.error
