@@ -21,7 +21,7 @@ const GalleryPage = () => {
 			{isSuccess && (
 				<div className="gallery-page">
 					<h1 className="gallery-page-title">Gallery Page</h1>
-					<Line />
+					<Line extraClass={"gallery-page-line"} />
 					<div className="gallery-page-list-container">
 						{galleryAlbumsData.map((galleryAlbum) => {
 							return (
