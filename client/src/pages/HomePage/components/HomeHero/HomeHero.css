@@ -21,6 +21,10 @@
 	height: 350px;
 }
 
+.slick-slider {
+	background-color: var(--green16);
+}
+
 .slick-list {
 	width: 100vw;
 }
