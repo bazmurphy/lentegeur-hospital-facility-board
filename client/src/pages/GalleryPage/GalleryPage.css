@@ -1,9 +1,15 @@
 .gallery-page {
-	margin: 20px;
+	padding: 20px;
+	background-color: var(--green16);
 }
 
 .gallery-page-title {
-	/* placeholder */
+	color: var(--green07);
+}
+
+.gallery-page-line {
+	background-color: var(--green07);
+	width: 90%;
 }
 
 .gallery-page-list-container {
@@ -15,12 +21,12 @@
 
 @media screen and (min-width: 768px) {
 	.gallery-page {
-		margin: 40px 20px;
+		padding: 40px 20px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.gallery-page {
-		margin: 40px auto;
+		/* placeholder */
 	}
 }
