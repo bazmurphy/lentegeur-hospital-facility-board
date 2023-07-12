@@ -1,26 +1,23 @@
 import "./EventsPage.css";
-import Line from "../../components/Line/Line";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
-import Card from "../../components/Card/Card";
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Line from "../../components/Line/Line";
+import Card from "../../components/Card/Card";
+import queryFetch from "../../utils/queryFetch";
 
 const EventsPage = () => {
-	const fetchEvents = async () => {
-		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/events?populate=images`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
 		queryKey: ["events"],
-		queryFn: fetchEvents,
+		queryFn: () =>
+			queryFetch({
+				endPoint: "/events",
+				sortBy: "startDate",
+				sortOrder: "ASC",
+			}),
 	});
+
 	const eventsData = data?.data;
 
 	const [searchValue, setSearchValue] = useState("");
@@ -48,13 +45,13 @@ const EventsPage = () => {
 	});
 
 	return (
-		<div className="event-page">
-			<h1>Events</h1>
-			<Line />
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
-			{!!filteredEvents && (
-				<>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="event-page">
+					<h1>Events</h1>
+					<Line />
 					<form className="search-form">
 						<select value={selectedCategory} onChange={handleCategoryChange}>
 							<option value="All">All</option>
@@ -102,9 +99,9 @@ const EventsPage = () => {
 							);
 						})}
 					</div>
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

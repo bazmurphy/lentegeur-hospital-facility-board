@@ -1,26 +1,23 @@
 import "./NewsPage.css";
-import Line from "../../components/Line/Line";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
-import Card from "../../components/Card/Card";
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Line from "../../components/Line/Line";
+import Card from "../../components/Card/Card";
+import queryFetch from "../../utils/queryFetch";
 
 const NewsPage = () => {
-	const fetchNewsArticles = async () => {
-		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/news-articles?populate=images`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
 		queryKey: ["news-articles"],
-		queryFn: fetchNewsArticles,
+		queryFn: () =>
+			queryFetch({
+				endPoint: "/news-articles",
+				sortBy: "date",
+				sortOrder: "DESC",
+			}),
 	});
+
 	const newsArticlesData = data?.data;
 
 	const [searchValue, setSearchValue] = useState("");
@@ -49,13 +46,13 @@ const NewsPage = () => {
 	});
 
 	return (
-		<div className="news-page">
-			<h1>News</h1>
-			<Line />
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
-			{!!filteredNewsArticles && (
-				<>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="news-page">
+					<h1>News</h1>
+					<Line />
 					<form className="search-form">
 						<select value={selectedCategory} onChange={handleCategoryChange}>
 							<option value="All">All</option>
@@ -103,9 +100,9 @@ const NewsPage = () => {
 							);
 						})}
 					</div>
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

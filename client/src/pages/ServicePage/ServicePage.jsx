@@ -1,31 +1,21 @@
 import "./ServicePage.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Line from "../../components/Line/Line";
-import Loading from "../../components/Loading/Loading";
-import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import GoBackButton from "../../components/GoBackButton/GoBackButton";
+import queryFetch from "../../utils/queryFetch";
 import parseContent from "../../utils/parseContent";
 
 const ServicePage = () => {
 	const { slug } = useParams();
 
-	const fetchService = async (slug) => {
-		const response = await fetch(
-			`${
-				import.meta.env.VITE_API_URL
-			}/services?filters[slug][$eq]=${slug}&populate=images`
-		);
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, isError, isSuccess, error, data } = useQuery({
 		queryKey: ["services", slug],
-		queryFn: () => fetchService(slug),
+		queryFn: () => queryFetch({ endPoint: "/services", slug: slug }),
 	});
+
 	const serviceData = data?.data[0];
 
 	const navigate = useNavigate();
@@ -34,11 +24,11 @@ const ServicePage = () => {
 	};
 
 	return (
-		<div className="service-page">
-			{isLoading && <Loading />}
-			{isError && <ErrorComponent error={error} />}
-			{!!serviceData && (
-				<>
+		<>
+			{isLoading && <LoadingPage />}
+			{isError && <ErrorPage error={error} />}
+			{isSuccess && (
+				<div className="service-page">
 					<h1>{serviceData.title}</h1>
 					<Line />
 					<div className="service-page-subcontainer">
@@ -71,9 +61,9 @@ const ServicePage = () => {
 						</div>
 					</div>
 					<GoBackButton goBack={goBack} />
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 
