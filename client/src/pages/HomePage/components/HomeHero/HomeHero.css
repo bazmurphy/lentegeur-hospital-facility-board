@@ -19,12 +19,12 @@
 
 .slide-image-container {
 	height: 350px;
-	max-width: 1200px;
+	/* max-width: 1200px; */
 }
 
 .slick-list {
 	height: 350px;
-	max-width: 1200px;
+	max-width: 800px;
 }
 
 /* arrows */

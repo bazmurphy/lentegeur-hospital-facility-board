@@ -1,6 +1,7 @@
 .news-page {
 	padding: 20px;
 	background-color: var(--green16);
+	border: 4px solid orange;
 }
 
 @media screen and (min-width: 768px) {
@@ -11,22 +12,21 @@
 
 @media screen and (min-width: 1200px) {
 	.news-page {
-		margin: 0 auto;
-		padding: 40px 0;
+		/* placeholder */
 	}
 }
 
 .news-page .search-form {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	gap: 5px;
 	margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
 	.news-page .search-form {
-		justify-content: center;
-		align-items: center;
 		margin-bottom: 2rem;
 	}
 }

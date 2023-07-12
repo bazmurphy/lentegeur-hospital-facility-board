@@ -4,7 +4,6 @@
 }
 
 .gallery-page-title {
-	/* placeholder */
 	color: var(--green07);
 }
 
@@ -28,6 +27,6 @@
 
 @media screen and (min-width: 1200px) {
 	.gallery-page {
-		margin: 0 auto;
+		/* placeholder */
 	}
 }
