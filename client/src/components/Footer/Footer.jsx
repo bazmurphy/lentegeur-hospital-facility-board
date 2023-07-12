@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./Footer.css";
 import { NavLink } from "react-router-dom";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const Footer = () => {
 	const navLinks = [
@@ -13,8 +15,15 @@ const Footer = () => {
 		{ id: 8, to: "/contact-us", text: "Contact Us" },
 	];
 
-	const handleSubmit = (event) => {
+	const [email, setEmail] = useState(""); // Add state for the email input
+
+	const handleSubmit = (subscribe, event) => {
+		// Add 'subscribe' as a parameter
 		event.preventDefault();
+		const formData = new FormData(event.target);
+		const submittedEmail = formData.get("email");
+		subscribe({ EMAIL: submittedEmail });
+		setEmail(""); // Reset the email input
 	};
 
 	return (
@@ -62,12 +71,48 @@ const Footer = () => {
 				</div>
 				<div className="footer-subcontainer">
 					<h4 className="footer-subheading">SUBSCRIBE</h4>
-					<form onSubmit={handleSubmit} className="footer-subscribe-form">
-						<input type="text" className="footer-subscribe-form-input" />
-						<button type="submit" className="footer-subscribe-form-button">
-							Subscribe
-						</button>
-					</form>
+					<MailchimpSubscribe
+						url={`${import.meta.env.VITE_MAILCHIMP_URL}`}
+						render={({ subscribe, status, message }) => {
+							console.log(subscribe);
+							return (
+								<form
+									onSubmit={(event) => handleSubmit(subscribe, event)}
+									className="footer-subscribe-form"
+								>
+									<input
+										type="email"
+										name="email"
+										className="footer-subscribe-form-input"
+										placeholder="Your email"
+										value={email} // Set the value of the email input
+										onChange={(event) => setEmail(event.target.value)} // Handle input changes
+									/>
+									<button
+										type="submit"
+										className="footer-subscribe-form-button"
+									>
+										Subscribe
+									</button>
+									{status === "sending" && (
+										<div className="footer-subscribe-form-status-loading">
+											Subscribing...
+										</div>
+									)}
+									{status === "error" && (
+										<div className="footer-subscribe-form-status-error">
+											{message}
+										</div>
+									)}
+									{status === "success" && (
+										<div className="footer-subscribe-form-status-success">
+											Subscribed!
+										</div>
+									)}
+								</form>
+							);
+						}}
+					/>
 				</div>
 			</div>
 		</footer>

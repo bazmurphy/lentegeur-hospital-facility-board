@@ -85,6 +85,24 @@ footer {
 	color: black;
 }
 
+.footer-subscribe-form-status-loading,
+.footer-subscribe-form-status-error,
+.footer-subscribe-form-status-success {
+	text-align: center;
+}
+
+.footer-subscribe-form-status-loading {
+	color: yellowgreen;
+}
+
+.footer-subscribe-form-status-error {
+	color: red;
+}
+
+.footer-subscribe-form-status-success {
+	color: yellow;
+}
+
 @media (min-width: 768px) {
 	.footer-container {
 		flex-direction: row;
