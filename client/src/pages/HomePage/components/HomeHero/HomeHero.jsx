@@ -10,7 +10,7 @@ const HomeHero = () => {
 	const settings = {
 		dots: true, // Display dots at the bottom indicating image count
 		arrows: true, // Display navigation arrows
-		autoplay: true, // Automatically transition to the next image
+		autoplay: false, // Automatically transition to the next image
 		autoplaySpeed: 3000, // Delay between image transitions (in milliseconds)
 	};
 
