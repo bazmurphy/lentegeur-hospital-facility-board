@@ -20,20 +20,18 @@ const ContactUsForm = () => {
 		setIsSubmitting(true); // Disable the submit button
 		const formData = new FormData(event.target);
 
-		formData.append("access_key", "1f67ca1a-8ce7-43fa-89fc-c43ec6b983cf");
+		formData.append("access_key", `${import.meta.env.VITE_WEB3FORMS_KEY}`);
 
-		const res = await fetch("https://api.web3forms.com/submit", {
+		const response = await fetch(`${import.meta.env.VITE_WEB3FORMS_URL}`, {
 			method: "POST",
 			body: formData,
-		}).then((res) => res.json());
+		}).then((response) => response.json());
 
-		if (res.success) {
-			console.log("Success", res);
-			setResult(res.message);
+		if (response.success) {
+			setResult(response.message);
 			formRef.current.reset(); // Reset the form fields
 		} else {
-			console.log("Error", res);
-			setResult(res.message);
+			setResult(response.message);
 		}
 		setIsSubmitting(false); // Enable the submit button
 	};
