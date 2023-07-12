@@ -18,9 +18,8 @@
 
 .contact-us-form-input,
 .contact-us-form-select,
-.contact-us-form-textarea,
-.contact-us-form-submit {
-	border: 1px solid var(--black);
+.contact-us-form-textarea {
+	border: 2px solid hsl(120, 100%, 15%);
 }
 
 .contact-us-form-input,
@@ -34,6 +33,7 @@
 
 .contact-us-form-label {
 	font-weight: 500;
+	color: var(--white);
 }
 
 .contact-us-form-select {
@@ -45,30 +45,35 @@
 	resize: none;
 }
 
-.contact-us-form-submit {
-	justify-self: center; /* override default grid item rule and place in the center */
-	padding: 6px 24px;
-	background-color: var(--green01);
-	color: var(--white);
-	border-radius: 30px;
-	cursor: pointer;
-}
-
-.contact-us-form-submit:hover {
-	background-color: var(--green08);
-}
-
 .contact-us-form-submit-container {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
 
-.contact-us-form-submit-result {
+.contact-us-form-submit {
+	justify-self: center; /* override default grid item rule and place in the center */
+	padding: 6px 24px;
+	background-color: var(--green01);
+	color: var(--white);
+	border: 0;
+	border-radius: 20px;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.contact-us-form-submit:hover {
+	background-color: var(--yellow-logo);
+	color: var(--black);
 }
 
 .contact-us-form-submit.disabled {
 	background-color: var(--gray05);
+}
+
+.contact-us-form-submit-result {
+	color: var(--yellow-logo);
+	font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
