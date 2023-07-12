@@ -11,8 +11,8 @@ function NewsCard({
 	summary,
 }) {
 	return (
-		<>
-			<Link to={`/news/${slug}`} className="home-news-card-container">
+		<div className="home-news-card-container">
+			<Link to={`/news/${slug}`}>
 				<div className="home-news-card-details">
 					<h2 className="home-news-card-title">{title}</h2>
 					<div className="home-news-card-details-subcontainer">
@@ -30,7 +30,7 @@ function NewsCard({
 					/>
 				</div>
 			</Link>
-		</>
+		</div>
 	);
 }
 
