@@ -15,7 +15,7 @@
 }
 
 .donate-line {
-	/* background-color: white; */
+	/* background-color: var(--white); */
 	background-image: linear-gradient(
 		90deg,
 		hsl(0deg 0% 100%) 0%,
