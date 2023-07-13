@@ -1,9 +1,6 @@
-.slick-list {
-	height: 100%;
-}
-
 .home-news-section {
 	background-color: var(--green10);
+	padding-bottom: 15px;
 }
 
 .home-news-title {
@@ -12,6 +9,18 @@
 }
 
 .home-news-line {
-	background-color: var(--green07);
-	width: 95%;
+	/* background-color: var(--green07); */
+	width: 70%;
+	background-image: linear-gradient(
+		90deg,
+		hsl(123deg 64% 70%) 0%,
+		hsl(121deg 33% 42%) 25%,
+		hsl(122deg 62% 16%) 50%,
+		hsl(121deg 33% 42%) 75%,
+		hsl(123deg 64% 70%) 100%
+	);
+}
+
+.slick-list {
+	height: 100%;
 }

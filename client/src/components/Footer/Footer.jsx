@@ -71,6 +71,9 @@ const Footer = () => {
 				</div>
 				<div className="footer-subcontainer">
 					<h4 className="footer-subheading">SUBSCRIBE</h4>
+					<p className="footer-subscribe-info">
+						Please subscribe to our Newsletter...
+					</p>
 					<MailchimpSubscribe
 						url={`${import.meta.env.VITE_MAILCHIMP_URL}`}
 						render={({ subscribe, status, message }) => {

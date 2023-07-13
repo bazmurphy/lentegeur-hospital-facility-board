@@ -17,7 +17,7 @@
 	--gray70: hsl(0, 0%, 70%);
 	--gray80: hsl(0, 0%, 80%);
 	--gray90: hsl(0, 0%, 90%);
-	--white: hsl(0, 0%, 100%);
+	--white: hwb(0 100% 0%);
 
 	--yellow-logo: hsl(59, 89%, 50%); /* #f1ed0e */
 	--green-logo: hsl(130, 60%, 37%); /* #269739 */
@@ -42,6 +42,9 @@
 	--green18: #e9ffe6;
 	--green19: #f3ffe0;
 	--green20: #39692d;
+	--green21: hsl(115, 100%, 90%);
+
+	--test: #d0ffcc;
 
 	--image-glass: rgba(30, 172, 39, 0.3);
 }

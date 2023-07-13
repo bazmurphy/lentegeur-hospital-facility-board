@@ -3,6 +3,18 @@
 	flex-direction: column;
 }
 
+.home-page-divider-one {
+	background-color: hsl(126, 73%, 30%);
+	/* height: 15px; */
+	height: 10px;
+}
+
+.home-page-divider-two {
+	background-color: hsl(126, 73%, 30%);
+	/* height: 15px; */
+	height: 15px;
+}
+
 @media screen and (min-width: 768px) {
 	.home-page {
 		/* placeholder */
