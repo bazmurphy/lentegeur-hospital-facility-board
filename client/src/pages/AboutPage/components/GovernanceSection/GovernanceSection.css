@@ -5,7 +5,7 @@
 }
 
 .governance-section h2 {
-	color: white;
+	color: var(--white);
 }
 
 .governance-container {
@@ -15,7 +15,7 @@
 }
 
 .governance-text-container {
-	/* placeholder */
+	color: var(--white);
 }
 
 .governance-line {
