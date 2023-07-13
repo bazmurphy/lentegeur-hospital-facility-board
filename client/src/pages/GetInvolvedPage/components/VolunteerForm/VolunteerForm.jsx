@@ -5,47 +5,37 @@ const VolunteerForm = () => {
 	// this is deliberately using an "uncontrolled" form
 	// we can switch it to a "controlled" form (using State) if required
 	const formRef = useRef(null);
-
+	const [result, setResult] = useState("");
 	// mocking a form submission (to test disabling the submit button)
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	const handleSubmit = async (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
+		setResult("Sending");
+		setIsSubmitting(true); // Disable the submit button
+		const formData = new FormData(event.target);
 
-		setIsSubmitting(true);
+		formData.append("access_key", `${import.meta.env.VITE_WEB3FORMS_KEY}`);
 
-		const formData = new FormData(formRef.current);
-		const firstname = formData.get("firstname");
-		const lastname = formData.get("lastname");
-		const email = formData.get("email");
-		const phone = formData.get("phone");
-		const message = formData.get("message");
+		const response = await fetch(`${import.meta.env.VITE_WEB3FORMS_URL}`, {
+			method: "POST",
+			body: formData,
+		}).then((response) => response.json());
 
-		const requestBody = {
-			firstname,
-			lastname,
-			email,
-			phone,
-			message,
-		};
-
-		// inspect requestBody before POST
-		console.log("Volunteer Form Submit requestBody:", requestBody);
-
-		// mocking a network request/response cycle delay
-		await new Promise((resolve) => setTimeout(resolve, 2000));
-
-		setIsSubmitting(false);
-
-		// reset the Form after successful Submission
-		formRef.current.reset();
+		if (response.success) {
+			setResult(response.message);
+			formRef.current.reset(); // Reset the form fields
+		} else {
+			setResult(response.message);
+		}
+		setIsSubmitting(false); // Enable the submit button
 	};
 
 	return (
 		<div className="volunteer-form-container">
 			<h3>Do you want to become a Volunteer?</h3>
 			<p>Fields marked with an asterisk (*) are required.</p>
-			<form ref={formRef} onSubmit={handleSubmit} className="volunteer-form">
+			<form ref={formRef} onSubmit={onSubmit} className="volunteer-form">
 				<div className="volunteer-form-group">
 					<label
 						htmlFor="volunteer-form-firstname"
@@ -125,18 +115,18 @@ const VolunteerForm = () => {
 						className="volunteer-form-textarea"
 					/>
 				</div>
-				<button
-					type="submit"
-					disabled={isSubmitting}
-					className="volunteer-form-submit"
-				>
-					{isSubmitting ? (
-						<div className="form-submit-loading-icon"></div>
-					) : (
-						"SUBMIT"
-					)}
-					{/* later: transition the loader into a tick after success */}
-				</button>
+				<div className="volunteer-form-submit-container">
+					<span className="volunteer-form-submit-result">{result}</span>
+					<button
+						type="submit"
+						disabled={isSubmitting}
+						className={`volunteer-form-submit ${
+							isSubmitting ? "disabled" : ""
+						}`}
+					>
+						{isSubmitting ? "Submitting" : "Submit"}
+					</button>
+				</div>
 			</form>
 		</div>
 	);

@@ -1,25 +1,50 @@
 .visit-us-section {
 	padding: 20px 70px 70px 70px;
-	background: var(--green08);
+	/* background: var(--green08); */
 	color: var(--yellow-logo);
+	background-image: linear-gradient(
+		45deg,
+		hsl(133, 49%, 36%) 0%,
+		hsl(133, 49%, 26%) 50%,
+		hsl(133, 49%, 36%) 100%
+	);
 }
+
 .visit-us-section > h2 {
 	text-align: center;
 }
+
 .visit-us-line {
 	background-color: var(--yellow-logo);
-	width: 50%;
+	width: 100%;
+	background-image: linear-gradient(
+		90deg,
+		hsl(133deg 49% 36%) 0%,
+		hsl(89deg 53% 46%) 20%,
+		hsl(64deg 79% 48%) 40%,
+		hsl(64deg 79% 48%) 60%,
+		hsl(89deg 53% 46%) 80%,
+		hsl(133deg 49% 36%) 100%
+	);
 }
 
 .visit-us-container {
 	display: grid;
-	/* <Line /> margin-bottom should be fulfilling this container's margin-top rule? */
-	/* margin-top: 30px; */
 	row-gap: 30px;
 	grid-template-areas:
 		"visit-us-address-container"
 		"visit-us-map-container"
 		"visit-us-contacts-container";
+}
+
+.visit-us-contacts-container a {
+	text-decoration: none;
+	list-style: none;
+	color: var(--yellow-logo);
+}
+
+.contact-us-contacts-list {
+	list-style-type: none;
 }
 
 .visit-us-address-container,
@@ -66,5 +91,9 @@
 	.visit-us-address-container,
 	.visit-us-contacts-container {
 		margin-left: 0;
+	}
+
+	.visit-us-line {
+		width: 80%;
 	}
 }

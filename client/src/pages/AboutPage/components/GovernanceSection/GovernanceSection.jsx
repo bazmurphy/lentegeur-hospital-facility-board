@@ -5,7 +5,7 @@ import parseContent from "../../../../utils/parseContent";
 const GovernanceSection = ({ governanceSectionText }) => {
 	return (
 		<section className="governance-section">
-			<h2>Governance</h2>
+			<h2 className="governance-title">Governance</h2>
 			<Line extraClass="governance-line" />
 			<div className="governance-text-container">
 				{parseContent(governanceSectionText)}

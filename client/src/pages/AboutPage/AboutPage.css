@@ -3,6 +3,10 @@
 	background-color: var(--green16);
 }
 
+.about-page-title {
+	color: var(--green17);
+}
+
 @media screen and (min-width: 768px) {
 	.about-page {
 		padding: 40px 0;

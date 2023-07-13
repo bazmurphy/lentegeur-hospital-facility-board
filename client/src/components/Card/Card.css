@@ -17,7 +17,10 @@
 }
 
 .card-container-content {
-	width: 280px;
+	/* ORIGINAL */
+	/* width: 280px; */
+	/* SOLUTION*/
+	width: 340px;
 }
 
 .card-container-content:hover {
@@ -49,7 +52,10 @@
 }
 
 .card-image-container-content {
-	width: 240px;
+	/* ORIGINAL */
+	/* width: 240px; */
+	/* SOLUTION*/
+	width: 300px;
 	height: 160px;
 }
 
@@ -90,8 +96,14 @@
 }
 
 .card-date {
-	font-size: 14px;
 	border-radius: 25px;
+	font-weight: 600;
+}
+
+.card-start-date {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--green07);
 }
 
 .card-category {
@@ -110,11 +122,12 @@
 	gap: 4px;
 	padding: 0.2rem 0.5rem;
 	border-radius: 25px;
-	background-color: var(--gray70);
+	background-color: var(--green11);
 }
 
 .card-tag {
 	font-size: 14px;
+	color: var(--green02);
 }
 
 .card-button {

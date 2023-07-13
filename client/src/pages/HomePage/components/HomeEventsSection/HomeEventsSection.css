@@ -1,5 +1,9 @@
 .home-events-section {
-	background-color: var(--green04);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 70, 67, 1) 0%,
+		rgba(172, 201, 157, 1) 100%
+	);
 	padding: 20px 0 10px 0;
 }
 

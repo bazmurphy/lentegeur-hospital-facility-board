@@ -1,13 +1,21 @@
 .volunteer-section {
-	/* placeholder */
+	padding: 0 20px;
 }
 
 .volunteer-title {
-	/* placeholder */
+	color: var(--green17);
 }
 
 .volunteer-line {
-	background-color: black;
+	width: 100%;
+	background-image: linear-gradient(
+		90deg,
+		hsl(113deg 44% 29%) 0%,
+		hsl(112deg 30% 40%) 25%,
+		hsl(112deg 24% 51%) 50%,
+		hsl(112deg 29% 63%) 75%,
+		hsl(113deg 40% 75%) 100%
+	);
 }
 
 .volunteer-image-container {

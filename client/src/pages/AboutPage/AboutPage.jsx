@@ -31,7 +31,7 @@ const AboutPage = () => {
 			{isError && <ErrorPage error={error} />}
 			{isSuccess && (
 				<div className="about-page">
-					<h1>About</h1>
+					<h1 className="about-page-title">About</h1>
 					<HistorySection
 						historySectionImage={historySectionImage}
 						historySectionText={historySectionText}

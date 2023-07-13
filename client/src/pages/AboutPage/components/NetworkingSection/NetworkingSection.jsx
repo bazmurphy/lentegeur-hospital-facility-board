@@ -10,7 +10,7 @@ const NetworkingSection = ({
 }) => {
 	return (
 		<section className="networking-section">
-			<h2>Networking Affiliates</h2>
+			<h2 className="networking-title">Networking Affiliates</h2>
 			<Line extraClass="networking-line" />
 			<div className="networking-container">
 				<div className="networking-image-container">

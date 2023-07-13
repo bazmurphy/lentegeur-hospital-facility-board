@@ -5,7 +5,7 @@ import parseContent from "../../../../utils/parseContent";
 const HistorySection = ({ historySectionImage, historySectionText }) => {
 	return (
 		<section className="history-section">
-			<h2>History</h2>
+			<h2 className="history-title">History</h2>
 			<Line extraClass="history-line" />
 			<div className={"history-container"}>
 				<div className="history-image-container">

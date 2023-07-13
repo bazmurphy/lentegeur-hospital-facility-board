@@ -12,11 +12,12 @@ const ContactUsForm = () => {
 		{ id: 1, option: "Compliments" },
 		{ id: 2, option: "Complaints" },
 		{ id: 3, option: "Suggestions" },
+		{ id: 4, option: "Other" },
 	];
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
-		setResult("Sending....");
+		setResult("Sending");
 		setIsSubmitting(true); // Disable the submit button
 		const formData = new FormData(event.target);
 
@@ -173,7 +174,7 @@ const ContactUsForm = () => {
 							isSubmitting ? "disabled" : ""
 						}`}
 					>
-						{isSubmitting ? "Submitting..." : "SUBMIT"}
+						{isSubmitting ? "Submitting" : "Submit"}
 					</button>
 				</div>
 			</form>

@@ -2,8 +2,21 @@
 	padding: 0 20px;
 }
 
+.networking-title {
+	color: var(--green17);
+}
+
 .networking-line {
-	background-color: var(--black);
+	margin-bottom: 20px;
+	width: 100%;
+	background-image: linear-gradient(
+		90deg,
+		hsl(113deg 44% 29%) 0%,
+		hsl(112deg 30% 40%) 25%,
+		hsl(112deg 24% 51%) 50%,
+		hsl(112deg 29% 63%) 75%,
+		hsl(113deg 40% 75%) 100%
+	);
 }
 
 .networking-container {
@@ -14,7 +27,7 @@
 }
 
 .networking-image-container {
-	margin: 15px 0;
+	margin-bottom: 15px;
 	width: 100%;
 	height: 150px;
 }
