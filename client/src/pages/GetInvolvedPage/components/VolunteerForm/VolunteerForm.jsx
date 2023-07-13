@@ -124,7 +124,7 @@ const VolunteerForm = () => {
 							isSubmitting ? "disabled" : ""
 						}`}
 					>
-						{isSubmitting ? "Submitting" : "SUBMIT"}
+						{isSubmitting ? "Submitting" : "Submit"}
 					</button>
 				</div>
 			</form>
