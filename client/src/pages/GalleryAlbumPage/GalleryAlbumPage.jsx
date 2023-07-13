@@ -25,8 +25,8 @@ const GalleryAlbumPage = () => {
 			{isError && <ErrorPage error={error} />}
 			{isSuccess && (
 				<div className="gallery-album-page">
-					<h1>Gallery Album Page</h1>
-					<Line />
+					<h1 className="gallery-title">Gallery Album Page</h1>
+					<Line extraClass="gallery-page-line" />
 					<div className="gallery-album-container">
 						<Link to="/gallery" className="gallery-album-link-back">
 							{"< Back"}
