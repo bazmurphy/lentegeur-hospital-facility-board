@@ -41,10 +41,17 @@ footer {
 	color: var(--white);
 	font-size: 14px;
 }
+.footer-link:hover {
+	color: var(--yellow-logo);
+}
 
 .footer-navigation-link {
 	text-decoration: none;
 	color: var(--white);
+}
+
+.footer-navigation-link:hover {
+	color: var(--yellow-logo);
 }
 
 .footer-navigation-link.active {
