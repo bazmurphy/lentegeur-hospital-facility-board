@@ -6,8 +6,10 @@ const LoadingPage = () => {
 	return (
 		<div className="loading-page">
 			<h1 className="loading-page-title">Loading</h1>
-			<Line className="loading-page-line" />
-			<LoadingIcon size={200} />
+			<Line extraClass={"loading-page-line"} />
+			<div className="loading-page-subcontainer">
+				<LoadingIcon size={300} />
+			</div>
 		</div>
 	);
 };
