@@ -39,10 +39,9 @@ const NewsPage = () => {
 		const summaryMatches = newsArticle.summary
 			.toLowerCase()
 			.includes(searchValue.toLowerCase());
-		const categoryMatches = newsArticle.category
-			.toLowerCase()
-			.includes(searchValue.toLowerCase());
-		return titleMatches || summaryMatches || categoryMatches;
+		const categoryMatches =
+			selectedCategory === "All" || newsArticle.category === selectedCategory;
+		return (titleMatches || summaryMatches) && categoryMatches;
 	});
 
 	return (
@@ -51,14 +50,15 @@ const NewsPage = () => {
 			{isError && <ErrorPage error={error} />}
 			{isSuccess && (
 				<div className="news-page">
-					<h1>News</h1>
-					<Line />
-					<form className="search-form">
-						<select value={selectedCategory} onChange={handleCategoryChange}>
+					<h1 className="news-page-title">News</h1>
+					<Line extraClass={"news-page-line"} />
+					<form className="news-form">
+						<select
+							value={selectedCategory}
+							onChange={handleCategoryChange}
+							className="news-form-category"
+						>
 							<option value="All">All</option>
-							{/* make a unique array of categories */}
-							{/* then map over it to generate the options */}
-							{/* (!) BUT this is very inefficient if there are many Events */}
 							{[
 								...new Set(data?.data.map((eventItem) => eventItem.category)),
 							].map((category) => (
@@ -72,13 +72,14 @@ const NewsPage = () => {
 							placeholder="Search"
 							value={searchValue}
 							onChange={handleSearch}
+							className="news-form-search"
 						/>
-						<p>
+						<p className="news-form-filter-results">
 							{filteredNewsArticles.length} News Article
 							{filteredNewsArticles.length > 1 ? "s" : ""} found
 						</p>
 					</form>
-					<div className="cards-list-container">
+					<div className="news-cards-list-container">
 						{filteredNewsArticles.map((newsArticle) => {
 							const { id, title, slug, date, category, tags, summary } =
 								newsArticle;
