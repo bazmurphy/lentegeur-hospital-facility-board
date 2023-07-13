@@ -2,6 +2,12 @@
 	margin-bottom: 30px; /* to offset from the next section */
 	padding: 30px 20px;
 	background: var(--green08);
+	background-image: linear-gradient(
+		300deg,
+		hsl(133, 49%, 36%) 0%,
+		hsl(133, 49%, 30%) 50%,
+		hsl(133, 49%, 24%) 100%
+	);
 }
 
 .donate-title {
@@ -9,7 +15,13 @@
 }
 
 .donate-line {
-	background-color: white;
+	/* background-color: var(--white); */
+	background-image: linear-gradient(
+		90deg,
+		hsl(0deg 0% 100%) 0%,
+		hsl(133deg 48% 68%) 50%,
+		hsl(133deg 49% 36%) 100%
+	);
 }
 
 .donate-section-subcontainer {
@@ -17,6 +29,7 @@
 	flex-direction: column;
 	gap: 10px;
 	margin-bottom: 10px; /* to offset from the next subcontainer */
+	color: white;
 }
 
 .donate-link {
@@ -28,6 +41,7 @@
 	display: grid;
 	justify-content: start;
 	row-gap: 5px;
+	color: white;
 }
 
 .donate-account-detail {
@@ -35,11 +49,14 @@
 }
 
 .donate-account-label {
-	font-weight: 600;
+	/* font-weight: 600; */
+	font-weight: 500;
 }
 
 .donate-account-value {
 	/* might need a different font-weight? */
+	/* color: var(--yellow-logo); */
+	font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {

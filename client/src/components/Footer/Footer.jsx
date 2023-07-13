@@ -74,7 +74,6 @@ const Footer = () => {
 					<MailchimpSubscribe
 						url={`${import.meta.env.VITE_MAILCHIMP_URL}`}
 						render={({ subscribe, status, message }) => {
-							console.log(subscribe);
 							return (
 								<form
 									onSubmit={(event) => handleSubmit(subscribe, event)}

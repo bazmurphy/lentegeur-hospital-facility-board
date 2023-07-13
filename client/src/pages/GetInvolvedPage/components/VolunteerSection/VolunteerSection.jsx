@@ -6,7 +6,9 @@ import parseContent from "../../../../utils/parseContent";
 const Volunteer = ({ volunteerSectionImage, volunteerSectionText }) => {
 	return (
 		<section className="volunteer-section">
-			<h2 className="volunteer-title">Volunteer</h2>
+			<h2 className="volunteer-title" id="volunteer">
+				Volunteer
+			</h2>
 			<Line extraClass={"volunteer-line"} />
 			<div className="volunteer-image-container">
 				<img

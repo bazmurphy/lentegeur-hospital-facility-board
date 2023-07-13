@@ -1,22 +1,27 @@
 .error-page {
 	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: hsl(0, 100%, 94%);
+	background-color: hsl(0, 100%, 95%);
 }
 
 .error-page-title {
-	color: hsl(0, 100%, 40%);
+	color: hsl(0, 100%, 30%);
 }
 
 .error-page-line {
-	background-color: hsl(0, 100%, 40%);
+	width: 90%;
+	background-image: linear-gradient(
+		45deg,
+		hsl(0deg 90% 80%) 0%,
+		hsl(0deg 90% 50%) 25%,
+		hsl(0deg 90% 30%) 50%,
+		hsl(0deg 90% 50%) 75%,
+		hsl(0deg 90% 80%) 100%
+	);
 }
 
 .error-page-message {
 	text-align: center;
-	color: hsl(0, 100%, 40%);
+	font-weight: 500;
 }
 
 .error-page-link {

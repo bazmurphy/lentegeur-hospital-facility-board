@@ -49,15 +49,16 @@ const EventsPage = () => {
 			{isLoading && <LoadingPage />}
 			{isError && <ErrorPage error={error} />}
 			{isSuccess && (
-				<div className="event-page">
-					<h1>Events</h1>
-					<Line />
-					<form className="search-form">
-						<select value={selectedCategory} onChange={handleCategoryChange}>
+				<div className="events-page">
+					<h1 className="events-page-title">Events</h1>
+					<Line extraClass={"events-page-line"} />
+					<form className="events-form">
+						<select
+							value={selectedCategory}
+							onChange={handleCategoryChange}
+							className="news-form-category"
+						>
 							<option value="All">All</option>
-							{/* make a unique array of categories */}
-							{/* then map over it to generate the options */}
-							{/* (!) BUT this is very inefficient if there are many Events */}
 							{[
 								...new Set(data?.data.map((eventItem) => eventItem.category)),
 							].map((category) => (
@@ -71,15 +72,16 @@ const EventsPage = () => {
 							placeholder="Search"
 							value={searchValue}
 							onChange={handleSearch}
+							className="events-form-search"
 						/>
-						<p>
+						<p className="events-form-filter-results">
 							{filteredEvents.length} Event
 							{filteredEvents.length > 1 ? "s" : ""} found
 						</p>
 					</form>
-					<div className="cards-list-container">
+					<div className="events-cards-list-container">
 						{filteredEvents.map((eventItem) => {
-							const { id, title, slug, date, category, tags, summary } =
+							const { id, title, slug, startDate, category, tags, summary } =
 								eventItem;
 							const { url, alternativeText } = eventItem.images[0];
 							return (
@@ -89,7 +91,7 @@ const EventsPage = () => {
 									slug={slug}
 									image={url}
 									alternativeText={alternativeText}
-									date={date}
+									startDate={startDate}
 									category={category}
 									tags={tags}
 									summary={summary}

@@ -19,7 +19,7 @@ const VisitUsSection = () => {
 					</p>
 				</div>
 				<div className="visit-us-contacts-container">
-					<h3>CONTACTS</h3>
+					<h3>CONTACT</h3>
 					<p>
 						<span>
 							<ul className="contact-us-contacts-list">

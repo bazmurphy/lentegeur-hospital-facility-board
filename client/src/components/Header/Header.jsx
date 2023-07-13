@@ -57,8 +57,9 @@ const Header = () => {
 				<NavLink to="/" className="header-logo-container">
 					<div className="header-logo-image-container">
 						<img
-							src="./logo.png"
+							src="/logo.png"
 							alt="Lentegeur Hospital Facility Board Logo"
+							className="header-logo-image"
 						/>
 					</div>
 					<h2 className="header-logo-title">

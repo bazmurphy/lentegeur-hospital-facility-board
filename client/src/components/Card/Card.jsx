@@ -10,6 +10,7 @@ function Card({
 	category,
 	tags,
 	date,
+	startDate,
 	summary,
 	pageName,
 	passedClass,
@@ -51,6 +52,7 @@ function Card({
 								))}
 							</p>
 						)}
+						{startDate && <h4 className="card-start-date"> {startDate}</h4>}
 					</div>
 					<p className="card-summary">{summary}</p>
 					<button className="card-button">
