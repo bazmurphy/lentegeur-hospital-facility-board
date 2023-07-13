@@ -6,7 +6,7 @@
 	display: grid;
 	row-gap: 15px;
 	padding: 25px 20px;
-	border-radius: none;
+	border-radius: 10px;
 	/* background-color: var(--green02); */
 	background-image: linear-gradient(
 		45deg,
@@ -33,7 +33,7 @@
 .contact-us-form-textarea {
 	width: 100%;
 	padding: 6px;
-	background-color: var(--green18);
+	background-color: hsl(115, 100%, 95%);
 	border-radius: 10px;
 }
 
@@ -94,7 +94,6 @@
 		row-gap: 25px; /* larger row-gap for Desktop */
 		column-gap: 50px; /* adjust this center column gap */
 		padding: 40px 50px; /* larger padding for Desktop */
-		border-radius: 10px;
 	}
 
 	.contact-us-form-message-container {
