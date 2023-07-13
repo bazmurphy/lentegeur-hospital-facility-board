@@ -5,9 +5,15 @@
 .contact-us-form {
 	display: grid;
 	row-gap: 15px;
-	background-color: var(--green02);
 	padding: 25px 20px;
 	border-radius: none;
+	/* background-color: var(--green02); */
+	background-image: linear-gradient(
+		45deg,
+		hsl(113, 63%, 27%) 0%,
+		hsl(113, 63%, 35%) 50%,
+		hsl(113, 63%, 27%) 100%
+	);
 }
 
 .contact-us-form-group {
@@ -19,7 +25,7 @@
 .contact-us-form-input,
 .contact-us-form-select,
 .contact-us-form-textarea {
-	border: 2px solid hsl(120, 100%, 15%);
+	border: none;
 }
 
 .contact-us-form-input,
@@ -32,7 +38,7 @@
 }
 
 .contact-us-form-label {
-	font-weight: 500;
+	font-weight: 600;
 	color: var(--white);
 }
 
@@ -54,10 +60,10 @@
 .contact-us-form-submit {
 	justify-self: center; /* override default grid item rule and place in the center */
 	padding: 6px 24px;
+	border: none;
+	border-radius: 20px;
 	background-color: var(--green01);
 	color: var(--white);
-	border: 0;
-	border-radius: 20px;
 	cursor: pointer;
 	font-weight: 600;
 }
