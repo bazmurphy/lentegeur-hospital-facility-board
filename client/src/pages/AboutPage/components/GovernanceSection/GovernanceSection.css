@@ -1,11 +1,27 @@
 .governance-section {
 	margin-bottom: 30px;
 	padding: 30px 20px;
-	background-color: var(--green08);
+	background-image: linear-gradient(
+		300deg,
+		hsl(133, 49%, 36%) 0%,
+		hsl(133, 49%, 30%) 50%,
+		hsl(133, 49%, 24%) 100%
+	);
 }
 
-.governance-section h2 {
+.governance-title {
 	color: var(--white);
+}
+
+.governance-line {
+	/* background-color: var(--white); */
+	margin-bottom: 20px;
+	background-image: linear-gradient(
+		90deg,
+		hsl(0deg 0% 100%) 0%,
+		hsl(133deg 48% 68%) 50%,
+		hsl(133deg 49% 36%) 100%
+	);
 }
 
 .governance-container {
@@ -16,9 +32,4 @@
 
 .governance-text-container {
 	color: var(--white);
-}
-
-.governance-line {
-	background-color: var(--white);
-	margin-bottom: 20px;
 }
