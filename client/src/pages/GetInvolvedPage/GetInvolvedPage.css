@@ -1,10 +1,11 @@
 .get-involved-page {
-	padding: 20px;
+	padding: 20px 0;
+	background-color: var(--green16);
 }
 
 @media screen and (min-width: 768px) {
 	.get-involved-page {
-		padding: 40px 20px;
+		padding: 40px 0px;
 	}
 }
 

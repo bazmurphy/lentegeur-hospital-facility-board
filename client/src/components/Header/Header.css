@@ -115,14 +115,14 @@ header nav ul {
 	transform: none;
 	transition: 0.7s;
 	/* make sure it is on top of all other elements */
-	z-index: 3;
+	z-index: 4;
 }
 
 /* mobile navigation menu (on close) */
 .navigation-closing {
 	transition: 0.7s;
 	/* make sure it is on top of all other elements */
-	z-index: 3;
+	z-index: 4;
 }
 
 .header-logo-container {

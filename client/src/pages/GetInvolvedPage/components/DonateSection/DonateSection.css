@@ -1,13 +1,15 @@
 .donate-section {
 	margin-bottom: 30px; /* to offset from the next section */
+	padding: 30px 20px;
+	background: var(--green08);
 }
 
 .donate-title {
-	/* placeholder */
+	color: white;
 }
 
 .donate-line {
-	background-color: black;
+	background-color: white;
 }
 
 .donate-section-subcontainer {
