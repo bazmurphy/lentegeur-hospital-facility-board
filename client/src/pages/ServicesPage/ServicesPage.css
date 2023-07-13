@@ -1,19 +1,28 @@
 .services-page {
 	padding: 20px;
+	background-color: var(--green16);
 }
 
 .services-page-title {
 	margin-bottom: 20px;
 }
 
+.services-page-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.services-page-line {
+	background-color: var(--green07);
+	width: 80%;
+}
+
 @media screen and (min-width: 768px) {
 	.services-page {
 		padding: 40px 20px;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.services-page {
-		/* placeholder */
 	}
 }

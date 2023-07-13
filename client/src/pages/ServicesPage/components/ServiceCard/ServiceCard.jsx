@@ -1,5 +1,4 @@
 import "./ServiceCard.css";
-import Line from "../../../../components/Line/Line";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({
@@ -9,8 +8,7 @@ const ServiceCard = ({
 	alternativeText,
 	// category,
 	// tags,
-	summary,
-	customClassAlignImage,
+	// summary,
 }) => {
 	return (
 		<Link
@@ -21,18 +19,17 @@ const ServiceCard = ({
 		>
 			<section className="service-card-container">
 				<h2 className="service-card-title">{title}</h2>
-				<Line />
-				<div className={`service-card-subcontainer ${customClassAlignImage}`}>
-					<div className="service-card-image-container">
-						<img
-							className="service-card-image"
-							src={image}
-							alt={alternativeText}
-						/>
-					</div>
+				<p className="service-card-learn">LEARN MORE</p>
+				<div className="service-card-image-container">
+					<img
+						className="service-card-image"
+						src={image}
+						alt={alternativeText}
+					/>
+					<div className="overlay"></div>
+
 					{/* <span>{category}</span> */}
 					{/* <span>{tags}</span> */}
-					<p className="service-card-summary">{summary}</p>
 				</div>
 			</section>
 		</Link>
