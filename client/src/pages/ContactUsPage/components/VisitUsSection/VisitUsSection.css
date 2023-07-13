@@ -15,11 +15,21 @@
 	display: grid;
 	/* <Line /> margin-bottom should be fulfilling this container's margin-top rule? */
 	/* margin-top: 30px; */
+
 	row-gap: 30px;
 	grid-template-areas:
 		"visit-us-address-container"
 		"visit-us-map-container"
 		"visit-us-contacts-container";
+}
+.visit-us-contacts-container a {
+	text-decoration: none;
+	list-style: none;
+	color: var(--yellow-logo);
+}
+
+.contact-us-contacts-list {
+	list-style-type: none;
 }
 
 .visit-us-address-container,
