@@ -70,6 +70,10 @@
 	gap: 12px;
 }
 
+.pswp__img {
+	height: auto !important;
+}
+
 @media screen and (min-width: 768px) {
 	.gallery-album-page {
 		padding: 40px 20px;
