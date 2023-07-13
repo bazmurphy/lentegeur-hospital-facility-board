@@ -12,7 +12,9 @@ const Donate = ({
 }) => {
 	return (
 		<section className="donate-section">
-			<h2 className="donate-title">Donate</h2>
+			<h2 className="donate-title" id="donate">
+				Donate
+			</h2>
 			<Line extraClass={"donate-line"} />
 			<div className="donate-section-subcontainer">
 				{parseContent(donateSectionText)}
