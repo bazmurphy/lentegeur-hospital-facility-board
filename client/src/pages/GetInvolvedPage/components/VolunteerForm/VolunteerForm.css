@@ -1,7 +1,3 @@
-.volunteer-form-container {
-	/* placeholder */
-}
-
 .volunteer-form-container > h3 {
 	text-align: center;
 	margin-bottom: 20px;
@@ -16,7 +12,8 @@
 	display: grid;
 	row-gap: 20px;
 	padding: 20px 30px;
-	background-color: hsl(0, 0%, 85%);
+	background-color: var(--green02);
+	border-radius: none;
 }
 
 .volunteer-form-group {
@@ -27,13 +24,15 @@
 
 .volunteer-form-label {
 	font-weight: 500;
+	color: var(--white);
 }
 
 .volunteer-form-input,
 .volunteer-form-textarea {
 	padding: 6px;
-	border: 1px solid var(--black);
-	background-color: hsl(0, 6%, 90%);
+	border: 2px solid hsl(120, 100%, 15%);
+	background-color: var(--green18);
+	border-radius: 10px;
 }
 
 .volunteer-form-textarea {
@@ -45,14 +44,17 @@
 .volunteer-form-submit {
 	justify-self: center;
 	padding: 4px 24px;
-	border: 1px solid var(--black);
-	background-color: hsl(0, 0%, 70%);
-	color: hsl(0, 0%, 100%);
+	background-color: var(--green01);
+	color: var(--white);
+	border: 0;
+	border-radius: 20px;
 	cursor: pointer;
+	font-weight: 600;
 }
 
 .volunteer-form-submit:hover {
-	background-color: var(--gray60);
+	background-color: var(--yellow-logo);
+	color: var(--black);
 }
 
 @media screen and (min-width: 768px) {
@@ -65,6 +67,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 40px;
 		padding: 30px 50px;
+		border-radius: 10px;
 	}
 
 	.volunter-form-message-container {
