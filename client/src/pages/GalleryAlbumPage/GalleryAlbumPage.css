@@ -1,5 +1,6 @@
 .gallery-album-page {
-	margin: 20px;
+	padding: 20px;
+	background-color: var(--green16);
 }
 
 .gallery-album-title {
@@ -27,36 +28,40 @@
 }
 
 .gallery-album-image-container {
-	width: 400px;
-	height: 300px;
+	width: 100%; /* Change to percentage to make it responsive */
+	height: auto; /* Remove fixed height to maintain aspect ratio */
 }
 
 .gallery-album-image {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	border-radius: 20px;
+}
+
+.gallery-container-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Use auto-fit and minmax to create responsive grid */
+	grid-template-rows: repeat(2, 1fr); /* Use fr units for responsive row height */
+	gap: 12px;
 }
 
 @media screen and (min-width: 768px) {
 	.gallery-album-page {
-		margin: 40px 20px;
+		padding: 40px 20px;
 	}
 
 	.gallery-album-summary {
-		/* not sure on this percentage */
 		width: 80%;
 	}
 
 	.gallery-album-image-container {
-		/* this should be a different aspect ratio for tablet/desktop */
-		width: 400px;
-		height: 300px;
+		width: 100%; /* Change to percentage to make it responsive */
+		height: auto; /* Remove fixed height to maintain aspect ratio */
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.gallery-album-page {
-		margin: 40px auto;
+		/* Add specific styles for larger screens if needed */
 	}
 }
