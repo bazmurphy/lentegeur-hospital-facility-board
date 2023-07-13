@@ -30,7 +30,7 @@ const ServicePage = () => {
 			{isSuccess && (
 				<div className="service-page">
 					<h1>{serviceData.title}</h1>
-					<Line />
+					<Line extraClass="service-page-line" />
 					<div className="service-page-subcontainer">
 						<div className="service-page-image-container">
 							<img
@@ -39,24 +39,22 @@ const ServicePage = () => {
 								alt={serviceData.images[0].alternativeText}
 							/>
 						</div>
-						<div className="service-page-category-tag-container">
-							{serviceData.category && (
-								<span className="service-page-category">{`Category: ${serviceData.category}`}</span>
-							)}
-							{serviceData.tags && (
-								<span className="service-page-tags-container">
-									Tags:{" "}
-									{serviceData.tags.map((tag) => {
-										return (
-											<span key={tag} className="service-page-tag">
-												{tag}
-											</span>
-										);
-									})}
-								</span>
-							)}
-						</div>
-						<div className="service-page-content-container">
+						{serviceData.category && (
+							<span className="service-page-category">{`Category: ${serviceData.category}`}</span>
+						)}
+						{serviceData.tags && (
+							<span className="service-page-tags-container">
+								Tags:{" "}
+								{serviceData.tags.map((tag) => {
+									return (
+										<span key={tag} className="service-page-tag">
+											{tag}
+										</span>
+									);
+								})}
+							</span>
+						)}
+						<div className="service-page-service-container">
 							{parseContent(serviceData.content)}
 						</div>
 					</div>
