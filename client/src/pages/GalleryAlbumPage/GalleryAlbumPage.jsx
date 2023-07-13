@@ -29,7 +29,7 @@ const GalleryAlbumPage = () => {
 					<Line extraClass="gallery-page-line" />
 					<div className="gallery-album-container">
 						<Link to="/gallery" className="gallery-album-link-back">
-							{"< Back"}
+							{"Back"}
 						</Link>
 						<h2 className="gallery-album-title">{galleryAlbumData.title}</h2>
 						<p className="gallery-album-summary">{galleryAlbumData.summary}</p>
