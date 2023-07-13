@@ -1,13 +1,12 @@
 .home-services-section {
-	padding-top: 20px;
-	/* background-color: var(--green16); */
+	padding-top: 10px;
+	background-color: var(--green11);
+	/* background-color: hsl(126, 73%, 30%); */
 	background-image: linear-gradient(
-		45deg,
-		var(--green16) 0%,
-		hsl(115deg 100% 96%) 25%,
-		hsl(115deg 100% 98%) 50%,
-		hsl(115deg 100% 96%) 75%,
-		var(--green16) 100%
+		180deg,
+		hsl(112deg 100% 91%) 0%,
+		hsl(113deg 100% 93%) 5%,
+		hsl(115deg 100% 95%) 10%
 	);
 }
 
@@ -17,7 +16,7 @@
 }
 
 .home-services-line {
-	width: 85%;
+	width: 60%;
 	/* background-color: var(--green17); */
 	background-image: linear-gradient(
 		90deg,
@@ -35,6 +34,24 @@
 	column-gap: 20px;
 	padding-top: 30px;
 	padding-bottom: 40px;
+
+	/* background-image: linear-gradient(
+		45deg,
+		var(--green16) 0%,
+		hsl(115deg 100% 96%) 25%,
+		hsl(115deg 100% 98%) 50%,
+		hsl(115deg 100% 96%) 75%,
+		var(--green16) 100%
+	); */
+
+	background-color: var(--green16);
+
+	/* background-image: linear-gradient(
+		180deg,
+		var(--green16) 0%,
+		hsl(115deg 100% 96%) 50%,
+		hsl(115deg 100% 98%) 100%
+	); */
 }
 
 @media screen and (min-width: 768px) {

@@ -1,11 +1,13 @@
 import "./HomeGetInvolvedSection.css";
 import { Link } from "react-router-dom";
 import { FaHandHoldingMedical, FaPerson } from "react-icons/fa6";
+import Line from "../../../../components/Line/Line";
 
 const HomeGetInvolvedSection = () => {
 	return (
 		<section className="home-get-involved-section">
 			<h2 className="home-get-involved-title">Get Involved</h2>
+			<Line extraClass={"home-get-involved-line"} />
 			<div className="home-get-involved-cards-container">
 				<Link
 					to="/get-involved#donate"
