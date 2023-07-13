@@ -11,7 +11,7 @@ const VolunteerForm = () => {
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
-		setResult("Sending....");
+		setResult("Sending");
 		setIsSubmitting(true); // Disable the submit button
 		const formData = new FormData(event.target);
 
@@ -124,7 +124,7 @@ const VolunteerForm = () => {
 							isSubmitting ? "disabled" : ""
 						}`}
 					>
-						{isSubmitting ? "Submitting..." : "SUBMIT"}
+						{isSubmitting ? "Submitting" : "SUBMIT"}
 					</button>
 				</div>
 			</form>
