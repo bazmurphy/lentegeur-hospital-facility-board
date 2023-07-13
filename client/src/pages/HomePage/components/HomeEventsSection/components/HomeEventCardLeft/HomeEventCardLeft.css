@@ -1,7 +1,6 @@
 .home-event-container-left {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--green05);
 	text-decoration: none;
 }
 
