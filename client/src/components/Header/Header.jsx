@@ -54,7 +54,7 @@ const Header = () => {
 	return (
 		<header>
 			<div className="header-subcontainer">
-				<div className="header-logo-container">
+				<NavLink to="/" className="header-logo-container">
 					<div className="header-logo-image-container">
 						<img
 							src="./logo.png"
@@ -66,7 +66,7 @@ const Header = () => {
 						<br />
 						Facility Board
 					</h2>
-				</div>
+				</NavLink>
 				<nav
 					className={`${isNavigationOpen ? "navigation-open" : ""} ${
 						isNavigationClosing ? "navigation-closing" : ""
