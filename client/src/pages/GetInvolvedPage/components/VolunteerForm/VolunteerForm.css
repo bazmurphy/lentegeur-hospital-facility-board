@@ -39,7 +39,7 @@
 	padding: 6px;
 	border: 2px solid hsl(120, 100%, 15%);
 	border-radius: 10px;
-	background-color: hsl(115, 100%, 95%);
+	background-color: var(--green21);
 }
 
 .volunteer-form-textarea {

@@ -33,7 +33,7 @@
 .contact-us-form-textarea {
 	width: 100%;
 	padding: 6px;
-	background-color: hsl(115, 100%, 95%);
+	background-color: var(--green21);
 	border-radius: 10px;
 }
 
