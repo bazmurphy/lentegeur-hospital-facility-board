@@ -19,7 +19,7 @@ const queryFetch = async (options) => {
 	}${sortBy && sortOrder ? `sort=${sortBy}:${sortOrder}&` : ""}populate=*`;
 
 	const response = await fetch(url);
-	console.log("queryFetch response:", response);
+	// console.log("queryFetch response:", response);
 
 	if (!response.ok) {
 		throw new Error("Failed to fetch the data...");
