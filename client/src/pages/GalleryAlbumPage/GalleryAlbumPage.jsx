@@ -43,8 +43,8 @@ const GalleryAlbumPage = () => {
 												key={id}
 												original={url}
 												thumbnail={url}
-												width="1024"
-												height="768"
+												width="880"
+												height="550"
 											>
 												{({ ref, open }) => (
 													<img
