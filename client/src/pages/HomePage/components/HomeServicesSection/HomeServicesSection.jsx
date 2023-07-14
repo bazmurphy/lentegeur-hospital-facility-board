@@ -1,7 +1,8 @@
 import "./HomeServicesSection.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Line from "../../../../components/Line/Line";
 import HomeServiceCard from "./components/HomeServiceCard/HomeServiceCard";
-import { useState, useEffect } from "react";
 
 const HomeServicesSection = ({ servicesData }) => {
 	const [numberOfCards, setNumberOfCards] = useState(3);
@@ -29,7 +30,9 @@ const HomeServicesSection = ({ servicesData }) => {
 
 	return (
 		<section className="home-services-section">
-			<h2 className="home-services-title">Our Services</h2>
+			<Link to="/services" className="home-services-title-link">
+				<h2 className="home-services-title">Our Services</h2>
+			</Link>
 			<Line extraClass={"home-services-line"} />
 			<div className="home-services-card-list">
 				{servicesData.slice(0, numberOfCards).map((service) => {

@@ -1,11 +1,19 @@
 .home-news-section {
+	padding: 10px 0 15px 0;
 	background-color: var(--green10);
-	padding-bottom: 15px;
+}
+
+.home-news-title-link {
+	text-decoration: none;
 }
 
 .home-news-title {
-	margin-top: 10px;
+	text-align: center;
 	color: var(--green07);
+}
+
+.home-news-title:hover {
+	color: #1b741e;
 }
 
 .home-news-line {

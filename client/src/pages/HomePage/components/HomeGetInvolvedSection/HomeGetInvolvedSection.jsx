@@ -6,7 +6,9 @@ import Line from "../../../../components/Line/Line";
 const HomeGetInvolvedSection = () => {
 	return (
 		<section className="home-get-involved-section">
-			<h2 className="home-get-involved-title">Get Involved</h2>
+			<Link to="/events" className="home-get-involved-title-link">
+				<h2 className="home-get-involved-title">Get Involved</h2>
+			</Link>
 			<Line extraClass={"home-get-involved-line"} />
 			<div className="home-get-involved-cards-container">
 				<Link

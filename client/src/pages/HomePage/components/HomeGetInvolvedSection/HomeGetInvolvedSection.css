@@ -1,7 +1,4 @@
 .home-get-involved-section {
-	/* background: linear-gradient(0deg, hsl(108, 20%, 30%), var(--green09)); */
-	/* background-color: hsl(127, 74%, 10%); */
-	/* background: linear-gradient(180deg, #072c0b, #106518 25%); */
 	background-image: linear-gradient(
 		180deg,
 		hsl(126, 73%, 12%) 0%,
@@ -9,12 +6,19 @@
 	);
 	border-bottom: 6px solid var(--green12);
 	padding-top: 20px;
-	/* #08350d */
+}
+
+.home-get-involved-title-link {
+	text-decoration: none;
 }
 
 .home-get-involved-title {
 	text-align: center;
 	color: var(--green10);
+}
+
+.home-get-involved-title:hover {
+	color: #83e488;
 }
 
 .home-get-involved-line {
