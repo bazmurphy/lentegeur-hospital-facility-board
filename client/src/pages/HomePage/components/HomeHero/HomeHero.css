@@ -11,11 +11,11 @@
 	position: absolute;
 	left: 55px;
 	bottom: 50px;
-	width: 60%;
-	color: white;
-	font-size: 22px;
-	background-color: rgba(37, 36, 36, 0.517);
 	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: hsla(0, 0%, 15%, 0.5);
+	color: var(--white);
+	font-size: 22px;
 }
 
 .slide-image-container {
@@ -23,7 +23,6 @@
 }
 
 .slick-slider {
-	background-color: #f1fef1;
 	background-color: hsl(126, 73%, 30%);
 }
 
@@ -31,27 +30,28 @@
 	width: 100vw;
 }
 
-/* arrows */
+.slick-prev,
+.slick-next {
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	color: hsl(0, 0%, 100%, 0.7);
+}
+
 .slick-prev {
 	left: 10px;
 }
 
 .slick-next {
-	right: 10px;
+	/* this shouldnt be 0px but there is some alignment issue */
+	right: 0px;
 }
 
-.slick-prev,
-.slick-next {
-	z-index: 1;
-	width: 50px;
-	height: 50px;
-}
-
-.slick-prev:before,
-.slick-next:before {
-	font-size: 40px;
-	/* this is controlling the colour of the prev/next arrows */
-	color: var(--gray60);
+.slick-next:focus,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-prev:hover {
+	color: var(--yellow-logo);
 }
 
 .slick-slide img {
@@ -60,25 +60,24 @@
 	height: 100%;
 }
 
-/* dots */
 .slick-dots {
-	bottom: 15px;
+	bottom: 10px;
 }
 
 .slick-dots li button:before {
-	color: rgb(81, 78, 78);
-	font-size: 12px;
+	opacity: 0.6;
+	font-size: 14px;
+	color: var(--green-logo);
 }
 
 .slick-dots li.slick-active button:before {
-	color: white;
+	color: var(--yellow-logo);
 }
 
 @media screen and (min-width: 768px) {
 	.slide-title {
 		left: 100px;
 		bottom: 70px;
-		width: 50%;
 		font-size: 30px;
 	}
 }
