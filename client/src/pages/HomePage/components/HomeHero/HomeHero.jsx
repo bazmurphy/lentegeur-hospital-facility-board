@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./HomeHero.css";
+import "./HomeHero.css"; // this has to be after the css imports above to override the defaults
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 
 const HomeHero = ({ homePageData }) => {
 	const {
@@ -18,6 +19,8 @@ const HomeHero = ({ homePageData }) => {
 		arrows: true, // Display navigation arrows
 		autoplay: true, // Automatically transition to the next image
 		autoplaySpeed: 3000, // Delay between image transitions (in milliseconds)
+		nextArrow: <MdArrowForwardIos />,
+		prevArrow: <MdArrowBackIos />,
 	};
 
 	return (
