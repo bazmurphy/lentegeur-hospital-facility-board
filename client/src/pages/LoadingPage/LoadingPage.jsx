@@ -8,7 +8,7 @@ const LoadingPage = () => {
 			<h1 className="loading-page-title">Loading</h1>
 			<Line extraClass={"loading-page-line"} />
 			<div className="loading-page-subcontainer">
-				<LoadingIcon size={300} />
+				<LoadingIcon />
 			</div>
 		</div>
 	);
