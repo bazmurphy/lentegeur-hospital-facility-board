@@ -84,9 +84,7 @@ const HomePage = () => {
 			{isSuccess && (
 				<div className="home-page">
 					<HomeHero homePageData={homePageData} />
-					<div className="home-page-divider-one"></div>
 					<HomeServicesSection servicesData={servicesData} />
-					{/* <div className="home-page-divider-two"></div> */}
 					<HomeEventsSection eventsData={eventsData} />
 					<HomeNewsSection newsArticlesData={newsArticlesData} />
 					<HomeGetInvolvedSection />

@@ -3,8 +3,17 @@
 	background-color: hsl(127, 74%, 10%);
 }
 
+.home-events-title-link {
+	text-decoration: none;
+}
+
 .home-events-title {
+	text-align: center;
 	color: var(--green21);
+}
+
+.home-events-title:hover {
+	color: #b2ffab;
 }
 
 .home-events-line {

@@ -1,4 +1,5 @@
 import "./HomeNewsSection.css";
+import { Link } from "react-router-dom";
 import Line from "../../../../components/Line/Line";
 import Slider from "react-slick";
 import NewsCard from "./components/HomeNewsCard/HomeNewsCard";
@@ -38,7 +39,9 @@ const HomeNewsSection = ({ newsArticlesData }) => {
 	};
 	return (
 		<section className="home-news-section">
-			<h1 className="home-news-title">Latest News</h1>
+			<Link to="/news" className="home-news-title-link">
+				<h2 className="home-news-title">Latest News</h2>
+			</Link>
 			<Line extraClass={"home-news-line"} />
 			<Slider {...sliderSettings}>
 				{newsArticlesData.map((homeNews) => {

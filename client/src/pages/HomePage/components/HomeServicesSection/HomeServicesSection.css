@@ -10,9 +10,17 @@
 	);
 }
 
+.home-services-title-link {
+	text-decoration: none;
+}
+
 .home-services-title {
 	text-align: center;
 	color: var(--green17);
+}
+
+.home-services-title:hover {
+	color: #20441b;
 }
 
 .home-services-line {
@@ -20,9 +28,9 @@
 	/* background-color: var(--green17); */
 	background-image: linear-gradient(
 		90deg,
-		var(--green17) 0%,
-		var(--green12) 50%,
-		var(--green17) 100%
+		hsl(120, 100%, 92%) 0%,
+		hsl(113, 44%, 29%) 50%,
+		hsl(120, 100%, 92%) 100%
 	);
 }
 
@@ -35,23 +43,15 @@
 	padding-top: 30px;
 	padding-bottom: 40px;
 
-	/* background-image: linear-gradient(
-		45deg,
+	/* background-color: var(--green16); */
+	background-image: linear-gradient(
+		0deg,
 		var(--green16) 0%,
 		hsl(115deg 100% 96%) 25%,
 		hsl(115deg 100% 98%) 50%,
 		hsl(115deg 100% 96%) 75%,
 		var(--green16) 100%
-	); */
-
-	background-color: var(--green16);
-
-	/* background-image: linear-gradient(
-		180deg,
-		var(--green16) 0%,
-		hsl(115deg 100% 96%) 50%,
-		hsl(115deg 100% 98%) 100%
-	); */
+	);
 }
 
 @media screen and (min-width: 768px) {
