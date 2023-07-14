@@ -39,7 +39,7 @@ const HomeNewsSection = ({ newsArticlesData }) => {
 	};
 	return (
 		<section className="home-news-section">
-			<Link to="/events" className="home-news-title-link">
+			<Link to="/news" className="home-news-title-link">
 				<h2 className="home-news-title">Latest News</h2>
 			</Link>
 			<Line extraClass={"home-news-line"} />
