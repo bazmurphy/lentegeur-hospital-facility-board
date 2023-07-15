@@ -1,7 +1,7 @@
 .donate-section {
 	margin-bottom: 30px; /* to offset from the next section */
 	padding: 30px 20px;
-	background: var(--green08);
+	/* background: var(--green08); */
 	background-image: linear-gradient(
 		300deg,
 		hsl(133, 49%, 36%) 0%,

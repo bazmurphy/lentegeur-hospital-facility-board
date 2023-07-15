@@ -1,7 +1,6 @@
 .visit-us-section {
 	padding: 20px 70px 70px 70px;
 	/* background: var(--green08); */
-	color: var(--yellow-logo);
 	background-image: linear-gradient(
 		45deg,
 		hsl(133, 49%, 36%) 0%,
@@ -12,12 +11,14 @@
 
 .visit-us-section > h2 {
 	text-align: center;
+	/* color: var(--white); */
+	color: hsl(115, 100%, 88%);
 }
 
 .visit-us-line {
-	background-color: var(--yellow-logo);
 	width: 100%;
-	background-image: linear-gradient(
+	/* background-color: var(--yellow-logo); */
+	/* background-image: linear-gradient(
 		90deg,
 		hsl(133deg 49% 36%) 0%,
 		hsl(89deg 53% 46%) 20%,
@@ -25,6 +26,14 @@
 		hsl(64deg 79% 48%) 60%,
 		hsl(89deg 53% 46%) 80%,
 		hsl(133deg 49% 36%) 100%
+	); */
+	background-image: linear-gradient(
+		90deg,
+		hsl(133, 49%, 36%) 0%,
+		hsl(133, 48%, 68%) 25%,
+		hsl(0, 0%, 100%) 50%,
+		hsl(133, 48%, 68%) 75%,
+		hsl(133, 49%, 36%) 100%
 	);
 }
 
@@ -35,11 +44,17 @@
 		"visit-us-address-container"
 		"visit-us-map-container"
 		"visit-us-contacts-container";
+	color: var(--white);
 }
 
 .visit-us-contacts-container a {
 	text-decoration: none;
 	list-style: none;
+	color: var(--white);
+	font-weight: 500;
+}
+
+.visit-us-contacts-container a:hover {
 	color: var(--yellow-logo);
 }
 
@@ -66,6 +81,8 @@
 .visit-us-address-container > h3,
 .visit-us-contacts-container > h3 {
 	font-weight: 600;
+	/* color: var(--white); */
+	color: hsl(115, 100%, 88%);
 }
 
 .visit-us-address-container > p,
@@ -78,6 +95,7 @@
 .visit-us-address-container > p > span,
 .visit-us-contacts-container > p > span {
 	font-size: inherit;
+	font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {
