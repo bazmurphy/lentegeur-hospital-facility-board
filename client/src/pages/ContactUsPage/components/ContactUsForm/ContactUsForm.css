@@ -42,7 +42,7 @@
 .contact-us-form-input,
 .contact-us-form-select,
 .contact-us-form-textarea {
-	border: 2px solid hsl(120, 100%, 15%);
+	border: 1px solid hsl(120, 100%, 15%);
 }
 
 .contact-us-form-input,
