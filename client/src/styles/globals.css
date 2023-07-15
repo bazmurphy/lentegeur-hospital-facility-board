@@ -54,8 +54,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	/* uncomment this when developing to see how the box models interact */
-	/* border: 1px dotted black; */
+
 	font-family: "Quicksand", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -72,29 +71,41 @@
 }
 
 body {
+	min-height: 100vh;
 	min-width: 320px;
-	/* overflow-x: hidden;  */
+	/* overflow-x: hidden; */
 	/* this is to prevent the content jumping left when a scroll bar appears */
 }
 
 #root {
 	min-height: 100vh;
+	width: 100%;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 }
 
+header {
+	/* placeholder */
+}
+
 main {
+	min-height: 100vh;
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
 }
 
-footer {
-	margin-top: auto;
+@media screen and (min-width: 768px) {
+	main {
+		min-height: auto;
+	}
 }
 
-/* h1's are usually the Page title/heading at the top of the Page */
+footer {
+	/* placeholder */
+}
+
 h1 {
 	font-size: 24px;
 	font-weight: 800;
@@ -107,7 +118,6 @@ h1 {
 	}
 }
 
-/* h2's are usually the title/headings at the top of the Sections */
 h2 {
 	font-size: 22px;
 	font-weight: 700;
@@ -119,7 +129,6 @@ h2 {
 	}
 }
 
-/* h3's are usually the title/headings in the Card Containers */
 h3 {
 	font-size: 18px;
 	font-weight: 800;
@@ -131,7 +140,6 @@ h3 {
 	}
 }
 
-/* The general paragraph text across the entire Website */
 p {
 	font-size: 14px;
 	line-height: 1.6;

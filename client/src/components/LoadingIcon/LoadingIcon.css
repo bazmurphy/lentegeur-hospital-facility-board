@@ -1,0 +1,15 @@
+.loading-icon {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	background: none;
+	display: block;
+	shape-rendering: auto;
+}
+
+@media screen and (min-width: 768px) {
+	.loading-icon {
+		width: 300px;
+		height: 300px;
+	}
+}
