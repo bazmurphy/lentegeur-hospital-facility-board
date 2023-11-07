@@ -10,6 +10,11 @@ on:
 
 jobs:
   build-then-update-on-s3:
+    env:
+      VITE_API_URL: ${{ vars.VITE_API_URL }}
+      VITE_WEB3FORMS_URL: ${{ vars.VITE_WEB3FORMS_URL }}
+      VITE_WEB3FORMS_KEY: ${{ vars.VITE_WEB3FORMS_KEY }}
+      VITE_MAILCHIMP_URL: ${{ vars.VITE_MAILCHIMP_URL }}
     defaults:
       run:
         working-directory: client
