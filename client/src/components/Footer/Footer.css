@@ -1,146 +1,145 @@
 footer {
-	background: linear-gradient(
-		180deg,
-		hsl(126, 73%, 25%) 0%,
-		hsl(126, 73%, 5%) 100%
-	);
+  background: linear-gradient(
+    180deg,
+    hsl(167, 55%, 53%),
+    hsl(167, 48%, 24%) 100%
+  );
 }
 
 .footer-container {
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	padding: 30px 60px 45px 60px;
-	font-size: 12px;
-	max-width: 1200px;
-	margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px 60px 45px 60px;
+  font-size: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-subcontainer {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .footer-subheading {
-	color: var(--white);
-	font-weight: 800;
-	font-size: 16px;
-	filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%));
+  color: var(--white);
+  font-weight: 800;
+  font-size: 16px;
 }
 
 .footer-list {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
 }
 
 .footer-link {
-	text-decoration: none;
-	color: var(--white);
-	font-size: 14px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 14px;
 }
 
 .footer-link:hover {
-	color: var(--yellow-logo);
+  color: rgb(255, 248, 146);
 }
 
 .footer-navigation-link {
-	text-decoration: none;
-	color: var(--white);
+  text-decoration: none;
+  color: var(--white);
 }
 
 .footer-navigation-link:hover {
-	color: var(--yellow-logo);
+  color: rgb(255, 248, 146);
 }
 
 .footer-navigation-link.active {
-	color: var(--yellow-logo);
+  color: rgb(255, 248, 146);
 }
 
 .footer-address-container {
-	display: flex;
-	flex-direction: column;
-	color: white;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
 
 .footer-subscribe-info {
-	max-width: 240px;
-	color: var(--white);
-	text-align: left;
-	line-height: 1.3;
+  max-width: 240px;
+  color: var(--white);
+  text-align: left;
+  line-height: 1.3;
 }
 
 .footer-subscribe-form {
-	max-width: 240px;
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .footer-subscribe-form-input {
-	padding: 2px 4px;
-	border: 1px solid white;
-	border-radius: 4px;
-	/* background-color: hsla(0, 0%, 100%, 0.15); */
-	background-color: var(--green21);
-	color: black;
+  padding: 2px 4px;
+  border: 1px solid white;
+  border-radius: 4px;
+  /* background-color: hsla(0, 0%, 100%, 0.15); */
+  background-color: rgb(255, 251, 191);
+  color: black;
 }
 
 .footer-subscribe-form-button {
-	padding: 2px;
-	border: 1px solid white;
-	border-radius: 4px;
-	background-color: hsla(0, 0%, 100%, 0.35);
-	color: white;
-	outline: none;
-	cursor: pointer;
-	font-weight: 600;
+  padding: 2px;
+  border: 1px solid rgb(255, 248, 146);
+  border-radius: 4px;
+  background-color: hsla(0, 0%, 100%, 0.35);
+  color: rgb(255, 248, 146);
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .footer-subscribe-form-button:hover {
-	background-color: var(--yellow-logo);
-	color: black;
+  background-color: rgb(255, 248, 146);
+  color: black;
 }
 
 .footer-subscribe-form-status-loading,
 .footer-subscribe-form-status-error,
 .footer-subscribe-form-status-success {
-	text-align: center;
-	font-weight: 600;
+  text-align: center;
+  font-weight: 600;
 }
 
 .footer-subscribe-form-status-loading {
-	color: yellowgreen;
+  color: rgb(255, 248, 146);
 }
 
 .footer-subscribe-form-status-error {
-	color: red;
+  color: red;
 }
 
 .footer-subscribe-form-status-success {
-	color: yellow;
+  color: yellow;
 }
 
 @media (min-width: 768px) {
-	.footer-container {
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 30px 30px 40px 30px;
-	}
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 30px 40px 30px;
+  }
 
-	.footer-subheading {
-		color: var(--white);
-		font-weight: 800;
-		font-size: 17px;
-	}
+  .footer-subheading {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 17px;
+  }
 
-	.footer-list {
-		gap: 5px;
-	}
+  .footer-list {
+    gap: 5px;
+  }
 
-	.footer-list > li > a {
-		font-size: 16px;
-	}
+  .footer-list > li > a {
+    font-size: 16px;
+  }
 }
