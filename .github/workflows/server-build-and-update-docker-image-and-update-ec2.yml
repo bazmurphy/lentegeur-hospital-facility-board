@@ -1,0 +1,65 @@
+name: Build and Update Server Docker Image, Update on EC2
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "server/**"
+  workflow_dispatch:
+
+jobs:
+  build-and-update-docker-image:
+    defaults:
+      run:
+        working-directory: server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Code
+        uses: actions/checkout@v4
+
+      - name: Build the Docker Image
+        run: docker build -t bazmurphy/lhfb-server:latest server
+
+      - name: Login to DockerHub
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+
+      - name: Push the Docker Image to DockerHub
+        run: docker push bazmurphy/lhfb-server:latest
+
+  update-on-ec2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure SSH on the GitHub Actions Container (Without Using A Third Party Action!)
+        # this creates a folder and ssh configuration inside the Github Actions Container itself
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: |
+          echo SSH Configuration Started...
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/ec2.key
+          chmod 600 ~/.ssh/ec2.key
+          cat >>~/.ssh/config <<END
+          Host ec2
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/ec2.key
+            StrictHostKeyChecking no
+          END
+          echo SSH Configuration Complete!
+
+      # we can now run individual ssh commands using the Host
+
+      - name: Stop the Container
+        run: ssh ec2 'docker-compose down'
+
+      - name: Pull the latest Docker Image from DockerHub
+        run: ssh ec2 'docker pull bazmurphy/lhfb-server:latest'
+
+      - name: Restart the Containers
+        run: ssh ec2 'docker-compose up -d'
