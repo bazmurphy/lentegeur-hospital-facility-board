@@ -31,6 +31,7 @@ jobs:
         run: docker push bazmurphy/lhfb-server:latest
 
   update-on-ec2:
+    needs: build-and-update-docker-image
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH on the GitHub Actions Container (Without Using A Third Party Action!)
