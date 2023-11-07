@@ -15,7 +15,7 @@ resource "aws_launch_template" "lhfb_launch_template" {
   instance_type = "t2.micro"
 
   # [4] Key Pair Login
-  # key_name = ""
+  key_name = aws_key_pair.lhfb_key_pair.key_name
 
   # [5] Network Settings
   # [5.1]
@@ -103,6 +103,11 @@ resource "aws_launch_template" "lhfb_launch_template" {
       CLOUDINARY_SECRET   = var.cloudinary_secret
     }
   ))
+  # DATABASE_HOST       = aws_db_instance.lhfb_rds_database.address
+  # DATABASE_PORT       = aws_db_instance.lhfb_rds_database.port
+  # DATABASE_NAME       = aws_db_instance.lhfb_rds_database.db_name
+  # DATABASE_USERNAME   = aws_db_instance.lhfb_rds_database.username
+  # DATABASE_PASSWORD   = aws_db_instance.lhfb_rds_database.password
 
   tags = {
     "Name" = "lhfb-launch-template"
@@ -139,7 +144,7 @@ resource "aws_autoscaling_group" "lhfb_autoscaling_group" {
   # ???
 
   # [7] Health Checks
-  # [7.1] EC2 Health Checkes Always Enabled
+  # [7.1] EC2 Health Checks Always Enabled
   # [7.2] Elastic Load Balancing Health Checks
   health_check_type = "ELB"
   # [7.3] Health Check Grace Period
