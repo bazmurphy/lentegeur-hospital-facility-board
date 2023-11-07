@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	RouterProvider,
-	Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
 } from "react-router-dom";
 
 import RootLayout from "./layouts/RootLayout/RootLayout";
@@ -24,31 +24,31 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
-	createRoutesFromElements(
-		<Route path="/" element={<RootLayout />}>
-			<Route index element={<HomePage />} />
-			<Route path="about" element={<AboutPage />} />
-			<Route path="services" element={<ServicesPage />} />
-			<Route path="services/:slug" element={<ServicePage />} />
-			<Route path="news" element={<NewsPage />} />
-			<Route path="news/:slug" element={<ContentPage />} />
-			<Route path="events" element={<EventsPage />} />
-			<Route path="events/:slug" element={<ContentPage />} />
-			<Route path="gallery" element={<GalleryPage />} />
-			<Route path="gallery/:slug" element={<GalleryAlbumPage />} />
-			<Route path="get-involved" element={<GetInvolvedPage />} />
-			<Route path="contact-us" element={<ContactUsPage />} />
-			<Route path="*" element={<NotFoundPage />} />
-		</Route>
-	)
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="about" element={<AboutPage />} />
+      <Route path="services" element={<ServicesPage />} />
+      <Route path="services/:slug" element={<ServicePage />} />
+      <Route path="news" element={<NewsPage />} />
+      <Route path="news/:slug" element={<ContentPage />} />
+      <Route path="events" element={<EventsPage />} />
+      <Route path="events/:slug" element={<ContentPage />} />
+      <Route path="gallery" element={<GalleryPage />} />
+      <Route path="gallery/:slug" element={<GalleryAlbumPage />} />
+      <Route path="get-involved" element={<GetInvolvedPage />} />
+      <Route path="contact-us" element={<ContactUsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Route>
+  )
 );
 
 const App = () => {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<RouterProvider router={router}></RouterProvider>
-		</QueryClientProvider>
-	);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
+  );
 };
 
 export default App;

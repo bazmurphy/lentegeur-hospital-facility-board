@@ -47,6 +47,17 @@
   );
 }
 
+.home-event-details-left:hover {
+  background-image: linear-gradient(
+    300deg,
+    hsl(122, 62%, 12%) 0%,
+    hsl(123, 62%, 14%) 25%,
+    hsl(124, 62%, 16%) 50%,
+    hsl(125, 62%, 18%) 75%,
+    hsl(126, 62%, 20%) 100%
+  );
+}
+
 @media screen and (min-width: 768px) {
   .home-event-details-left {
     width: 60%;
