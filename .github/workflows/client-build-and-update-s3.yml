@@ -1,0 +1,40 @@
+name: Build Client, Update on S3
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "client/**"
+  workflow_dispatch:
+
+jobs:
+  build-then-update-on-s3:
+    defaults:
+      run:
+        working-directory: client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build the Client
+        run: npm run build
+
+      - name: Set AWS S3 Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_S3 }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_S3 }}
+          aws-region: eu-west-2
+
+      - name: Sync the Client Dist folder to AWS S3
+        run: aws s3 sync ./dist s3://lhfb --delete
