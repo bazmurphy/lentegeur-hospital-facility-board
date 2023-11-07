@@ -191,4 +191,17 @@ variable "cloudinary_name" {}
 variable "cloudinary_key" {}
 variable "cloudinary_secret" {}
 
-# # -----------------------------------------------
+# -----------------------------------------------
+
+# Public Key for the Key Pair
+variable "lhfb_public_key" {}
+
+# -----------------------------------------------
+
+# Create a Key Pair
+resource "aws_key_pair" "lhfb_key_pair" {
+  key_name   = "lhfb-key-pair"
+  public_key = var.lhfb_public_key
+}
+
+# -----------------------------------------------
