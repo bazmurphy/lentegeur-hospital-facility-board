@@ -1,86 +1,86 @@
 .home-event-container-left {
-	display: flex;
-	flex-direction: column;
-	text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-	.home-event-container-left {
-		flex-direction: row;
-		width: 50%;
-		height: 400px;
-	}
+  .home-event-container-left {
+    flex-direction: row;
+    width: 50%;
+    height: 400px;
+  }
 }
 
 .home-event-image-container-left {
-	width: 100%;
-	height: 300px;
+  width: 100%;
+  height: 300px;
 }
 
 @media screen and (min-width: 768px) {
-	.home-event-image-container-left {
-		width: 40%;
-		height: 100%;
-	}
+  .home-event-image-container-left {
+    width: 50%;
+    height: 100%;
+  }
 }
 
 .home-event-image-left {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .home-event-details-left {
-	padding: 1rem;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
-	background-image: linear-gradient(
-		300deg,
-		hsl(126, 62%, 20%) 0%,
-		hsl(125, 62%, 18%) 25%,
-		hsl(124, 62%, 16%) 50%,
-		hsl(123, 62%, 14%) 75%,
-		hsl(122, 62%, 12%) 100%
-	);
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  background-image: linear-gradient(
+    300deg,
+    hsl(126, 62%, 20%) 0%,
+    hsl(125, 62%, 18%) 25%,
+    hsl(124, 62%, 16%) 50%,
+    hsl(123, 62%, 14%) 75%,
+    hsl(122, 62%, 12%) 100%
+  );
 }
 
 @media screen and (min-width: 768px) {
-	.home-event-details-left {
-		width: 60%;
-		align-items: center;
-		justify-content: center;
-	}
+  .home-event-details-left {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .home-event-title-left {
-	color: var(--green21);
-	text-decoration: none;
-	transition: 0.5s all ease-in-out;
+  color: var(--green21);
+  text-decoration: none;
+  transition: 0.5s all ease-in-out;
 }
 
 .home-event-container-left:hover .home-event-title-left,
 .home-event-container-left:focus .home-event-title-left {
-	color: var(--yellow-logo);
+  color: var(--yellow-logo);
 }
 
 .home-event-summary-left {
-	color: var(--white);
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
-	.home-event-summary-left {
-		padding: 0 7%;
-	}
+  .home-event-summary-left {
+    padding: 0 7%;
+  }
 }
 
 .home-event-date-left {
-	color: var(--green21);
-	align-self: flex-end;
-	/* background: hsla(137, 33%, 96%, 0.08); */
-	background: hsla(0, 0%, 100%, 0.12);
-	padding: 3px 7px;
-	border-radius: 25px;
+  color: var(--green21);
+  align-self: flex-end;
+  /* background: hsla(137, 33%, 96%, 0.08); */
+  background: hsla(0, 0%, 100%, 0.12);
+  padding: 3px 7px;
+  border-radius: 25px;
 }
