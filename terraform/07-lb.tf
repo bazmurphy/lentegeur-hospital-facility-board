@@ -56,6 +56,8 @@ resource "aws_lb_target_group" "lhfb_load_balancer_target_group" {
 
   # [2] Health Checks
   health_check {
+    # Disable Health Checks
+    # enabled = false
     # [2.1] Health Check Protocol
     protocol = "HTTP"
     # [2.2] Health Check Path
@@ -71,7 +73,7 @@ resource "aws_lb_target_group" "lhfb_load_balancer_target_group" {
     # [2.6] Timeout
     timeout = 5
     # [2.7] Interval
-    interval = 30
+    interval = 300
     # [2.8] Success Codes
     matcher = "200"
   }

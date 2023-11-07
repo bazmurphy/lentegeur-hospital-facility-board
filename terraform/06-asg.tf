@@ -144,7 +144,7 @@ resource "aws_autoscaling_group" "lhfb_autoscaling_group" {
   # ???
 
   # [7] Health Checks
-  # [7.1] EC2 Health Checkes Always Enabled
+  # [7.1] EC2 Health Checks Always Enabled
   # [7.2] Elastic Load Balancing Health Checks
   health_check_type = "ELB"
   # [7.3] Health Check Grace Period
