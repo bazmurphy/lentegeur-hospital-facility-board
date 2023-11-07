@@ -61,5 +61,8 @@ jobs:
       - name: Pull the latest Docker Image from DockerHub
         run: ssh ec2 'docker pull bazmurphy/lhfb-server:latest'
 
+      - name: Pull the latest Docker Compose file
+        run: ssh ec2 'sudo wget -O /home/ec2-user/docker-compose.yml https://raw.githubusercontent.com/bazmurphy/lentegeur-hospital-facility-board/development/server/docker-compose.yml'
+
       - name: Restart the Containers
         run: ssh ec2 'docker-compose up -d'
