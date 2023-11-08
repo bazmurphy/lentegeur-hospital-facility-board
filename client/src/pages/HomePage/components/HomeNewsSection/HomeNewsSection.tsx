@@ -1,7 +1,7 @@
 import "./HomeNewsSection.css";
+import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Line from "../../../../components/Line/Line";
-import Slider from "react-slick";
 import HomeNewsCard from "./components/HomeNewsCard/HomeNewsCard";
 import { NewsArticle } from "../../../NewsPage/NewsPage";
 
@@ -11,33 +11,26 @@ export interface HomeNewsSectionProps {
 
 const HomeNewsSection = ({ newsArticlesData }: HomeNewsSectionProps) => {
   const sliderSettings = {
+    arrows: false,
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 900,
         settings: {
-          arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000,
         },
       },
     ],

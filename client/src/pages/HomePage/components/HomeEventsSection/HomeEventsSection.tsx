@@ -26,7 +26,7 @@ const HomeEventsSection = ({ eventsData }: HomeEventsSectionProps) => {
       </Link>
       <Line extraClass={"home-events-line"} />
       <div className="home-events-container">
-        {eventsData.map((homeEvent: Event, index: number) => {
+        {eventsData.slice(0, 2).map((homeEvent: Event, index: number) => {
           const { slug, title, images, startDate, summary } = homeEvent;
           const isEventsCardRight = index % 4 === 2 || index % 4 === 3;
           if (isEventsCardRight) {
