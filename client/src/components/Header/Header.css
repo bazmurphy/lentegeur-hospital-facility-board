@@ -1,207 +1,193 @@
 header {
-	background: linear-gradient(
-		180deg,
-		hsl(126, 73%, 5%) 0%,
-		hsl(126, 73%, 25%) 100%
-	);
+  background: hsl(167, 55%, 53%);
 }
 
 header nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transform: translateY(-100vh);
-	background: linear-gradient(
-		340deg,
-		hsla(126, 76%, 5%, 0.97) 0%,
-		hsla(130, 56%, 9%, 0.97) 10%,
-		hsla(132, 65%, 13%, 0.97) 20%,
-		hsla(131, 71%, 17%, 0.97) 30%,
-		hsla(130, 74%, 21%, 0.97) 40%,
-		hsla(126, 73%, 25%, 0.97) 50%,
-		hsla(130, 74%, 21%, 0.97) 60%,
-		hsla(131, 71%, 17%, 0.97) 70%,
-		hsla(132, 65%, 13%, 0.97) 80%,
-		hsla(130, 56%, 9%, 0.97) 90%,
-		hsla(126, 76%, 5%, 0.97) 100%
-	);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100vh);
+  background: hsl(167, 55%, 53%);
 }
 
 header nav ul {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	gap: 16px;
-	list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  list-style: none;
 }
 
 /* disabling scrolling of the body in the background whilst the mobile navigation is open */
 .disable-scroll {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .header-subcontainer {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
-	height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 80px;
 }
 
 .navigation-link {
-	color: var(--black);
-	text-decoration: none;
-	font-size: 18px;
-	font-weight: 600;
-	transition: all ease-in-out 200ms;
-	color: var(--white);
-	filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%));
+  color: var(--black);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all ease-in-out 200ms;
+  color: var(--white);
+  /* filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%)); */
 }
 
 .navigation-link:hover {
-	color: var(--yellow-logo);
+  color: rgb(255, 248, 146);
 }
 
 .navigation-link.active {
-	color: var(--yellow-logo);
+  color: var(--yellow-logo);
 }
 
 .navigation-link-underline {
-	display: none;
+  display: none;
 }
 
 /* to style both versions of the mobile navigation menu buttons: open ≡ and close X */
 .navigation-menu-button {
-	display: block;
-	outline: none;
-	border: none;
-	background: transparent;
-	color: var(--white);
-	cursor: pointer;
-	filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%));
+  display: block;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  /* filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%)); */
 }
 
 .navigation-menu-button:hover {
-	color: var(--yellow-logo);
+  color: var(--yellow-logo);
 }
 
 /* to position the mobile navigation menu X close button */
 .navigation-menu-button-close {
-	position: absolute;
-	top: 24px;
-	right: 16px;
+  position: absolute;
+  top: 24px;
+  right: 16px;
 }
 
 /* the style of the mobile navigation menu ≡ open icon  */
 .navigation-menu-button-icon {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 /* the style of the mobile navigation menu X close icon  */
 .navigation-menu-button-icon-close {
-	font-size: 26px;
+  font-size: 26px;
 }
 
 /* mobile navigation menu (on open) */
 .navigation-open {
-	overflow: hidden;
-	transform: none;
-	transition: 0.7s;
-	/* make sure it is on top of all other elements */
-	z-index: 4;
+  overflow: hidden;
+  transform: none;
+  transition: 0.7s;
+  /* make sure it is on top of all other elements */
+  z-index: 4;
 }
 
 /* mobile navigation menu (on close) */
 .navigation-closing {
-	transition: 0.7s;
-	/* make sure it is on top of all other elements */
-	z-index: 4;
+  transition: 0.7s;
+  /* make sure it is on top of all other elements */
+  z-index: 4;
 }
 
 .header-logo-container {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
 .header-logo-title {
-	font-size: 16px;
-	color: var(--white);
-	filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%));
+  font-size: 16px;
+  font-weight: bolds;
+  color: var(--white);
+  /* filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%)); */
 }
 
 .header-logo-title:hover {
-	color: var(--yellow-logo);
+  color: rgb(255, 248, 146);
 }
 
 .header-logo-image-container {
-	width: 40px;
-	height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .header-logo-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	filter: drop-shadow(0px 0px 2px hsl(0, 0%, 0%));
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  transition: 1s;
 }
 
 .header-logo-image:hover {
-	filter: drop-shadow(0px -5px 5px hsl(56, 83%, 49%));
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0px -5px 5px hsla(56, 100%, 72%, 0.753));
 }
 
 @media only screen and (min-width: 960px) {
-	header nav {
-		position: relative;
-		margin-top: 15px;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: flex-end;
-		width: auto;
-		height: auto;
-		background: transparent;
-		transform: none;
-	}
+  header nav {
+    position: relative;
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: auto;
+    height: auto;
+    background: transparent;
+    transform: none;
+  }
 
-	header nav ul {
-		display: flex;
-		flex-direction: row;
-	}
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+  }
 
-	.navigation-menu-button {
-		display: none;
-	}
+  .navigation-menu-button {
+    display: none;
+  }
 
-	.navigation-link.active {
-		color: var(--yellow-logo);
-	}
+  .navigation-link.active {
+    color: rgb(255, 248, 146);
+  }
 
-	.navigation-link.active + .navigation-link-underline {
-		display: block;
-		width: 80%;
-		height: 2px;
-		margin: 0 auto;
-		background-color: var(--yellow-logo);
-	}
+  .navigation-link.active + .navigation-link-underline {
+    display: block;
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgb(255, 248, 146);
+  }
 }
 
 @media only screen and (min-width: 875px) {
 }
 
 @media only screen and (min-width: 1024px) {
-	.navigation-link {
-		font-size: 18px;
-	}
+  .navigation-link {
+    font-size: 18px;
+  }
 
-	.header-logo-title {
-		font-size: 20px;
-	}
+  .header-logo-title {
+    font-size: 20px;
+  }
 }
