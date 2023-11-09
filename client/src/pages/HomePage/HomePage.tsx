@@ -23,7 +23,12 @@ const HomePage = () => {
         },
         {
           queryKey: ["services"],
-          queryFn: () => queryFetch({ endPoint: "/services" }),
+          queryFn: () =>
+            queryFetch({
+              endPoint: "/services",
+              sortBy: "id",
+              sortOrder: "ASC",
+            }),
         },
         {
           queryKey: ["events"],

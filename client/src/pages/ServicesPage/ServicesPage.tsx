@@ -25,7 +25,8 @@ export interface Service {
 const ServicesPage = () => {
   const { isLoading, isError, isSuccess, error, data } = useQuery({
     queryKey: ["services"],
-    queryFn: () => queryFetch({ endPoint: "/services" }),
+    queryFn: () =>
+      queryFetch({ endPoint: "/services", sortBy: "id", sortOrder: "ASC" }),
   });
 
   const servicesData: Service[] = data?.data;
