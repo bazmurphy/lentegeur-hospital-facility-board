@@ -92,6 +92,8 @@ const Header = () => {
           <button
             className="navigation-menu-button navigation-menu-button-close"
             onClick={closeNavbar}
+            aria-label="Navigation Menu"
+            role="button"
           >
             <FaTimes className="navigation-menu-button-icon-close" />
           </button>
