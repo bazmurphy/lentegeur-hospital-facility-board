@@ -57,14 +57,14 @@ resource "aws_s3_bucket_website_configuration" "lhfb_bucket_website_configuratio
     suffix = "index.html"
   }
   error_document {
-    key = "error.html"
+    key = "index.html"
   }
 }
 
 # Define The S3 Policy Document
 data "aws_iam_policy_document" "lhfb_policy_document_s3" {
   statement {
-    sid    = "PublicRead"
+    # sid    = "PublicRead"
     effect = "Allow"
     principals {
       type        = "*"
@@ -83,32 +83,32 @@ resource "aws_s3_bucket_policy" "lhfb_bucket_policy" {
 
 # -----------------------------------------------
 
-module "client_dist_folder" {
-  source = "hashicorp/dir/template"
+# module "client_dist_folder" {
+#   source = "hashicorp/dir/template"
 
-  # base_dir = "${path.module}/"
-  base_dir = "../client/dist"
-}
+#   # base_dir = "${path.module}/"
+#   base_dir = "../client/dist"
+# }
 
-# Upload the contents of client/dist/ to the S3 Bucket
-resource "aws_s3_object" "lhfb_bucket_s3_object" {
-  bucket = aws_s3_bucket.lhfb_bucket.id
+# # Upload the contents of client/dist/ to the S3 Bucket
+# resource "aws_s3_object" "lhfb_bucket_s3_object" {
+#   bucket = aws_s3_bucket.lhfb_bucket.id
 
-  for_each = module.client_dist_folder.files
+#   for_each = module.client_dist_folder.files
 
-  key          = each.key
-  content_type = each.value.content_type
+#   key          = each.key
+#   content_type = each.value.content_type
 
-  # The template_files module guarantees that only one of these two attributes will be set for each file,
-  # depending on whether it is an in-memory template rendering result or a static file on disk.
-  source = each.value.source_path
+#   # The template_files module guarantees that only one of these two attributes will be set for each file,
+#   # depending on whether it is an in-memory template rendering result or a static file on disk.
+#   source = each.value.source_path
 
-  # (!) S3 assigns a Content Type of binary/octet-stream to uploaded files by default
-  content = each.value.content
+#   # (!) S3 assigns a Content Type of binary/octet-stream to uploaded files by default
+#   content = each.value.content
 
-  # Unless the bucket has encryption enabled, the ETag of each object is an MD5 hash of that object.
-  etag = each.value.digests.md5
-}
+#   # Unless the bucket has encryption enabled, the ETag of each object is an MD5 hash of that object.
+#   etag = each.value.digests.md5
+# }
 
 # -----------------------------------------------
 
